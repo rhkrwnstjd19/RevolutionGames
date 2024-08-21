@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1c5051d7a8da7b4294bb2e6d02b81ff, type: 3}
+  m_Name: Lightning
+  m_EditorClassIdentifier: 
+  skillName: Lightnig
+  description: Targetin Enmey Attack
+  skillIcon: {fileID: 21300000, guid: c7983f142b364304a82bb8158574b413, type: 3}
+  cooldown: 5
+  damage: 2
+  skillPrefab: {fileID: 0}

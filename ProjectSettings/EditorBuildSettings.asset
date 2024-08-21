@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/gps_scene.unity
+    guid: 76a211d8055ecfa488842b0c5e85d04a
+  - enabled: 1
+    path: Assets/Scenes/dungeon_scene.unity
+    guid: 526722213da7ec84b990ec2db9dddca3
+  - enabled: 1
+    path: Assets/Scenes/InDungeon.unity
+    guid: 61154cc45c3e5aa4b98ce1c754fc65a3
+  m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: cd6ca4369b7f3ec4bb265c15bb631314,
+      type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 9e37060332bc6834cb69c9a6fbf38600,
+      type: 2}
