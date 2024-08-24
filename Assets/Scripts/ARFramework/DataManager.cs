@@ -1,8 +1,9 @@
 using UnityEngine;
 
+//í…ŒìŠ¤íŠ¸ìš© ì£¼ì„
 public class DataManager : Singleton<DataManager>
 {
-    //ÇÃ·¹ÀÌ¾î Á¤º¸¸¦ ÀúÀåÇÏ±â À§ÇÑ µ¥ÀÌÅÍ ¸Å´ÏÀú
+    //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å´ï¿½ï¿½ï¿½
     public int PlayerExp { get; private set; }
     public int PlayerLevel { get; private set; }
     public int PlayerMaxHp { get; private set; }
@@ -18,7 +19,6 @@ public class DataManager : Singleton<DataManager>
     void LoadData()
     {
         Debug.Log("Succesfullt Loaded Data!");
-        // µ¥ÀÌÅÍ ºÒ·¯¿À±â
         PlayerExp = PlayerPrefs.GetInt("PlayerExp", 0);
         PlayerLevel = PlayerPrefs.GetInt("PlayerLevel", 1);
         PlayerMaxHp = PlayerPrefs.GetInt("PlayerMaxHp", 5);
@@ -33,7 +33,7 @@ public class DataManager : Singleton<DataManager>
     }
     public void SaveData()
     {
-        // µ¥ÀÌÅÍ ÀúÀåÇÏ±â
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½
         PlayerPrefs.SetInt("PlayerExp", PlayerExp);
         PlayerPrefs.SetInt("PlayerLevel", PlayerLevel);
         PlayerPrefs.SetInt("PlayerMaxHp", PlayerMaxHp);
@@ -42,11 +42,11 @@ public class DataManager : Singleton<DataManager>
         PlayerPrefs.Save();
     }
 
-    // µ¥ÀÌÅÍ ¾÷µ¥ÀÌÆ® ¿¹½Ã ÇÔ¼ö
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
     public void UpdateExp(int exp)
     {
         PlayerExp += exp;
-        // ÇÊ¿äÇÑ °æ¿ì ´Ù¸¥ ·ÎÁ÷ Ãß°¡
+        // ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
         if(PlayerExp >= expMax[PlayerLevel - 1])
         {
             UpdateLevelUp();

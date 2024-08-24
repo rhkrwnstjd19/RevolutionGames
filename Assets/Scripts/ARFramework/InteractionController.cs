@@ -37,7 +37,7 @@ public class InteractionController : Singleton<InteractionController>
         }
         else
         {
-            Debug.LogError("Undefined MOde");
+            Debug.LogError("Undefined Mode");
         }
     }
     IEnumerator ChangeMode(GameObject mode)

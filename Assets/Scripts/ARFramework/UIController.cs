@@ -45,8 +45,7 @@ public class UIController:Singleton<UIController>
         if (currentPanel) FadeOut(currentPanel);
 
         currentPanel = panel;
-        if (panel)
-            FadeIn(panel);
+        if (panel) FadeIn(panel); 
     }
     void FadeIn(CanvasGroup panel)
     {

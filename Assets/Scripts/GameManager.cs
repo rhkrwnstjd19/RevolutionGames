@@ -37,7 +37,6 @@ public class GameManager : Singleton<GameManager>
         if (currentEnemyCount >=dungeonInfo.monsterCount)
         {
             isCleared = true;
-            // 게임 클리어 처리
         }
     }
     public void SceneChange(string nam)
