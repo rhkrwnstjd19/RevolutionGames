@@ -12,6 +12,9 @@ public class GameManager : Singleton<GameManager>
     public DungeonInfo dungeonInfo;
     public bool isPlayerDead=false;
 
+    public static GameManager Instance;
+    public List<Enemy> capturedMonsters = new List<Enemy>();
+
     private void Start()
     {
         if (GameManager.Instance != this)
@@ -42,5 +45,28 @@ public class GameManager : Singleton<GameManager>
     public void SceneChange(string nam)
     {
         SceneManager.LoadScene(nam);
+    }
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void CaptureMonster(GameObject monster)
+    {
+        Enemy enemyData = monster.GetComponent<Enemy>();
+        if (!capturedMonsters.Contains(enemyData))
+        {
+            capturedMonsters.Add(enemyData);
+            Debug.Log(enemyData.enemyName + " has been added to your collection.");
+            // 도감 UI 업데이트 - 도감 스크립트에서 처리
+        }
     }
 }

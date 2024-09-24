@@ -13,6 +13,9 @@ public class Enemy : MonoBehaviour
     GameObject target;
     Vector3 direction;
     [SerializeField]
+    public string enemyName;
+    public string enemyDescription;
+    public Sprite enemyImage;
     private float enemyHp = 3;
     private int attackAmount = 2;
     private bool isDead;
