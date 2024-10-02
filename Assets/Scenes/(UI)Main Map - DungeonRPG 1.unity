@@ -2856,7 +2856,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -208.10727, y: 353}
+  m_AnchoredPosition: {x: -208.10768, y: 353}
   m_SizeDelta: {x: 846.8501, y: 656.4789}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &882603140
@@ -4670,8 +4670,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 36375995}
   m_HandleRect: {fileID: 36375994}
   m_Direction: 0
-  m_Value: -0.0000014881981
-  m_Size: 0.4914508
+  m_Value: -0.00000049606604
+  m_Size: 0.48672172
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5586,6 +5586,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CanvasUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885646000722586265, guid: 696ecbd8d74a41a4c9f4e08f375021a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3984935059628857288, guid: 696ecbd8d74a41a4c9f4e08f375021a2,
         type: 3}
