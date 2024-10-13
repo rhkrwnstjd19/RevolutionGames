@@ -338,6 +338,21 @@ PrefabInstance:
       propertyPath: addGoFeatureComponents
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114473218596793094, guid: 652a8ba30c8274fae83d4ae6cd6bae92,
+        type: 3}
+      propertyPath: pois.renderingOptions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114473218596793094, guid: 652a8ba30c8274fae83d4ae6cd6bae92,
+        type: 3}
+      propertyPath: pois.renderingOptions.Array.data[2].kind
+      value: 283
+      objectReference: {fileID: 0}
+    - target: {fileID: 114473218596793094, guid: 652a8ba30c8274fae83d4ae6cd6bae92,
+        type: 3}
+      propertyPath: pois.renderingOptions.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 191634, guid: 166413d63d1da814ea57f371dcc9a37e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1593,6 +1608,26 @@ PrefabInstance:
     - target: {fileID: 3984935059628857288, guid: 696ecbd8d74a41a4c9f4e08f375021a2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168091863458382009, guid: 696ecbd8d74a41a4c9f4e08f375021a2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168091863458382009, guid: 696ecbd8d74a41a4c9f4e08f375021a2,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168091863458382009, guid: 696ecbd8d74a41a4c9f4e08f375021a2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168091863458382009, guid: 696ecbd8d74a41a4c9f4e08f375021a2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
