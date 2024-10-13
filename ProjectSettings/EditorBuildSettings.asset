@@ -14,12 +14,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/InDungeon.unity
     guid: 61154cc45c3e5aa4b98ce1c754fc65a3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test_Main.unity
     guid: bc0118203e2e4a948a8c060b93bd118f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test_Collect.unity
     guid: 63d90bfae13af1e4988bf9e6447dff9f
+  - enabled: 1
+    path: Assets/Scenes/(UI)Main Map - DungeonRPG 1.unity
+    guid: da253992001d0a6488056792c309f086
+  - enabled: 1
+    path: Assets/Scenes/(UI)Test_Collect 1.unity
+    guid: addecb6b8a86d144e8fe1bb1bce4a3fa
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: cd6ca4369b7f3ec4bb265c15bb631314,
       type: 2}

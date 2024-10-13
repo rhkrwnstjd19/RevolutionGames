@@ -6,12 +6,13 @@ using UnityEngine.UI;
 
 public class SpawnMonster : MonoBehaviour
 {
-    public GameObject Cube; // 큐브 오브젝트
+    public GameObject[] monsterPrefab; // 몬스터 배열
     private ARRaycastManager raycastManager; // 레이캐스트 매니저
 
     private List<ARRaycastHit> hit = new List<ARRaycastHit>(); // 레이캐스트 히트 결과
 
     private bool objectSpawn = false; // 오브젝트가 생성되었는지 확인
+    public int selectedMonsterIndex = -1;   //monster select
 
     public Text messagePanel;
     public GameObject GotoMainButton;
@@ -25,11 +26,43 @@ public class SpawnMonster : MonoBehaviour
 
     private void Update()
     {
-        Spawn();
+        if (selectedMonsterIndex > -1)
+        {
+            Spawn();
+        }
     }
 
     void Spawn()
     {
+        if (!objectSpawn)
+        {
+            GameObject selectedMonster = monsterPrefab[selectedMonsterIndex];
+
+            Vector2 screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
+            Ray ray = Camera.main.ScreenPointToRay(screenCenter);
+
+            if (raycastManager.Raycast(ray, hit, TrackableType.PlaneWithinPolygon))
+            {
+                Pose hitPose = hit[0].pose;
+
+                ShowMessage("Hit Position: " + hitPose.position);
+
+                Instantiate(selectedMonster, hitPose.position, hitPose.rotation);
+                objectSpawn = true;
+
+                //ShowMessage("몬스터 생성 완료!");
+
+                Invoke("EndStage", 2f);
+            }
+            else
+            {
+                ShowMessage("지면 인식 실패.");
+            }
+        }
+
+
+
+        /*
         // 터치 입력 확인
         if (Input.touchCount > 0 && !objectSpawn)
         {
@@ -42,12 +75,8 @@ public class SpawnMonster : MonoBehaviour
                 if (raycastManager.Raycast(touch.position, hit, TrackableType.PlaneWithinPolygon))
                 {
                     Pose hitPose = hit[0].pose;
-                    Instantiate(Cube, hitPose.position, hitPose.rotation);
-                    objectSpawn = true;
 
-                    ShowMessage("큐브 생성 완료!");
 
-                    Invoke("EndStage", 2f);
                 }
                 else
                 {
@@ -56,6 +85,7 @@ public class SpawnMonster : MonoBehaviour
                 }
             }
         }
+        */
     }
     // 메시지 패널에 텍스트 표시
     private void ShowMessage(string message)
@@ -69,5 +99,10 @@ public class SpawnMonster : MonoBehaviour
     private void EndStage()
     {
         GotoMainButton.SetActive(true);
+    }
+
+    public void SetSelectedMonster(int index)
+    {
+        selectedMonsterIndex = index;    
     }
 }

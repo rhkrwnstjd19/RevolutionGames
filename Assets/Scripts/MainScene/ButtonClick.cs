@@ -5,27 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class ButtonClick : MonoBehaviour
 {
-    public GameObject StageListUI;
-    public GameObject GameSelectButton;
-    public void OnButtonClickCorrect() //수집형 던전 버튼
+    public GameObject CollectSceneButton;
+    public GameObject StageSelectButton;
+    public void OnButtonClickCollect() //수집형 던전 버튼
     {
-        StageListUI.SetActive(true);
-        GameSelectButton.SetActive(false);
+        StageSelectButton.SetActive(true);
     }
 
     public void OnButtonClickBack_StageSelect()
     {
-        StageListUI.SetActive(false);
-        GameSelectButton.SetActive(true);
+        StageSelectButton.SetActive(false);
     }
 
     public void OnButtonClickStageOne() //수집형 던전 리스트 버튼
     {
-        SceneManager.LoadScene("Test_Collect");
+        SceneManager.LoadScene("(UI)Test_Collect 1");
     }
 
     public void OnButtonClickGoToMain()
     {
-        SceneManager.LoadScene("Test_Main");
+        SceneManager.LoadScene("(UI)Main Map - DungeonRPG 1");
     }
 }
