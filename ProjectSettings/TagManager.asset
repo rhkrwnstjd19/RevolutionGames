@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Attack
   - Enemy
+  - Dungeon
   layers:
   - Default
   - TransparentFX

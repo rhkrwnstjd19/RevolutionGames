@@ -332,9 +332,8 @@ GameObject:
   - component: {fileID: 465872}
   - component: {fileID: 6587926}
   - component: {fileID: 11436998}
-  - component: {fileID: 4114892518107624373}
   m_Layer: 0
-  m_Name: Place
+  m_Name: Place 1
   m_TagString: Dungeon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -393,15 +392,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   continousRotation: 1
---- !u!114 &4114892518107624373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 191634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cbc7a3a7fa06364a9e1302477511dd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
