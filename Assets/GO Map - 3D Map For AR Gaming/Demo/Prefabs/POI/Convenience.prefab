@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 465872}
   - component: {fileID: 6587926}
-  - component: {fileID: 11436998}
   m_Layer: 0
-  m_Name: SpecialPlace 1
-  m_TagString: Untagged
+  m_Name: Convenience
+  m_TagString: RPGDungeon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,22 +52,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 50, y: 35.8, z: 50}
-  m_Center: {x: 0, y: 8.1, z: 0}
---- !u!114 &11436998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 191634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e7463ad86b374368a1f89fdb153cdab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 50
-  continousRotation: 1
+  m_Size: {x: 20, y: 15, z: 20}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2743061743214147110
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,7 +83,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 15, y: 15, z: 15}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 465872}
@@ -131,7 +116,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7d07f10e0a157a940906d50e256c50b8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

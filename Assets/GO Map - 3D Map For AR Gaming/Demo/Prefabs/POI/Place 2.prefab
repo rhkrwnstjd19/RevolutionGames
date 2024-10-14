@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 576099141966194930}
   - component: {fileID: 3362497749219142746}
   - component: {fileID: 5653682790711693647}
-  - component: {fileID: 5529215187467088155}
+  - component: {fileID: 2588290717725618452}
   m_Layer: 0
   m_Name: Place 2
   m_TagString: Dungeon
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   continousRotation: 1
---- !u!114 &5529215187467088155
+--- !u!114 &2588290717725618452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,9 +81,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 249007286411521554}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cbc7a3a7fa06364a9e1302477511dd8, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b07cb8a575ce2d4bb69ade0e55624ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  confirmationPanel: {fileID: 0}
 --- !u!1 &2191913640816329020
 GameObject:
   m_ObjectHideFlags: 0

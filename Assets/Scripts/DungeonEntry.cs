@@ -49,7 +49,7 @@ public class DungeonEntry : MonoBehaviour
     void ShowConfirmation()
     {
         if (confirmationPanel != null){
-           // DuneonEntryView.Instance.ShowConfirmation();
+          // DuneonEntryView.Instance.ShowConfirmation();
             Debug.Log($"confirmationPanel is not null : {confirmationPanel}");
         }
         else{
