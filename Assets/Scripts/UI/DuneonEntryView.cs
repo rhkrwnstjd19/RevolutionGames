@@ -99,7 +99,7 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
     // 수락 버튼 클릭 시 호출되는 함수
     public void OnAccept()
     {
-        if (isRPG) SceneManager.LoadScene("RPGDungeonScene");
+        if (isRPG) SceneManager.LoadScene("RPGDungeon");
         else SceneManager.LoadScene("BossDungeonScene");
     }
 
