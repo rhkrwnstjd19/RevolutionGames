@@ -1,31 +1,42 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
     public ScriptableSkill skill;
-    
-    void Start(){
-        StartCoroutine(shootFire());
+    public ParticleSystem fireballHitEffect;
+    public float speed = 10f; // Fireball의 속도
+    public float lifetime = 5f; // Fireball의 생존 시간
+    [Range(-45f, 45f)]
+    public float horizontalAngle = 0f; // 좌우 각도 (-45 ~ 45도)
+
+    void Start()
+    {
+        StartCoroutine(ShootFire());
     }
-    IEnumerator shootFire(){
-       // 카메라의 forward 방향을 기준으로 이동 방향 설정
-        Vector3 direction = Camera.main.transform.forward;
 
-        // Fireball의 회전을 카메라의 회전과 일치시킴
-        transform.rotation = Camera.main.transform.rotation;
+    IEnumerator ShootFire()
+    {
+        // 카메라의 forward 방향과 horizontalAngle을 적용한 방향 벡터 설정
+        Camera mainCamera = Camera.main;
+        Vector3 forward = mainCamera.transform.forward;
+        Vector3 right = mainCamera.transform.right;
 
-        // Fireball의 속도 설정
-        float speed = 10f;
+        // 수평 각도를 라디안으로 변환
+        float angleRad = horizontalAngle * Mathf.Deg2Rad;
 
-        // Fireball의 생존 시간 설정
-        float lifetime = 5f;
+        // 회전 행렬을 사용하여 방향 벡터 회전
+        Vector3 direction = Quaternion.AngleAxis(horizontalAngle, Vector3.up) * forward;
+        direction = (direction + mainCamera.transform.up * 0.2f).normalized; // 약간의 상향 조정 (필요에 따라 조절 가능)
+
+        // Fireball의 회전을 이동 방향에 맞게 설정
+        transform.rotation = Quaternion.LookRotation(direction);
+
         float elapsed = 0f;
 
         while (elapsed < lifetime)
         {
-            // 지속적으로 Fireball을 이동시킴
+            // Fireball을 설정된 방향으로 지속적으로 이동
             transform.Translate(direction * speed * Time.deltaTime, Space.World);
             elapsed += Time.deltaTime;
             yield return null;
@@ -34,14 +45,30 @@ public class Fireball : MonoBehaviour
         // 생존 시간이 지난 후 Fireball 파괴
         Destroy(gameObject);
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<ZombieScript>().decreaseEnemyHp(skill.AttackVal);
+            Debug.Log("Fireball hit enemy");
+            ZombieScript zombie = other.gameObject.GetComponent<ZombieScript>();
+            if (zombie != null)
+            {
+                zombie.decreaseEnemyHp(skill.AttackVal);
+            }
+
+            // 충돌 지점 근처에 Hit Effect 소환
+            Vector3 hitPosition = other.ClosestPoint(transform.position) + Vector3.up * 1f;
+
+            if (fireballHitEffect != null)
+            {
+                ParticleSystem tmp = Instantiate(fireballHitEffect, hitPosition, Quaternion.identity);
+                tmp.Play();
+                Destroy(tmp.gameObject, tmp.main.duration); // 효과가 끝난 후 파괴
+            }
+
+            // Fireball 파괴
             Destroy(gameObject);
         }
     }
-
-
 }

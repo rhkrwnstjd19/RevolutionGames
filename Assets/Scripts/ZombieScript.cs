@@ -17,7 +17,7 @@ public class ZombieScript : MonoBehaviour
     GameObject target;
     Vector3 direction;
     [SerializeField]
-    private float enemyHp = 3;
+    private int enemyHp = 3;
     private int attackAmount = 2;
     private bool isDead;
     private bool isAttack=false;
@@ -41,7 +41,7 @@ public class ZombieScript : MonoBehaviour
             transform.eulerAngles = new Vector3(0, currentRotation.y, 0);
             //Beacuse Trigger was not working, Calculated the distance for attacking
             Debug.Log((Vector3.Distance(transform.position, target.transform.position)));
-            if(Vector3.Distance(transform.position, target.transform.position) < 3f)
+            if(Vector3.Distance(transform.position, target.transform.position) < 4f)
             {
                 
                 animator.SetBool("IsAttack", true);
@@ -65,19 +65,19 @@ public class ZombieScript : MonoBehaviour
         isAttack = false;
     }
     
-    public void decreaseEnemyHp(float attack)
+    public void decreaseEnemyHp(int attack)
     {
         enemyHp -= attack;
         if (enemyHp <= 0)
         {
-            zombieSound.PlayOneShot(zombieDead);
+            //zombieSound.PlayOneShot(zombieDead);
             isDead = true;
-            DataManager.Instance.UpdateExp(enemyExp);
-            DataManager.Instance.UpdateMoney(moneyDrop);
+            // DataManager.Instance.UpdateExp(enemyExp);
+            // DataManager.Instance.UpdateMoney(moneyDrop);
             animator.SetBool("IsDead", isDead);
             
             Destroy(this.gameObject, 3f);
-            GameManager.Instance.EnemyDefeated();
+            //GameManager.Instance.EnemyDefeated();
         }
     }
    
