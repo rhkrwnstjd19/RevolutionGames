@@ -24,6 +24,7 @@ Library: C:\Users\user\Documents\GitHub\RevolutionGames\Temp\BurstOutput\tempbur
 --assembly-defines=System.Xml;
 --assembly-defines=System.Xml.Linq;
 --assembly-defines=UniRx;
+--assembly-defines=Unity.Addressables;
 --assembly-defines=Unity.Burst;
 --assembly-defines=Unity.Burst.Unsafe;
 --assembly-defines=Unity.InputSystem;
@@ -32,6 +33,7 @@ Library: C:\Users\user\Documents\GitHub\RevolutionGames\Temp\BurstOutput\tempbur
 --assembly-defines=Unity.RenderPipeline.Universal.ShaderLibrary;
 --assembly-defines=Unity.RenderPipelines.Core.Runtime;
 --assembly-defines=Unity.RenderPipelines.Universal.Runtime;
+--assembly-defines=Unity.ResourceManager;
 --assembly-defines=Unity.Services.Analytics;
 --assembly-defines=Unity.Services.Core.Configuration;
 --assembly-defines=Unity.Services.Core.Device;
@@ -91,6 +93,7 @@ Library: C:\Users\user\Documents\GitHub\RevolutionGames\Temp\BurstOutput\tempbur
 --assembly-defines=System.Xml;
 --assembly-defines=System.Xml.Linq;
 --assembly-defines=UniRx;
+--assembly-defines=Unity.Addressables;
 --assembly-defines=Unity.Burst;
 --assembly-defines=Unity.Burst.Unsafe;
 --assembly-defines=Unity.InputSystem;
@@ -99,6 +102,7 @@ Library: C:\Users\user\Documents\GitHub\RevolutionGames\Temp\BurstOutput\tempbur
 --assembly-defines=Unity.RenderPipeline.Universal.ShaderLibrary;
 --assembly-defines=Unity.RenderPipelines.Core.Runtime;
 --assembly-defines=Unity.RenderPipelines.Universal.Runtime;
+--assembly-defines=Unity.ResourceManager;
 --assembly-defines=Unity.Services.Analytics;
 --assembly-defines=Unity.Services.Core.Configuration;
 --assembly-defines=Unity.Services.Core.Device;

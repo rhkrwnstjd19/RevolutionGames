@@ -1,0 +1,5285 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!29 &1
+OcclusionCullingSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_OcclusionBakeSettings:
+    smallestOccluder: 5
+    smallestHole: 0.25
+    backfaceThreshold: 100
+  m_SceneGUID: 00000000000000000000000000000000
+  m_OcclusionCullingData: {fileID: 0}
+--- !u!104 &2
+RenderSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 9
+  m_Fog: 0
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogMode: 3
+  m_FogDensity: 0.01
+  m_LinearFogStart: 0
+  m_LinearFogEnd: 300
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
+  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientIntensity: 1
+  m_AmbientMode: 0
+  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SkyboxMaterial: {fileID: 0}
+  m_HaloStrength: 0.5
+  m_FlareStrength: 1
+  m_FlareFadeSpeed: 3
+  m_HaloTexture: {fileID: 0}
+  m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
+  m_DefaultReflectionMode: 0
+  m_DefaultReflectionResolution: 128
+  m_ReflectionBounces: 1
+  m_ReflectionIntensity: 1
+  m_CustomReflection: {fileID: 0}
+  m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_UseRadianceAmbientProbe: 0
+--- !u!157 &3
+LightmapSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 12
+  m_GIWorkflowMode: 1
+  m_GISettings:
+    serializedVersion: 2
+    m_BounceScale: 1
+    m_IndirectOutputScale: 1
+    m_AlbedoBoost: 1
+    m_EnvironmentLightingMode: 0
+    m_EnableBakedLightmaps: 1
+    m_EnableRealtimeLightmaps: 0
+  m_LightmapEditorSettings:
+    serializedVersion: 12
+    m_Resolution: 2
+    m_BakeResolution: 40
+    m_AtlasSize: 1024
+    m_AO: 0
+    m_AOMaxDistance: 1
+    m_CompAOExponent: 1
+    m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
+    m_Padding: 2
+    m_LightmapParameters: {fileID: 0}
+    m_LightmapsBakeMode: 1
+    m_TextureCompression: 1
+    m_FinalGather: 0
+    m_FinalGatherFiltering: 1
+    m_FinalGatherRayCount: 256
+    m_ReflectionCompression: 2
+    m_MixedBakeMode: 2
+    m_BakeBackend: 1
+    m_PVRSampling: 1
+    m_PVRDirectSampleCount: 32
+    m_PVRSampleCount: 512
+    m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 256
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 1
+    m_PVRDenoiserTypeDirect: 1
+    m_PVRDenoiserTypeIndirect: 1
+    m_PVRDenoiserTypeAO: 1
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
+    m_PVREnvironmentMIS: 1
+    m_PVRCulling: 1
+    m_PVRFilteringGaussRadiusDirect: 1
+    m_PVRFilteringGaussRadiusIndirect: 5
+    m_PVRFilteringGaussRadiusAO: 2
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
+  m_LightingDataAsset: {fileID: 0}
+  m_LightingSettings: {fileID: 0}
+--- !u!196 &4
+NavMeshSettings:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_BuildSettings:
+    serializedVersion: 3
+    agentTypeID: 0
+    agentRadius: 0.5
+    agentHeight: 2
+    agentSlope: 45
+    agentClimb: 0.4
+    ledgeDropHeight: 0
+    maxJumpAcrossDistance: 0
+    minRegionArea: 2
+    manualCellSize: 0
+    cellSize: 0.16666667
+    manualTileSize: 0
+    tileSize: 256
+    buildHeightMesh: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
+    debug:
+      m_Flags: 0
+  m_NavMeshData: {fileID: 0}
+--- !u!1 &330585543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 330585546}
+  - component: {fileID: 330585545}
+  - component: {fileID: 330585544}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &330585544
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+--- !u!20 &330585545
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.01
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &330585546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5315242, y: -0.000004739035, z: 0.0000029847934, w: 0.84704316}
+  m_LocalPosition: {x: 16.902962, y: 22.29506, z: -18.564766}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &410087039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 410087041}
+  - component: {fileID: 410087040}
+  m_Layer: 0
+  m_Name: Directional Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &410087040
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410087039}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 1
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 0.082
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 5000
+  m_UseColorTemperature: 1
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &410087041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410087039}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.5262819, y: 0.169035, z: -0.11577937, w: -0.8252574}
+  m_LocalPosition: {x: -4.55, y: 17.35, z: 5.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 114.8, y: 158, z: -178.2}
+--- !u!1001 &218284738741454496
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4900481517100258177, guid: 5c9cf7329114cfa4696a02d6256b8a05,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_8_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538683509311251648, guid: 5c9cf7329114cfa4696a02d6256b8a05,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538683509311251648, guid: 5c9cf7329114cfa4696a02d6256b8a05,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538683509311251648, guid: 5c9cf7329114cfa4696a02d6256b8a05,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538683509311251648, guid: 5c9cf7329114cfa4696a02d6256b8a05,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538683509311251648, guid: 5c9cf7329114cfa4696a02d6256b8a05,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538683509311251648, guid: 5c9cf7329114cfa4696a02d6256b8a05,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538683509311251648, guid: 5c9cf7329114cfa4696a02d6256b8a05,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538683509311251648, guid: 5c9cf7329114cfa4696a02d6256b8a05,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538683509311251648, guid: 5c9cf7329114cfa4696a02d6256b8a05,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538683509311251648, guid: 5c9cf7329114cfa4696a02d6256b8a05,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5c9cf7329114cfa4696a02d6256b8a05, type: 3}
+--- !u!1001 &230223570244972670
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7010106880594962182, guid: 794d3e21a895e674f891ac802bcf7a72,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010106880594962182, guid: 794d3e21a895e674f891ac802bcf7a72,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010106880594962182, guid: 794d3e21a895e674f891ac802bcf7a72,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010106880594962182, guid: 794d3e21a895e674f891ac802bcf7a72,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010106880594962182, guid: 794d3e21a895e674f891ac802bcf7a72,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010106880594962182, guid: 794d3e21a895e674f891ac802bcf7a72,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010106880594962182, guid: 794d3e21a895e674f891ac802bcf7a72,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010106880594962182, guid: 794d3e21a895e674f891ac802bcf7a72,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010106880594962182, guid: 794d3e21a895e674f891ac802bcf7a72,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010106880594962182, guid: 794d3e21a895e674f891ac802bcf7a72,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601509208580266145, guid: 794d3e21a895e674f891ac802bcf7a72,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_12_2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 794d3e21a895e674f891ac802bcf7a72, type: 3}
+--- !u!1001 &527632538957851622
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 985031226780829926, guid: c8d37e0fc0cd6b3499251995e73e32ea,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 985031226780829926, guid: c8d37e0fc0cd6b3499251995e73e32ea,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 985031226780829926, guid: c8d37e0fc0cd6b3499251995e73e32ea,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 985031226780829926, guid: c8d37e0fc0cd6b3499251995e73e32ea,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 985031226780829926, guid: c8d37e0fc0cd6b3499251995e73e32ea,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 985031226780829926, guid: c8d37e0fc0cd6b3499251995e73e32ea,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 985031226780829926, guid: c8d37e0fc0cd6b3499251995e73e32ea,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 985031226780829926, guid: c8d37e0fc0cd6b3499251995e73e32ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 985031226780829926, guid: c8d37e0fc0cd6b3499251995e73e32ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 985031226780829926, guid: c8d37e0fc0cd6b3499251995e73e32ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297905524603715812, guid: c8d37e0fc0cd6b3499251995e73e32ea,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_12_6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c8d37e0fc0cd6b3499251995e73e32ea, type: 3}
+--- !u!1001 &541067546598070226
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2214669421955912920, guid: bcf284c84b8e23f4c9c7dd111af635a8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214669421955912920, guid: bcf284c84b8e23f4c9c7dd111af635a8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214669421955912920, guid: bcf284c84b8e23f4c9c7dd111af635a8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214669421955912920, guid: bcf284c84b8e23f4c9c7dd111af635a8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214669421955912920, guid: bcf284c84b8e23f4c9c7dd111af635a8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214669421955912920, guid: bcf284c84b8e23f4c9c7dd111af635a8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214669421955912920, guid: bcf284c84b8e23f4c9c7dd111af635a8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214669421955912920, guid: bcf284c84b8e23f4c9c7dd111af635a8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214669421955912920, guid: bcf284c84b8e23f4c9c7dd111af635a8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214669421955912920, guid: bcf284c84b8e23f4c9c7dd111af635a8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384746374287024054, guid: bcf284c84b8e23f4c9c7dd111af635a8,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_8_3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bcf284c84b8e23f4c9c7dd111af635a8, type: 3}
+--- !u!1001 &759582031826743822
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 674702086214736862, guid: 4f8521d0e95f2a5458afab5a0fb2a2fb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 674702086214736862, guid: 4f8521d0e95f2a5458afab5a0fb2a2fb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 674702086214736862, guid: 4f8521d0e95f2a5458afab5a0fb2a2fb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 674702086214736862, guid: 4f8521d0e95f2a5458afab5a0fb2a2fb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 674702086214736862, guid: 4f8521d0e95f2a5458afab5a0fb2a2fb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 674702086214736862, guid: 4f8521d0e95f2a5458afab5a0fb2a2fb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 674702086214736862, guid: 4f8521d0e95f2a5458afab5a0fb2a2fb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 674702086214736862, guid: 4f8521d0e95f2a5458afab5a0fb2a2fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 674702086214736862, guid: 4f8521d0e95f2a5458afab5a0fb2a2fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 674702086214736862, guid: 4f8521d0e95f2a5458afab5a0fb2a2fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7599332059883450597, guid: 4f8521d0e95f2a5458afab5a0fb2a2fb,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_4_6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4f8521d0e95f2a5458afab5a0fb2a2fb, type: 3}
+--- !u!1001 &809143345347462245
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4280634902759184486, guid: ebc562646cca38f4a9883636449c0aa9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280634902759184486, guid: ebc562646cca38f4a9883636449c0aa9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280634902759184486, guid: ebc562646cca38f4a9883636449c0aa9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280634902759184486, guid: ebc562646cca38f4a9883636449c0aa9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280634902759184486, guid: ebc562646cca38f4a9883636449c0aa9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280634902759184486, guid: ebc562646cca38f4a9883636449c0aa9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280634902759184486, guid: ebc562646cca38f4a9883636449c0aa9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280634902759184486, guid: ebc562646cca38f4a9883636449c0aa9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280634902759184486, guid: ebc562646cca38f4a9883636449c0aa9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280634902759184486, guid: ebc562646cca38f4a9883636449c0aa9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093484093523610606, guid: ebc562646cca38f4a9883636449c0aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_1_3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ebc562646cca38f4a9883636449c0aa9, type: 3}
+--- !u!1001 &946779584115620794
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3388886176349667380, guid: 8660bc123a46d2f43aa11063a6fa2834,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3388886176349667380, guid: 8660bc123a46d2f43aa11063a6fa2834,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3388886176349667380, guid: 8660bc123a46d2f43aa11063a6fa2834,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3388886176349667380, guid: 8660bc123a46d2f43aa11063a6fa2834,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3388886176349667380, guid: 8660bc123a46d2f43aa11063a6fa2834,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 3388886176349667380, guid: 8660bc123a46d2f43aa11063a6fa2834,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3388886176349667380, guid: 8660bc123a46d2f43aa11063a6fa2834,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3388886176349667380, guid: 8660bc123a46d2f43aa11063a6fa2834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3388886176349667380, guid: 8660bc123a46d2f43aa11063a6fa2834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3388886176349667380, guid: 8660bc123a46d2f43aa11063a6fa2834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896792946748963160, guid: 8660bc123a46d2f43aa11063a6fa2834,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_3_3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8660bc123a46d2f43aa11063a6fa2834, type: 3}
+--- !u!1001 &1085939946767928468
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3019528615994634025, guid: d814296f3aee5f14ba649eb55b4fc7ee,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_2_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365586050793007360, guid: d814296f3aee5f14ba649eb55b4fc7ee,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365586050793007360, guid: d814296f3aee5f14ba649eb55b4fc7ee,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365586050793007360, guid: d814296f3aee5f14ba649eb55b4fc7ee,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365586050793007360, guid: d814296f3aee5f14ba649eb55b4fc7ee,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365586050793007360, guid: d814296f3aee5f14ba649eb55b4fc7ee,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365586050793007360, guid: d814296f3aee5f14ba649eb55b4fc7ee,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365586050793007360, guid: d814296f3aee5f14ba649eb55b4fc7ee,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365586050793007360, guid: d814296f3aee5f14ba649eb55b4fc7ee,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365586050793007360, guid: d814296f3aee5f14ba649eb55b4fc7ee,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365586050793007360, guid: d814296f3aee5f14ba649eb55b4fc7ee,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d814296f3aee5f14ba649eb55b4fc7ee, type: 3}
+--- !u!1001 &1190899875205939011
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 444163547053096329, guid: 1a83cfbf6382d504683f13b673d940b0,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_12_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102679757349667337, guid: 1a83cfbf6382d504683f13b673d940b0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102679757349667337, guid: 1a83cfbf6382d504683f13b673d940b0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102679757349667337, guid: 1a83cfbf6382d504683f13b673d940b0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102679757349667337, guid: 1a83cfbf6382d504683f13b673d940b0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102679757349667337, guid: 1a83cfbf6382d504683f13b673d940b0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102679757349667337, guid: 1a83cfbf6382d504683f13b673d940b0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102679757349667337, guid: 1a83cfbf6382d504683f13b673d940b0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102679757349667337, guid: 1a83cfbf6382d504683f13b673d940b0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102679757349667337, guid: 1a83cfbf6382d504683f13b673d940b0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102679757349667337, guid: 1a83cfbf6382d504683f13b673d940b0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1a83cfbf6382d504683f13b673d940b0, type: 3}
+--- !u!1001 &1494758364934650821
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4009383308403733717, guid: 1ddf1ba8775b9864d90542622c0c74c1,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_1_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505611522145195720, guid: 1ddf1ba8775b9864d90542622c0c74c1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505611522145195720, guid: 1ddf1ba8775b9864d90542622c0c74c1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505611522145195720, guid: 1ddf1ba8775b9864d90542622c0c74c1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505611522145195720, guid: 1ddf1ba8775b9864d90542622c0c74c1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505611522145195720, guid: 1ddf1ba8775b9864d90542622c0c74c1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505611522145195720, guid: 1ddf1ba8775b9864d90542622c0c74c1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505611522145195720, guid: 1ddf1ba8775b9864d90542622c0c74c1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505611522145195720, guid: 1ddf1ba8775b9864d90542622c0c74c1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505611522145195720, guid: 1ddf1ba8775b9864d90542622c0c74c1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505611522145195720, guid: 1ddf1ba8775b9864d90542622c0c74c1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1ddf1ba8775b9864d90542622c0c74c1, type: 3}
+--- !u!1001 &1516602090424969198
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2206164603008226944, guid: 6e5ea4b1cc92f1f4490cef8490f5e7d8,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_6_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308414905684293766, guid: 6e5ea4b1cc92f1f4490cef8490f5e7d8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308414905684293766, guid: 6e5ea4b1cc92f1f4490cef8490f5e7d8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308414905684293766, guid: 6e5ea4b1cc92f1f4490cef8490f5e7d8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308414905684293766, guid: 6e5ea4b1cc92f1f4490cef8490f5e7d8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308414905684293766, guid: 6e5ea4b1cc92f1f4490cef8490f5e7d8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308414905684293766, guid: 6e5ea4b1cc92f1f4490cef8490f5e7d8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308414905684293766, guid: 6e5ea4b1cc92f1f4490cef8490f5e7d8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308414905684293766, guid: 6e5ea4b1cc92f1f4490cef8490f5e7d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308414905684293766, guid: 6e5ea4b1cc92f1f4490cef8490f5e7d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308414905684293766, guid: 6e5ea4b1cc92f1f4490cef8490f5e7d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e5ea4b1cc92f1f4490cef8490f5e7d8, type: 3}
+--- !u!1001 &2113702254916457108
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3779312877454564705, guid: 12ca655974f52dc4d916adde828c56d8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779312877454564705, guid: 12ca655974f52dc4d916adde828c56d8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779312877454564705, guid: 12ca655974f52dc4d916adde828c56d8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779312877454564705, guid: 12ca655974f52dc4d916adde828c56d8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779312877454564705, guid: 12ca655974f52dc4d916adde828c56d8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779312877454564705, guid: 12ca655974f52dc4d916adde828c56d8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779312877454564705, guid: 12ca655974f52dc4d916adde828c56d8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779312877454564705, guid: 12ca655974f52dc4d916adde828c56d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779312877454564705, guid: 12ca655974f52dc4d916adde828c56d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779312877454564705, guid: 12ca655974f52dc4d916adde828c56d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116929626178448699, guid: 12ca655974f52dc4d916adde828c56d8,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_7_2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 12ca655974f52dc4d916adde828c56d8, type: 3}
+--- !u!1001 &2221799115062365285
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3607231384484794779, guid: b4535e1d6903bd24cb2ae330ebbd178f,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_9_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282795275771484784, guid: b4535e1d6903bd24cb2ae330ebbd178f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282795275771484784, guid: b4535e1d6903bd24cb2ae330ebbd178f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282795275771484784, guid: b4535e1d6903bd24cb2ae330ebbd178f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282795275771484784, guid: b4535e1d6903bd24cb2ae330ebbd178f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282795275771484784, guid: b4535e1d6903bd24cb2ae330ebbd178f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282795275771484784, guid: b4535e1d6903bd24cb2ae330ebbd178f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282795275771484784, guid: b4535e1d6903bd24cb2ae330ebbd178f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282795275771484784, guid: b4535e1d6903bd24cb2ae330ebbd178f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282795275771484784, guid: b4535e1d6903bd24cb2ae330ebbd178f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282795275771484784, guid: b4535e1d6903bd24cb2ae330ebbd178f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b4535e1d6903bd24cb2ae330ebbd178f, type: 3}
+--- !u!1001 &2361059969385917068
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 23848356042004577, guid: 2ef72d371bc7f2e47a2c3b9a4c520f26,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_6_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712961365699088695, guid: 2ef72d371bc7f2e47a2c3b9a4c520f26,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712961365699088695, guid: 2ef72d371bc7f2e47a2c3b9a4c520f26,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712961365699088695, guid: 2ef72d371bc7f2e47a2c3b9a4c520f26,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712961365699088695, guid: 2ef72d371bc7f2e47a2c3b9a4c520f26,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712961365699088695, guid: 2ef72d371bc7f2e47a2c3b9a4c520f26,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712961365699088695, guid: 2ef72d371bc7f2e47a2c3b9a4c520f26,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712961365699088695, guid: 2ef72d371bc7f2e47a2c3b9a4c520f26,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712961365699088695, guid: 2ef72d371bc7f2e47a2c3b9a4c520f26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712961365699088695, guid: 2ef72d371bc7f2e47a2c3b9a4c520f26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712961365699088695, guid: 2ef72d371bc7f2e47a2c3b9a4c520f26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2ef72d371bc7f2e47a2c3b9a4c520f26, type: 3}
+--- !u!1001 &2370975775018830870
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5056679347672113778, guid: 74dee1ab9efa7694e83665b506f4c840,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_10_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836322852498925016, guid: 74dee1ab9efa7694e83665b506f4c840,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836322852498925016, guid: 74dee1ab9efa7694e83665b506f4c840,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836322852498925016, guid: 74dee1ab9efa7694e83665b506f4c840,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836322852498925016, guid: 74dee1ab9efa7694e83665b506f4c840,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836322852498925016, guid: 74dee1ab9efa7694e83665b506f4c840,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836322852498925016, guid: 74dee1ab9efa7694e83665b506f4c840,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836322852498925016, guid: 74dee1ab9efa7694e83665b506f4c840,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836322852498925016, guid: 74dee1ab9efa7694e83665b506f4c840,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836322852498925016, guid: 74dee1ab9efa7694e83665b506f4c840,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836322852498925016, guid: 74dee1ab9efa7694e83665b506f4c840,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 74dee1ab9efa7694e83665b506f4c840, type: 3}
+--- !u!1001 &2374693331462362699
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1289323602066258757, guid: 21bc1b750e9937d4eade0bacc30f9606,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289323602066258757, guid: 21bc1b750e9937d4eade0bacc30f9606,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289323602066258757, guid: 21bc1b750e9937d4eade0bacc30f9606,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289323602066258757, guid: 21bc1b750e9937d4eade0bacc30f9606,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289323602066258757, guid: 21bc1b750e9937d4eade0bacc30f9606,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289323602066258757, guid: 21bc1b750e9937d4eade0bacc30f9606,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289323602066258757, guid: 21bc1b750e9937d4eade0bacc30f9606,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289323602066258757, guid: 21bc1b750e9937d4eade0bacc30f9606,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289323602066258757, guid: 21bc1b750e9937d4eade0bacc30f9606,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289323602066258757, guid: 21bc1b750e9937d4eade0bacc30f9606,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988503343898308046, guid: 21bc1b750e9937d4eade0bacc30f9606,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_1_4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 21bc1b750e9937d4eade0bacc30f9606, type: 3}
+--- !u!1001 &2530336707606440997
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3980358297597194830, guid: 9addf4bf154d2f4448c14f4bb4612ab4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980358297597194830, guid: 9addf4bf154d2f4448c14f4bb4612ab4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980358297597194830, guid: 9addf4bf154d2f4448c14f4bb4612ab4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980358297597194830, guid: 9addf4bf154d2f4448c14f4bb4612ab4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980358297597194830, guid: 9addf4bf154d2f4448c14f4bb4612ab4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980358297597194830, guid: 9addf4bf154d2f4448c14f4bb4612ab4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980358297597194830, guid: 9addf4bf154d2f4448c14f4bb4612ab4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980358297597194830, guid: 9addf4bf154d2f4448c14f4bb4612ab4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980358297597194830, guid: 9addf4bf154d2f4448c14f4bb4612ab4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980358297597194830, guid: 9addf4bf154d2f4448c14f4bb4612ab4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323157995953148209, guid: 9addf4bf154d2f4448c14f4bb4612ab4,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_3_6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9addf4bf154d2f4448c14f4bb4612ab4, type: 3}
+--- !u!1001 &2729190883667348944
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8721319028314945447, guid: 88b3245b615f8fb43861d8beafa9de51,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_12_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832035832690665412, guid: 88b3245b615f8fb43861d8beafa9de51,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832035832690665412, guid: 88b3245b615f8fb43861d8beafa9de51,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832035832690665412, guid: 88b3245b615f8fb43861d8beafa9de51,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832035832690665412, guid: 88b3245b615f8fb43861d8beafa9de51,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832035832690665412, guid: 88b3245b615f8fb43861d8beafa9de51,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832035832690665412, guid: 88b3245b615f8fb43861d8beafa9de51,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832035832690665412, guid: 88b3245b615f8fb43861d8beafa9de51,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832035832690665412, guid: 88b3245b615f8fb43861d8beafa9de51,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832035832690665412, guid: 88b3245b615f8fb43861d8beafa9de51,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832035832690665412, guid: 88b3245b615f8fb43861d8beafa9de51,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 88b3245b615f8fb43861d8beafa9de51, type: 3}
+--- !u!1001 &2966428509724133178
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5072616482299255089, guid: 429b3e9421b525c45b7df4a8b155f4f6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072616482299255089, guid: 429b3e9421b525c45b7df4a8b155f4f6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072616482299255089, guid: 429b3e9421b525c45b7df4a8b155f4f6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072616482299255089, guid: 429b3e9421b525c45b7df4a8b155f4f6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072616482299255089, guid: 429b3e9421b525c45b7df4a8b155f4f6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072616482299255089, guid: 429b3e9421b525c45b7df4a8b155f4f6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072616482299255089, guid: 429b3e9421b525c45b7df4a8b155f4f6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072616482299255089, guid: 429b3e9421b525c45b7df4a8b155f4f6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072616482299255089, guid: 429b3e9421b525c45b7df4a8b155f4f6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072616482299255089, guid: 429b3e9421b525c45b7df4a8b155f4f6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5634244007304924989, guid: 429b3e9421b525c45b7df4a8b155f4f6,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_8_5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 429b3e9421b525c45b7df4a8b155f4f6, type: 3}
+--- !u!1001 &3003601230019994759
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4752482829202830940, guid: c6150bd904f1a054bb69cd7ff0dd56da,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_11_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605915646562128694, guid: c6150bd904f1a054bb69cd7ff0dd56da,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605915646562128694, guid: c6150bd904f1a054bb69cd7ff0dd56da,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605915646562128694, guid: c6150bd904f1a054bb69cd7ff0dd56da,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605915646562128694, guid: c6150bd904f1a054bb69cd7ff0dd56da,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605915646562128694, guid: c6150bd904f1a054bb69cd7ff0dd56da,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605915646562128694, guid: c6150bd904f1a054bb69cd7ff0dd56da,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605915646562128694, guid: c6150bd904f1a054bb69cd7ff0dd56da,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605915646562128694, guid: c6150bd904f1a054bb69cd7ff0dd56da,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605915646562128694, guid: c6150bd904f1a054bb69cd7ff0dd56da,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605915646562128694, guid: c6150bd904f1a054bb69cd7ff0dd56da,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c6150bd904f1a054bb69cd7ff0dd56da, type: 3}
+--- !u!1001 &3087095086307128549
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3512125530069044961, guid: 364b0ac6bbc941c43921caa66181c7c1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3512125530069044961, guid: 364b0ac6bbc941c43921caa66181c7c1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3512125530069044961, guid: 364b0ac6bbc941c43921caa66181c7c1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3512125530069044961, guid: 364b0ac6bbc941c43921caa66181c7c1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3512125530069044961, guid: 364b0ac6bbc941c43921caa66181c7c1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 3512125530069044961, guid: 364b0ac6bbc941c43921caa66181c7c1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3512125530069044961, guid: 364b0ac6bbc941c43921caa66181c7c1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3512125530069044961, guid: 364b0ac6bbc941c43921caa66181c7c1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3512125530069044961, guid: 364b0ac6bbc941c43921caa66181c7c1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3512125530069044961, guid: 364b0ac6bbc941c43921caa66181c7c1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338032951736450215, guid: 364b0ac6bbc941c43921caa66181c7c1,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_2_1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 364b0ac6bbc941c43921caa66181c7c1, type: 3}
+--- !u!1001 &3254881235459698506
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5610105431606127972, guid: 9185ec9cfeb39694cad28a12b5b69f53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610105431606127972, guid: 9185ec9cfeb39694cad28a12b5b69f53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610105431606127972, guid: 9185ec9cfeb39694cad28a12b5b69f53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610105431606127972, guid: 9185ec9cfeb39694cad28a12b5b69f53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610105431606127972, guid: 9185ec9cfeb39694cad28a12b5b69f53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610105431606127972, guid: 9185ec9cfeb39694cad28a12b5b69f53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610105431606127972, guid: 9185ec9cfeb39694cad28a12b5b69f53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610105431606127972, guid: 9185ec9cfeb39694cad28a12b5b69f53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610105431606127972, guid: 9185ec9cfeb39694cad28a12b5b69f53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610105431606127972, guid: 9185ec9cfeb39694cad28a12b5b69f53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519385875349323263, guid: 9185ec9cfeb39694cad28a12b5b69f53,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_5_1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9185ec9cfeb39694cad28a12b5b69f53, type: 3}
+--- !u!1001 &3267596572148109745
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 223744714551733983, guid: 94b88a38c68418146989324c994521d5,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_3_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 911760125830500540, guid: 94b88a38c68418146989324c994521d5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 911760125830500540, guid: 94b88a38c68418146989324c994521d5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 911760125830500540, guid: 94b88a38c68418146989324c994521d5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 911760125830500540, guid: 94b88a38c68418146989324c994521d5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 911760125830500540, guid: 94b88a38c68418146989324c994521d5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 911760125830500540, guid: 94b88a38c68418146989324c994521d5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 911760125830500540, guid: 94b88a38c68418146989324c994521d5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 911760125830500540, guid: 94b88a38c68418146989324c994521d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 911760125830500540, guid: 94b88a38c68418146989324c994521d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 911760125830500540, guid: 94b88a38c68418146989324c994521d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94b88a38c68418146989324c994521d5, type: 3}
+--- !u!1001 &3701315197800977731
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 634489621433881826, guid: c1a22cdcc15dae049b328b021e2442c8,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_1_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245456803586417067, guid: c1a22cdcc15dae049b328b021e2442c8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245456803586417067, guid: c1a22cdcc15dae049b328b021e2442c8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245456803586417067, guid: c1a22cdcc15dae049b328b021e2442c8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245456803586417067, guid: c1a22cdcc15dae049b328b021e2442c8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245456803586417067, guid: c1a22cdcc15dae049b328b021e2442c8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245456803586417067, guid: c1a22cdcc15dae049b328b021e2442c8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245456803586417067, guid: c1a22cdcc15dae049b328b021e2442c8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245456803586417067, guid: c1a22cdcc15dae049b328b021e2442c8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245456803586417067, guid: c1a22cdcc15dae049b328b021e2442c8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245456803586417067, guid: c1a22cdcc15dae049b328b021e2442c8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1a22cdcc15dae049b328b021e2442c8, type: 3}
+--- !u!1001 &3811535596251170558
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3888602037285511687, guid: 3495b242a8e9f6e46873cad9740f8f70,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_3_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909629560695008078, guid: 3495b242a8e9f6e46873cad9740f8f70,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909629560695008078, guid: 3495b242a8e9f6e46873cad9740f8f70,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909629560695008078, guid: 3495b242a8e9f6e46873cad9740f8f70,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909629560695008078, guid: 3495b242a8e9f6e46873cad9740f8f70,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909629560695008078, guid: 3495b242a8e9f6e46873cad9740f8f70,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909629560695008078, guid: 3495b242a8e9f6e46873cad9740f8f70,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909629560695008078, guid: 3495b242a8e9f6e46873cad9740f8f70,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909629560695008078, guid: 3495b242a8e9f6e46873cad9740f8f70,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909629560695008078, guid: 3495b242a8e9f6e46873cad9740f8f70,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909629560695008078, guid: 3495b242a8e9f6e46873cad9740f8f70,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3495b242a8e9f6e46873cad9740f8f70, type: 3}
+--- !u!1001 &4100324658570121600
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 208203574264472833, guid: 7a1fde1299b3e5c4fbbda3a98b6d64ec,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 208203574264472833, guid: 7a1fde1299b3e5c4fbbda3a98b6d64ec,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208203574264472833, guid: 7a1fde1299b3e5c4fbbda3a98b6d64ec,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208203574264472833, guid: 7a1fde1299b3e5c4fbbda3a98b6d64ec,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208203574264472833, guid: 7a1fde1299b3e5c4fbbda3a98b6d64ec,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 208203574264472833, guid: 7a1fde1299b3e5c4fbbda3a98b6d64ec,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208203574264472833, guid: 7a1fde1299b3e5c4fbbda3a98b6d64ec,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208203574264472833, guid: 7a1fde1299b3e5c4fbbda3a98b6d64ec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208203574264472833, guid: 7a1fde1299b3e5c4fbbda3a98b6d64ec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208203574264472833, guid: 7a1fde1299b3e5c4fbbda3a98b6d64ec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037041431207629993, guid: 7a1fde1299b3e5c4fbbda3a98b6d64ec,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_3_1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7a1fde1299b3e5c4fbbda3a98b6d64ec, type: 3}
+--- !u!1001 &4107925978837498110
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3258957004024602052, guid: d3fa0b042b4e15a4085045e5a82c562b,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_11_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243883524966135654, guid: d3fa0b042b4e15a4085045e5a82c562b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243883524966135654, guid: d3fa0b042b4e15a4085045e5a82c562b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243883524966135654, guid: d3fa0b042b4e15a4085045e5a82c562b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243883524966135654, guid: d3fa0b042b4e15a4085045e5a82c562b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243883524966135654, guid: d3fa0b042b4e15a4085045e5a82c562b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243883524966135654, guid: d3fa0b042b4e15a4085045e5a82c562b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243883524966135654, guid: d3fa0b042b4e15a4085045e5a82c562b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243883524966135654, guid: d3fa0b042b4e15a4085045e5a82c562b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243883524966135654, guid: d3fa0b042b4e15a4085045e5a82c562b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243883524966135654, guid: d3fa0b042b4e15a4085045e5a82c562b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d3fa0b042b4e15a4085045e5a82c562b, type: 3}
+--- !u!1001 &4151803682979246692
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3397469568494815936, guid: 9bdfea03f27e881468e13d3924ace1f7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397469568494815936, guid: 9bdfea03f27e881468e13d3924ace1f7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397469568494815936, guid: 9bdfea03f27e881468e13d3924ace1f7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397469568494815936, guid: 9bdfea03f27e881468e13d3924ace1f7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397469568494815936, guid: 9bdfea03f27e881468e13d3924ace1f7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397469568494815936, guid: 9bdfea03f27e881468e13d3924ace1f7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397469568494815936, guid: 9bdfea03f27e881468e13d3924ace1f7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397469568494815936, guid: 9bdfea03f27e881468e13d3924ace1f7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397469568494815936, guid: 9bdfea03f27e881468e13d3924ace1f7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397469568494815936, guid: 9bdfea03f27e881468e13d3924ace1f7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109891174056806071, guid: 9bdfea03f27e881468e13d3924ace1f7,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_11_4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9bdfea03f27e881468e13d3924ace1f7, type: 3}
+--- !u!1001 &4236854162346227267
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3920907495341395511, guid: 61543d96247358a43a9b847c4673deca,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920907495341395511, guid: 61543d96247358a43a9b847c4673deca,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920907495341395511, guid: 61543d96247358a43a9b847c4673deca,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920907495341395511, guid: 61543d96247358a43a9b847c4673deca,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920907495341395511, guid: 61543d96247358a43a9b847c4673deca,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920907495341395511, guid: 61543d96247358a43a9b847c4673deca,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920907495341395511, guid: 61543d96247358a43a9b847c4673deca,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920907495341395511, guid: 61543d96247358a43a9b847c4673deca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920907495341395511, guid: 61543d96247358a43a9b847c4673deca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920907495341395511, guid: 61543d96247358a43a9b847c4673deca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396544560248824361, guid: 61543d96247358a43a9b847c4673deca,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_12_1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 61543d96247358a43a9b847c4673deca, type: 3}
+--- !u!1001 &4303844990566221705
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4710803643806723011, guid: 4d310053589190044b2a5b2cb1f11151,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_11_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657751515968305568, guid: 4d310053589190044b2a5b2cb1f11151,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657751515968305568, guid: 4d310053589190044b2a5b2cb1f11151,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657751515968305568, guid: 4d310053589190044b2a5b2cb1f11151,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657751515968305568, guid: 4d310053589190044b2a5b2cb1f11151,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657751515968305568, guid: 4d310053589190044b2a5b2cb1f11151,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657751515968305568, guid: 4d310053589190044b2a5b2cb1f11151,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657751515968305568, guid: 4d310053589190044b2a5b2cb1f11151,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657751515968305568, guid: 4d310053589190044b2a5b2cb1f11151,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657751515968305568, guid: 4d310053589190044b2a5b2cb1f11151,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657751515968305568, guid: 4d310053589190044b2a5b2cb1f11151,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4d310053589190044b2a5b2cb1f11151, type: 3}
+--- !u!1001 &4399703349371068963
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1095113297396448898, guid: 60964743f45c70148882af8eaac389ca,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095113297396448898, guid: 60964743f45c70148882af8eaac389ca,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095113297396448898, guid: 60964743f45c70148882af8eaac389ca,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095113297396448898, guid: 60964743f45c70148882af8eaac389ca,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095113297396448898, guid: 60964743f45c70148882af8eaac389ca,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095113297396448898, guid: 60964743f45c70148882af8eaac389ca,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095113297396448898, guid: 60964743f45c70148882af8eaac389ca,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095113297396448898, guid: 60964743f45c70148882af8eaac389ca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095113297396448898, guid: 60964743f45c70148882af8eaac389ca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095113297396448898, guid: 60964743f45c70148882af8eaac389ca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1606926310907673617, guid: 60964743f45c70148882af8eaac389ca,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_3_5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 60964743f45c70148882af8eaac389ca, type: 3}
+--- !u!1001 &4400569599135718300
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5657418019456861973, guid: 12798e1a871be8d4ea9daea9656d2521,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_5_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839033242129238666, guid: 12798e1a871be8d4ea9daea9656d2521,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839033242129238666, guid: 12798e1a871be8d4ea9daea9656d2521,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839033242129238666, guid: 12798e1a871be8d4ea9daea9656d2521,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839033242129238666, guid: 12798e1a871be8d4ea9daea9656d2521,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839033242129238666, guid: 12798e1a871be8d4ea9daea9656d2521,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839033242129238666, guid: 12798e1a871be8d4ea9daea9656d2521,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839033242129238666, guid: 12798e1a871be8d4ea9daea9656d2521,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839033242129238666, guid: 12798e1a871be8d4ea9daea9656d2521,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839033242129238666, guid: 12798e1a871be8d4ea9daea9656d2521,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839033242129238666, guid: 12798e1a871be8d4ea9daea9656d2521,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 12798e1a871be8d4ea9daea9656d2521, type: 3}
+--- !u!1001 &4494359698464283712
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6844267112743076924, guid: e1a1602275335ec4b9243bfe8d5234a4,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_6_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469647690527441118, guid: e1a1602275335ec4b9243bfe8d5234a4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469647690527441118, guid: e1a1602275335ec4b9243bfe8d5234a4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469647690527441118, guid: e1a1602275335ec4b9243bfe8d5234a4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469647690527441118, guid: e1a1602275335ec4b9243bfe8d5234a4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469647690527441118, guid: e1a1602275335ec4b9243bfe8d5234a4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469647690527441118, guid: e1a1602275335ec4b9243bfe8d5234a4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469647690527441118, guid: e1a1602275335ec4b9243bfe8d5234a4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469647690527441118, guid: e1a1602275335ec4b9243bfe8d5234a4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469647690527441118, guid: e1a1602275335ec4b9243bfe8d5234a4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469647690527441118, guid: e1a1602275335ec4b9243bfe8d5234a4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e1a1602275335ec4b9243bfe8d5234a4, type: 3}
+--- !u!1001 &4580042407850345528
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1361519881878619582, guid: 90a556842bc817d4cbafbafc2769448a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361519881878619582, guid: 90a556842bc817d4cbafbafc2769448a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361519881878619582, guid: 90a556842bc817d4cbafbafc2769448a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361519881878619582, guid: 90a556842bc817d4cbafbafc2769448a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361519881878619582, guid: 90a556842bc817d4cbafbafc2769448a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361519881878619582, guid: 90a556842bc817d4cbafbafc2769448a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361519881878619582, guid: 90a556842bc817d4cbafbafc2769448a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361519881878619582, guid: 90a556842bc817d4cbafbafc2769448a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361519881878619582, guid: 90a556842bc817d4cbafbafc2769448a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361519881878619582, guid: 90a556842bc817d4cbafbafc2769448a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2831344770478754958, guid: 90a556842bc817d4cbafbafc2769448a,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_5_6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 90a556842bc817d4cbafbafc2769448a, type: 3}
+--- !u!1001 &4611778786594071208
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1483547338368848004, guid: 40437c5c697ec9d48b4dc49ebc3c576f,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_7_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7823750539138920177, guid: 40437c5c697ec9d48b4dc49ebc3c576f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7823750539138920177, guid: 40437c5c697ec9d48b4dc49ebc3c576f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7823750539138920177, guid: 40437c5c697ec9d48b4dc49ebc3c576f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7823750539138920177, guid: 40437c5c697ec9d48b4dc49ebc3c576f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7823750539138920177, guid: 40437c5c697ec9d48b4dc49ebc3c576f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 7823750539138920177, guid: 40437c5c697ec9d48b4dc49ebc3c576f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7823750539138920177, guid: 40437c5c697ec9d48b4dc49ebc3c576f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7823750539138920177, guid: 40437c5c697ec9d48b4dc49ebc3c576f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7823750539138920177, guid: 40437c5c697ec9d48b4dc49ebc3c576f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7823750539138920177, guid: 40437c5c697ec9d48b4dc49ebc3c576f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40437c5c697ec9d48b4dc49ebc3c576f, type: 3}
+--- !u!1001 &4627435038782168307
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 589191653709518429, guid: 4681106d127196547bd171080301c7b9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 589191653709518429, guid: 4681106d127196547bd171080301c7b9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 589191653709518429, guid: 4681106d127196547bd171080301c7b9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 589191653709518429, guid: 4681106d127196547bd171080301c7b9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 589191653709518429, guid: 4681106d127196547bd171080301c7b9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 589191653709518429, guid: 4681106d127196547bd171080301c7b9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 589191653709518429, guid: 4681106d127196547bd171080301c7b9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 589191653709518429, guid: 4681106d127196547bd171080301c7b9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 589191653709518429, guid: 4681106d127196547bd171080301c7b9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 589191653709518429, guid: 4681106d127196547bd171080301c7b9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7168512815898578213, guid: 4681106d127196547bd171080301c7b9,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_9_1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4681106d127196547bd171080301c7b9, type: 3}
+--- !u!1001 &4937576507035573402
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4004214819828629965, guid: 44d7ef3a7d5d648458528bc51f7114d3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004214819828629965, guid: 44d7ef3a7d5d648458528bc51f7114d3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004214819828629965, guid: 44d7ef3a7d5d648458528bc51f7114d3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004214819828629965, guid: 44d7ef3a7d5d648458528bc51f7114d3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004214819828629965, guid: 44d7ef3a7d5d648458528bc51f7114d3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004214819828629965, guid: 44d7ef3a7d5d648458528bc51f7114d3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004214819828629965, guid: 44d7ef3a7d5d648458528bc51f7114d3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004214819828629965, guid: 44d7ef3a7d5d648458528bc51f7114d3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004214819828629965, guid: 44d7ef3a7d5d648458528bc51f7114d3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004214819828629965, guid: 44d7ef3a7d5d648458528bc51f7114d3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4286034568754211994, guid: 44d7ef3a7d5d648458528bc51f7114d3,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_2_5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 44d7ef3a7d5d648458528bc51f7114d3, type: 3}
+--- !u!1001 &4997300907446711903
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 464651646554278440, guid: dd6d019b2dbb7824d8a6505da6a46979,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_5_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912046238071752753, guid: dd6d019b2dbb7824d8a6505da6a46979,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912046238071752753, guid: dd6d019b2dbb7824d8a6505da6a46979,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912046238071752753, guid: dd6d019b2dbb7824d8a6505da6a46979,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912046238071752753, guid: dd6d019b2dbb7824d8a6505da6a46979,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912046238071752753, guid: dd6d019b2dbb7824d8a6505da6a46979,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912046238071752753, guid: dd6d019b2dbb7824d8a6505da6a46979,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912046238071752753, guid: dd6d019b2dbb7824d8a6505da6a46979,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912046238071752753, guid: dd6d019b2dbb7824d8a6505da6a46979,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912046238071752753, guid: dd6d019b2dbb7824d8a6505da6a46979,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912046238071752753, guid: dd6d019b2dbb7824d8a6505da6a46979,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dd6d019b2dbb7824d8a6505da6a46979, type: 3}
+--- !u!1001 &5170910650835338251
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7370644739688688072, guid: c0963578f73d5ba49b0ecabaf8e4f86a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370644739688688072, guid: c0963578f73d5ba49b0ecabaf8e4f86a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370644739688688072, guid: c0963578f73d5ba49b0ecabaf8e4f86a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370644739688688072, guid: c0963578f73d5ba49b0ecabaf8e4f86a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370644739688688072, guid: c0963578f73d5ba49b0ecabaf8e4f86a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370644739688688072, guid: c0963578f73d5ba49b0ecabaf8e4f86a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370644739688688072, guid: c0963578f73d5ba49b0ecabaf8e4f86a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370644739688688072, guid: c0963578f73d5ba49b0ecabaf8e4f86a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370644739688688072, guid: c0963578f73d5ba49b0ecabaf8e4f86a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370644739688688072, guid: c0963578f73d5ba49b0ecabaf8e4f86a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406439017226464002, guid: c0963578f73d5ba49b0ecabaf8e4f86a,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_5_3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c0963578f73d5ba49b0ecabaf8e4f86a, type: 3}
+--- !u!1001 &5265006963484371588
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1060518283892562202, guid: 082462137abcaa74e9a1ecd7c73113d0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060518283892562202, guid: 082462137abcaa74e9a1ecd7c73113d0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060518283892562202, guid: 082462137abcaa74e9a1ecd7c73113d0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060518283892562202, guid: 082462137abcaa74e9a1ecd7c73113d0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060518283892562202, guid: 082462137abcaa74e9a1ecd7c73113d0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060518283892562202, guid: 082462137abcaa74e9a1ecd7c73113d0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060518283892562202, guid: 082462137abcaa74e9a1ecd7c73113d0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060518283892562202, guid: 082462137abcaa74e9a1ecd7c73113d0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060518283892562202, guid: 082462137abcaa74e9a1ecd7c73113d0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060518283892562202, guid: 082462137abcaa74e9a1ecd7c73113d0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092228895724818270, guid: 082462137abcaa74e9a1ecd7c73113d0,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_4_4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 082462137abcaa74e9a1ecd7c73113d0, type: 3}
+--- !u!1001 &5411934476227775667
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5606885261010956270, guid: fc562212480bc054292b117a97bc9c4d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606885261010956270, guid: fc562212480bc054292b117a97bc9c4d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606885261010956270, guid: fc562212480bc054292b117a97bc9c4d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606885261010956270, guid: fc562212480bc054292b117a97bc9c4d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606885261010956270, guid: fc562212480bc054292b117a97bc9c4d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606885261010956270, guid: fc562212480bc054292b117a97bc9c4d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606885261010956270, guid: fc562212480bc054292b117a97bc9c4d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606885261010956270, guid: fc562212480bc054292b117a97bc9c4d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606885261010956270, guid: fc562212480bc054292b117a97bc9c4d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606885261010956270, guid: fc562212480bc054292b117a97bc9c4d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6632703061043843291, guid: fc562212480bc054292b117a97bc9c4d,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_9_6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fc562212480bc054292b117a97bc9c4d, type: 3}
+--- !u!1001 &5570574296070502224
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3155481299405906821, guid: 94ffec14d5e70c94eb9a6d1c0bd1d860,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_4_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770046288093624946, guid: 94ffec14d5e70c94eb9a6d1c0bd1d860,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770046288093624946, guid: 94ffec14d5e70c94eb9a6d1c0bd1d860,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770046288093624946, guid: 94ffec14d5e70c94eb9a6d1c0bd1d860,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770046288093624946, guid: 94ffec14d5e70c94eb9a6d1c0bd1d860,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770046288093624946, guid: 94ffec14d5e70c94eb9a6d1c0bd1d860,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770046288093624946, guid: 94ffec14d5e70c94eb9a6d1c0bd1d860,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770046288093624946, guid: 94ffec14d5e70c94eb9a6d1c0bd1d860,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770046288093624946, guid: 94ffec14d5e70c94eb9a6d1c0bd1d860,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770046288093624946, guid: 94ffec14d5e70c94eb9a6d1c0bd1d860,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770046288093624946, guid: 94ffec14d5e70c94eb9a6d1c0bd1d860,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94ffec14d5e70c94eb9a6d1c0bd1d860, type: 3}
+--- !u!1001 &5677068281970203722
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1869818272745306231, guid: ef1287743c14c88429c7ee94bac8e5eb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869818272745306231, guid: ef1287743c14c88429c7ee94bac8e5eb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869818272745306231, guid: ef1287743c14c88429c7ee94bac8e5eb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869818272745306231, guid: ef1287743c14c88429c7ee94bac8e5eb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869818272745306231, guid: ef1287743c14c88429c7ee94bac8e5eb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869818272745306231, guid: ef1287743c14c88429c7ee94bac8e5eb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869818272745306231, guid: ef1287743c14c88429c7ee94bac8e5eb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869818272745306231, guid: ef1287743c14c88429c7ee94bac8e5eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869818272745306231, guid: ef1287743c14c88429c7ee94bac8e5eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869818272745306231, guid: ef1287743c14c88429c7ee94bac8e5eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287648005620434063, guid: ef1287743c14c88429c7ee94bac8e5eb,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_8_6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef1287743c14c88429c7ee94bac8e5eb, type: 3}
+--- !u!1001 &5909826972953652272
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7112322674772721820, guid: b32066d6bef42a544b813ac32f4f8a63,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_7_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098811405696924928, guid: b32066d6bef42a544b813ac32f4f8a63,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098811405696924928, guid: b32066d6bef42a544b813ac32f4f8a63,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098811405696924928, guid: b32066d6bef42a544b813ac32f4f8a63,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098811405696924928, guid: b32066d6bef42a544b813ac32f4f8a63,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098811405696924928, guid: b32066d6bef42a544b813ac32f4f8a63,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098811405696924928, guid: b32066d6bef42a544b813ac32f4f8a63,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098811405696924928, guid: b32066d6bef42a544b813ac32f4f8a63,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098811405696924928, guid: b32066d6bef42a544b813ac32f4f8a63,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098811405696924928, guid: b32066d6bef42a544b813ac32f4f8a63,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098811405696924928, guid: b32066d6bef42a544b813ac32f4f8a63,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b32066d6bef42a544b813ac32f4f8a63, type: 3}
+--- !u!1001 &5951653957826250206
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2616575396865317961, guid: 311f7698c843af741a26b7c24d4cb7b2,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_7_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939567929040852326, guid: 311f7698c843af741a26b7c24d4cb7b2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939567929040852326, guid: 311f7698c843af741a26b7c24d4cb7b2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939567929040852326, guid: 311f7698c843af741a26b7c24d4cb7b2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939567929040852326, guid: 311f7698c843af741a26b7c24d4cb7b2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939567929040852326, guid: 311f7698c843af741a26b7c24d4cb7b2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939567929040852326, guid: 311f7698c843af741a26b7c24d4cb7b2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939567929040852326, guid: 311f7698c843af741a26b7c24d4cb7b2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939567929040852326, guid: 311f7698c843af741a26b7c24d4cb7b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939567929040852326, guid: 311f7698c843af741a26b7c24d4cb7b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939567929040852326, guid: 311f7698c843af741a26b7c24d4cb7b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 311f7698c843af741a26b7c24d4cb7b2, type: 3}
+--- !u!1001 &6264309755428405222
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4452621669698606657, guid: 5bf62df7a0c2d794184b10660fb99897,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4452621669698606657, guid: 5bf62df7a0c2d794184b10660fb99897,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4452621669698606657, guid: 5bf62df7a0c2d794184b10660fb99897,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4452621669698606657, guid: 5bf62df7a0c2d794184b10660fb99897,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4452621669698606657, guid: 5bf62df7a0c2d794184b10660fb99897,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4452621669698606657, guid: 5bf62df7a0c2d794184b10660fb99897,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4452621669698606657, guid: 5bf62df7a0c2d794184b10660fb99897,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4452621669698606657, guid: 5bf62df7a0c2d794184b10660fb99897,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4452621669698606657, guid: 5bf62df7a0c2d794184b10660fb99897,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4452621669698606657, guid: 5bf62df7a0c2d794184b10660fb99897,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547882477798913656, guid: 5bf62df7a0c2d794184b10660fb99897,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_9_4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5bf62df7a0c2d794184b10660fb99897, type: 3}
+--- !u!1001 &6272155980815523561
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5810801315083258279, guid: 9906655f022515847b344a62fd94abe6,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_10_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559863959778063002, guid: 9906655f022515847b344a62fd94abe6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559863959778063002, guid: 9906655f022515847b344a62fd94abe6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559863959778063002, guid: 9906655f022515847b344a62fd94abe6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559863959778063002, guid: 9906655f022515847b344a62fd94abe6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559863959778063002, guid: 9906655f022515847b344a62fd94abe6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559863959778063002, guid: 9906655f022515847b344a62fd94abe6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559863959778063002, guid: 9906655f022515847b344a62fd94abe6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559863959778063002, guid: 9906655f022515847b344a62fd94abe6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559863959778063002, guid: 9906655f022515847b344a62fd94abe6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559863959778063002, guid: 9906655f022515847b344a62fd94abe6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9906655f022515847b344a62fd94abe6, type: 3}
+--- !u!1001 &6891573425541511085
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4523941288900799173, guid: 65e7c4ed03c6d0b41a846b7393e5e54e,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_10_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208477518730357295, guid: 65e7c4ed03c6d0b41a846b7393e5e54e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208477518730357295, guid: 65e7c4ed03c6d0b41a846b7393e5e54e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208477518730357295, guid: 65e7c4ed03c6d0b41a846b7393e5e54e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208477518730357295, guid: 65e7c4ed03c6d0b41a846b7393e5e54e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208477518730357295, guid: 65e7c4ed03c6d0b41a846b7393e5e54e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208477518730357295, guid: 65e7c4ed03c6d0b41a846b7393e5e54e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208477518730357295, guid: 65e7c4ed03c6d0b41a846b7393e5e54e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208477518730357295, guid: 65e7c4ed03c6d0b41a846b7393e5e54e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208477518730357295, guid: 65e7c4ed03c6d0b41a846b7393e5e54e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208477518730357295, guid: 65e7c4ed03c6d0b41a846b7393e5e54e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 65e7c4ed03c6d0b41a846b7393e5e54e, type: 3}
+--- !u!1001 &6899314877470634000
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5046625199418211014, guid: af8010157c2b27a4cb91036fd8f4dd3d,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_1_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770039094414738718, guid: af8010157c2b27a4cb91036fd8f4dd3d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770039094414738718, guid: af8010157c2b27a4cb91036fd8f4dd3d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770039094414738718, guid: af8010157c2b27a4cb91036fd8f4dd3d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770039094414738718, guid: af8010157c2b27a4cb91036fd8f4dd3d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770039094414738718, guid: af8010157c2b27a4cb91036fd8f4dd3d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770039094414738718, guid: af8010157c2b27a4cb91036fd8f4dd3d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770039094414738718, guid: af8010157c2b27a4cb91036fd8f4dd3d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770039094414738718, guid: af8010157c2b27a4cb91036fd8f4dd3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770039094414738718, guid: af8010157c2b27a4cb91036fd8f4dd3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770039094414738718, guid: af8010157c2b27a4cb91036fd8f4dd3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af8010157c2b27a4cb91036fd8f4dd3d, type: 3}
+--- !u!1001 &7010077552762504509
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6828754288428273822, guid: c66817d171b1ea54ca0f7882649ea329,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_4_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8303966530097073767, guid: c66817d171b1ea54ca0f7882649ea329,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8303966530097073767, guid: c66817d171b1ea54ca0f7882649ea329,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8303966530097073767, guid: c66817d171b1ea54ca0f7882649ea329,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8303966530097073767, guid: c66817d171b1ea54ca0f7882649ea329,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8303966530097073767, guid: c66817d171b1ea54ca0f7882649ea329,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8303966530097073767, guid: c66817d171b1ea54ca0f7882649ea329,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8303966530097073767, guid: c66817d171b1ea54ca0f7882649ea329,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8303966530097073767, guid: c66817d171b1ea54ca0f7882649ea329,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8303966530097073767, guid: c66817d171b1ea54ca0f7882649ea329,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8303966530097073767, guid: c66817d171b1ea54ca0f7882649ea329,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c66817d171b1ea54ca0f7882649ea329, type: 3}
+--- !u!1001 &7238668764537398499
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3004781604178313739, guid: 9b9b65ebc7ebb784bad4df7e2011b130,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_5_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696765965418424121, guid: 9b9b65ebc7ebb784bad4df7e2011b130,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696765965418424121, guid: 9b9b65ebc7ebb784bad4df7e2011b130,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696765965418424121, guid: 9b9b65ebc7ebb784bad4df7e2011b130,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696765965418424121, guid: 9b9b65ebc7ebb784bad4df7e2011b130,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696765965418424121, guid: 9b9b65ebc7ebb784bad4df7e2011b130,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696765965418424121, guid: 9b9b65ebc7ebb784bad4df7e2011b130,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696765965418424121, guid: 9b9b65ebc7ebb784bad4df7e2011b130,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696765965418424121, guid: 9b9b65ebc7ebb784bad4df7e2011b130,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696765965418424121, guid: 9b9b65ebc7ebb784bad4df7e2011b130,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696765965418424121, guid: 9b9b65ebc7ebb784bad4df7e2011b130,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9b9b65ebc7ebb784bad4df7e2011b130, type: 3}
+--- !u!1001 &7621294706216676316
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6322922704957649669, guid: 5f67f606203d26f46be38f891e222676,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_6_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950800481119183148, guid: 5f67f606203d26f46be38f891e222676,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950800481119183148, guid: 5f67f606203d26f46be38f891e222676,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950800481119183148, guid: 5f67f606203d26f46be38f891e222676,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950800481119183148, guid: 5f67f606203d26f46be38f891e222676,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950800481119183148, guid: 5f67f606203d26f46be38f891e222676,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950800481119183148, guid: 5f67f606203d26f46be38f891e222676,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950800481119183148, guid: 5f67f606203d26f46be38f891e222676,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950800481119183148, guid: 5f67f606203d26f46be38f891e222676,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950800481119183148, guid: 5f67f606203d26f46be38f891e222676,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950800481119183148, guid: 5f67f606203d26f46be38f891e222676,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5f67f606203d26f46be38f891e222676, type: 3}
+--- !u!1001 &7738592043940312461
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1712497141192214858, guid: c79e6e574f45b1b4f8f29015e30468e2,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_11_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919653250808221672, guid: c79e6e574f45b1b4f8f29015e30468e2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919653250808221672, guid: c79e6e574f45b1b4f8f29015e30468e2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919653250808221672, guid: c79e6e574f45b1b4f8f29015e30468e2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919653250808221672, guid: c79e6e574f45b1b4f8f29015e30468e2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919653250808221672, guid: c79e6e574f45b1b4f8f29015e30468e2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919653250808221672, guid: c79e6e574f45b1b4f8f29015e30468e2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919653250808221672, guid: c79e6e574f45b1b4f8f29015e30468e2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919653250808221672, guid: c79e6e574f45b1b4f8f29015e30468e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919653250808221672, guid: c79e6e574f45b1b4f8f29015e30468e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919653250808221672, guid: c79e6e574f45b1b4f8f29015e30468e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c79e6e574f45b1b4f8f29015e30468e2, type: 3}
+--- !u!1001 &7942686666714940179
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7189853952955823971, guid: cd5464d6da6d5ae4a9d4e801be7a91d7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189853952955823971, guid: cd5464d6da6d5ae4a9d4e801be7a91d7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189853952955823971, guid: cd5464d6da6d5ae4a9d4e801be7a91d7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189853952955823971, guid: cd5464d6da6d5ae4a9d4e801be7a91d7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189853952955823971, guid: cd5464d6da6d5ae4a9d4e801be7a91d7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189853952955823971, guid: cd5464d6da6d5ae4a9d4e801be7a91d7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189853952955823971, guid: cd5464d6da6d5ae4a9d4e801be7a91d7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189853952955823971, guid: cd5464d6da6d5ae4a9d4e801be7a91d7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189853952955823971, guid: cd5464d6da6d5ae4a9d4e801be7a91d7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189853952955823971, guid: cd5464d6da6d5ae4a9d4e801be7a91d7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9218551012803507019, guid: cd5464d6da6d5ae4a9d4e801be7a91d7,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_6_4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cd5464d6da6d5ae4a9d4e801be7a91d7, type: 3}
+--- !u!1001 &8006252869987506182
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3255187505538878657, guid: d66d8330b6d7ba741a823b1721658167,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255187505538878657, guid: d66d8330b6d7ba741a823b1721658167,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255187505538878657, guid: d66d8330b6d7ba741a823b1721658167,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255187505538878657, guid: d66d8330b6d7ba741a823b1721658167,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255187505538878657, guid: d66d8330b6d7ba741a823b1721658167,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255187505538878657, guid: d66d8330b6d7ba741a823b1721658167,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255187505538878657, guid: d66d8330b6d7ba741a823b1721658167,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255187505538878657, guid: d66d8330b6d7ba741a823b1721658167,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255187505538878657, guid: d66d8330b6d7ba741a823b1721658167,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255187505538878657, guid: d66d8330b6d7ba741a823b1721658167,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225476547535683482, guid: d66d8330b6d7ba741a823b1721658167,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_4_1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d66d8330b6d7ba741a823b1721658167, type: 3}
+--- !u!1001 &8059852727302233054
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1674151701572314119, guid: 4d16a755f7e514c41bddb273f3c56448,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_1_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041246588960644932, guid: 4d16a755f7e514c41bddb273f3c56448,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041246588960644932, guid: 4d16a755f7e514c41bddb273f3c56448,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041246588960644932, guid: 4d16a755f7e514c41bddb273f3c56448,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041246588960644932, guid: 4d16a755f7e514c41bddb273f3c56448,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041246588960644932, guid: 4d16a755f7e514c41bddb273f3c56448,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041246588960644932, guid: 4d16a755f7e514c41bddb273f3c56448,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041246588960644932, guid: 4d16a755f7e514c41bddb273f3c56448,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041246588960644932, guid: 4d16a755f7e514c41bddb273f3c56448,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041246588960644932, guid: 4d16a755f7e514c41bddb273f3c56448,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041246588960644932, guid: 4d16a755f7e514c41bddb273f3c56448,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4d16a755f7e514c41bddb273f3c56448, type: 3}
+--- !u!1001 &8097594164675894571
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 41600528514700430, guid: 96c0a858c582a0d4d96ab96e73c34fef,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_9_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878608747699761079, guid: 96c0a858c582a0d4d96ab96e73c34fef,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878608747699761079, guid: 96c0a858c582a0d4d96ab96e73c34fef,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878608747699761079, guid: 96c0a858c582a0d4d96ab96e73c34fef,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878608747699761079, guid: 96c0a858c582a0d4d96ab96e73c34fef,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878608747699761079, guid: 96c0a858c582a0d4d96ab96e73c34fef,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878608747699761079, guid: 96c0a858c582a0d4d96ab96e73c34fef,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878608747699761079, guid: 96c0a858c582a0d4d96ab96e73c34fef,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878608747699761079, guid: 96c0a858c582a0d4d96ab96e73c34fef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878608747699761079, guid: 96c0a858c582a0d4d96ab96e73c34fef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878608747699761079, guid: 96c0a858c582a0d4d96ab96e73c34fef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 96c0a858c582a0d4d96ab96e73c34fef, type: 3}
+--- !u!1001 &8215724060530159443
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4878377092358322188, guid: 5883d7ec86f88fe40989afd2fc24dedb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878377092358322188, guid: 5883d7ec86f88fe40989afd2fc24dedb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878377092358322188, guid: 5883d7ec86f88fe40989afd2fc24dedb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878377092358322188, guid: 5883d7ec86f88fe40989afd2fc24dedb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878377092358322188, guid: 5883d7ec86f88fe40989afd2fc24dedb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878377092358322188, guid: 5883d7ec86f88fe40989afd2fc24dedb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878377092358322188, guid: 5883d7ec86f88fe40989afd2fc24dedb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878377092358322188, guid: 5883d7ec86f88fe40989afd2fc24dedb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878377092358322188, guid: 5883d7ec86f88fe40989afd2fc24dedb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878377092358322188, guid: 5883d7ec86f88fe40989afd2fc24dedb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589110650054739371, guid: 5883d7ec86f88fe40989afd2fc24dedb,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_2_2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5883d7ec86f88fe40989afd2fc24dedb, type: 3}
+--- !u!1001 &8263165675034027555
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1361492563892566404, guid: 0c31f2039e6841941872c6b0a2d3024f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361492563892566404, guid: 0c31f2039e6841941872c6b0a2d3024f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361492563892566404, guid: 0c31f2039e6841941872c6b0a2d3024f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361492563892566404, guid: 0c31f2039e6841941872c6b0a2d3024f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361492563892566404, guid: 0c31f2039e6841941872c6b0a2d3024f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361492563892566404, guid: 0c31f2039e6841941872c6b0a2d3024f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361492563892566404, guid: 0c31f2039e6841941872c6b0a2d3024f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361492563892566404, guid: 0c31f2039e6841941872c6b0a2d3024f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361492563892566404, guid: 0c31f2039e6841941872c6b0a2d3024f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361492563892566404, guid: 0c31f2039e6841941872c6b0a2d3024f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177572297192804376, guid: 0c31f2039e6841941872c6b0a2d3024f,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_8_4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0c31f2039e6841941872c6b0a2d3024f, type: 3}
+--- !u!1001 &8267165934803300536
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3440414067096852450, guid: f5a13918115d7c2458599537281bf72e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440414067096852450, guid: f5a13918115d7c2458599537281bf72e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440414067096852450, guid: f5a13918115d7c2458599537281bf72e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440414067096852450, guid: f5a13918115d7c2458599537281bf72e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440414067096852450, guid: f5a13918115d7c2458599537281bf72e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440414067096852450, guid: f5a13918115d7c2458599537281bf72e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440414067096852450, guid: f5a13918115d7c2458599537281bf72e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440414067096852450, guid: f5a13918115d7c2458599537281bf72e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440414067096852450, guid: f5a13918115d7c2458599537281bf72e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440414067096852450, guid: f5a13918115d7c2458599537281bf72e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611273657494584972, guid: f5a13918115d7c2458599537281bf72e,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_2_4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f5a13918115d7c2458599537281bf72e, type: 3}
+--- !u!1001 &8395057463128468811
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4393628162415330984, guid: f6765ff69995d024f95565f139a82268,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393628162415330984, guid: f6765ff69995d024f95565f139a82268,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393628162415330984, guid: f6765ff69995d024f95565f139a82268,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393628162415330984, guid: f6765ff69995d024f95565f139a82268,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393628162415330984, guid: f6765ff69995d024f95565f139a82268,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393628162415330984, guid: f6765ff69995d024f95565f139a82268,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393628162415330984, guid: f6765ff69995d024f95565f139a82268,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393628162415330984, guid: f6765ff69995d024f95565f139a82268,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393628162415330984, guid: f6765ff69995d024f95565f139a82268,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393628162415330984, guid: f6765ff69995d024f95565f139a82268,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467240849945610881, guid: f6765ff69995d024f95565f139a82268,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_9_5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f6765ff69995d024f95565f139a82268, type: 3}
+--- !u!1001 &8517052895018194724
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5644626228482768892, guid: e740eff7221ff994882c23b3286ff047,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 5644626228482768892, guid: e740eff7221ff994882c23b3286ff047,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5644626228482768892, guid: e740eff7221ff994882c23b3286ff047,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5644626228482768892, guid: e740eff7221ff994882c23b3286ff047,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5644626228482768892, guid: e740eff7221ff994882c23b3286ff047,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5644626228482768892, guid: e740eff7221ff994882c23b3286ff047,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5644626228482768892, guid: e740eff7221ff994882c23b3286ff047,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5644626228482768892, guid: e740eff7221ff994882c23b3286ff047,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5644626228482768892, guid: e740eff7221ff994882c23b3286ff047,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5644626228482768892, guid: e740eff7221ff994882c23b3286ff047,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8443577184802035478, guid: e740eff7221ff994882c23b3286ff047,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_10_1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e740eff7221ff994882c23b3286ff047, type: 3}
+--- !u!1001 &8546769410039351144
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3732951602203587554, guid: b2ad1c08f82da804ca3762526f504f17,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3732951602203587554, guid: b2ad1c08f82da804ca3762526f504f17,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3732951602203587554, guid: b2ad1c08f82da804ca3762526f504f17,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3732951602203587554, guid: b2ad1c08f82da804ca3762526f504f17,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3732951602203587554, guid: b2ad1c08f82da804ca3762526f504f17,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3732951602203587554, guid: b2ad1c08f82da804ca3762526f504f17,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3732951602203587554, guid: b2ad1c08f82da804ca3762526f504f17,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3732951602203587554, guid: b2ad1c08f82da804ca3762526f504f17,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3732951602203587554, guid: b2ad1c08f82da804ca3762526f504f17,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3732951602203587554, guid: b2ad1c08f82da804ca3762526f504f17,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920118596347007362, guid: b2ad1c08f82da804ca3762526f504f17,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_4_5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b2ad1c08f82da804ca3762526f504f17, type: 3}
+--- !u!1001 &8563215948758635044
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4106490404777855591, guid: 4b3ce177e3d67a642b6f1d3622d25b72,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_6_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448183022385382322, guid: 4b3ce177e3d67a642b6f1d3622d25b72,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448183022385382322, guid: 4b3ce177e3d67a642b6f1d3622d25b72,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448183022385382322, guid: 4b3ce177e3d67a642b6f1d3622d25b72,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448183022385382322, guid: 4b3ce177e3d67a642b6f1d3622d25b72,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448183022385382322, guid: 4b3ce177e3d67a642b6f1d3622d25b72,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448183022385382322, guid: 4b3ce177e3d67a642b6f1d3622d25b72,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448183022385382322, guid: 4b3ce177e3d67a642b6f1d3622d25b72,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448183022385382322, guid: 4b3ce177e3d67a642b6f1d3622d25b72,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448183022385382322, guid: 4b3ce177e3d67a642b6f1d3622d25b72,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448183022385382322, guid: 4b3ce177e3d67a642b6f1d3622d25b72,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4b3ce177e3d67a642b6f1d3622d25b72, type: 3}
+--- !u!1001 &8570530212913508017
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 656575710747509845, guid: 7a556235fdc0cf843977ad3974fcf619,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 656575710747509845, guid: 7a556235fdc0cf843977ad3974fcf619,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656575710747509845, guid: 7a556235fdc0cf843977ad3974fcf619,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 656575710747509845, guid: 7a556235fdc0cf843977ad3974fcf619,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 656575710747509845, guid: 7a556235fdc0cf843977ad3974fcf619,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 656575710747509845, guid: 7a556235fdc0cf843977ad3974fcf619,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656575710747509845, guid: 7a556235fdc0cf843977ad3974fcf619,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656575710747509845, guid: 7a556235fdc0cf843977ad3974fcf619,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656575710747509845, guid: 7a556235fdc0cf843977ad3974fcf619,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656575710747509845, guid: 7a556235fdc0cf843977ad3974fcf619,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851969801295063691, guid: 7a556235fdc0cf843977ad3974fcf619,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_12_5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7a556235fdc0cf843977ad3974fcf619, type: 3}
+--- !u!1001 &8705098966347485154
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 664120048968060785, guid: a59af6107040d634184ecbe9ac7cfa4e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 664120048968060785, guid: a59af6107040d634184ecbe9ac7cfa4e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 664120048968060785, guid: a59af6107040d634184ecbe9ac7cfa4e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 664120048968060785, guid: a59af6107040d634184ecbe9ac7cfa4e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 664120048968060785, guid: a59af6107040d634184ecbe9ac7cfa4e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 664120048968060785, guid: a59af6107040d634184ecbe9ac7cfa4e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 664120048968060785, guid: a59af6107040d634184ecbe9ac7cfa4e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 664120048968060785, guid: a59af6107040d634184ecbe9ac7cfa4e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 664120048968060785, guid: a59af6107040d634184ecbe9ac7cfa4e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 664120048968060785, guid: a59af6107040d634184ecbe9ac7cfa4e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124490081255541231, guid: a59af6107040d634184ecbe9ac7cfa4e,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_8_1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a59af6107040d634184ecbe9ac7cfa4e, type: 3}
+--- !u!1001 &8847517569484361084
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2654577858588758772, guid: f32fbe87332830644aaa5f26c1f7627d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654577858588758772, guid: f32fbe87332830644aaa5f26c1f7627d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654577858588758772, guid: f32fbe87332830644aaa5f26c1f7627d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654577858588758772, guid: f32fbe87332830644aaa5f26c1f7627d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654577858588758772, guid: f32fbe87332830644aaa5f26c1f7627d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654577858588758772, guid: f32fbe87332830644aaa5f26c1f7627d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654577858588758772, guid: f32fbe87332830644aaa5f26c1f7627d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654577858588758772, guid: f32fbe87332830644aaa5f26c1f7627d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654577858588758772, guid: f32fbe87332830644aaa5f26c1f7627d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654577858588758772, guid: f32fbe87332830644aaa5f26c1f7627d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228750243933966129, guid: f32fbe87332830644aaa5f26c1f7627d,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_7_5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f32fbe87332830644aaa5f26c1f7627d, type: 3}
+--- !u!1001 &8855369133140620944
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7175895822369892207, guid: 472f1b9c0dfef5549a437d5e2bd5e850,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175895822369892207, guid: 472f1b9c0dfef5549a437d5e2bd5e850,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175895822369892207, guid: 472f1b9c0dfef5549a437d5e2bd5e850,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175895822369892207, guid: 472f1b9c0dfef5549a437d5e2bd5e850,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175895822369892207, guid: 472f1b9c0dfef5549a437d5e2bd5e850,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175895822369892207, guid: 472f1b9c0dfef5549a437d5e2bd5e850,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175895822369892207, guid: 472f1b9c0dfef5549a437d5e2bd5e850,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175895822369892207, guid: 472f1b9c0dfef5549a437d5e2bd5e850,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175895822369892207, guid: 472f1b9c0dfef5549a437d5e2bd5e850,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175895822369892207, guid: 472f1b9c0dfef5549a437d5e2bd5e850,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815391090830295353, guid: 472f1b9c0dfef5549a437d5e2bd5e850,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_10_4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 472f1b9c0dfef5549a437d5e2bd5e850, type: 3}
+--- !u!1001 &9146407655598648161
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5489197645097662684, guid: 5bb01e0b642bb2541a24167cbc756a41,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_7_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024266362455196327, guid: 5bb01e0b642bb2541a24167cbc756a41,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024266362455196327, guid: 5bb01e0b642bb2541a24167cbc756a41,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024266362455196327, guid: 5bb01e0b642bb2541a24167cbc756a41,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024266362455196327, guid: 5bb01e0b642bb2541a24167cbc756a41,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024266362455196327, guid: 5bb01e0b642bb2541a24167cbc756a41,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024266362455196327, guid: 5bb01e0b642bb2541a24167cbc756a41,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024266362455196327, guid: 5bb01e0b642bb2541a24167cbc756a41,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024266362455196327, guid: 5bb01e0b642bb2541a24167cbc756a41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024266362455196327, guid: 5bb01e0b642bb2541a24167cbc756a41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024266362455196327, guid: 5bb01e0b642bb2541a24167cbc756a41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5bb01e0b642bb2541a24167cbc756a41, type: 3}
+--- !u!1001 &9153103463990776272
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 667194384296740584, guid: 10dfd46af6d780f478978d87b7a26ed8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 667194384296740584, guid: 10dfd46af6d780f478978d87b7a26ed8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667194384296740584, guid: 10dfd46af6d780f478978d87b7a26ed8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 667194384296740584, guid: 10dfd46af6d780f478978d87b7a26ed8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 667194384296740584, guid: 10dfd46af6d780f478978d87b7a26ed8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667194384296740584, guid: 10dfd46af6d780f478978d87b7a26ed8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667194384296740584, guid: 10dfd46af6d780f478978d87b7a26ed8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667194384296740584, guid: 10dfd46af6d780f478978d87b7a26ed8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667194384296740584, guid: 10dfd46af6d780f478978d87b7a26ed8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667194384296740584, guid: 10dfd46af6d780f478978d87b7a26ed8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8688096489463944394, guid: 10dfd46af6d780f478978d87b7a26ed8,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_11_6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 10dfd46af6d780f478978d87b7a26ed8, type: 3}
+--- !u!1001 &9168148840703704723
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1556206404388134012, guid: b4bdc6edc22fe5b4db606b067501a361,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556206404388134012, guid: b4bdc6edc22fe5b4db606b067501a361,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556206404388134012, guid: b4bdc6edc22fe5b4db606b067501a361,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556206404388134012, guid: b4bdc6edc22fe5b4db606b067501a361,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556206404388134012, guid: b4bdc6edc22fe5b4db606b067501a361,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556206404388134012, guid: b4bdc6edc22fe5b4db606b067501a361,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556206404388134012, guid: b4bdc6edc22fe5b4db606b067501a361,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556206404388134012, guid: b4bdc6edc22fe5b4db606b067501a361,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556206404388134012, guid: b4bdc6edc22fe5b4db606b067501a361,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556206404388134012, guid: b4bdc6edc22fe5b4db606b067501a361,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2524877019963198633, guid: b4bdc6edc22fe5b4db606b067501a361,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_10_3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b4bdc6edc22fe5b4db606b067501a361, type: 3}
+--- !u!1001 &9180640550543767324
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3537098143464317372, guid: 5e1c741220c49364c83409b116a4249b,
+        type: 3}
+      propertyPath: m_Name
+      value: SpaceBalls_Glow_2_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218297906330735869, guid: 5e1c741220c49364c83409b116a4249b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218297906330735869, guid: 5e1c741220c49364c83409b116a4249b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218297906330735869, guid: 5e1c741220c49364c83409b116a4249b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218297906330735869, guid: 5e1c741220c49364c83409b116a4249b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218297906330735869, guid: 5e1c741220c49364c83409b116a4249b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218297906330735869, guid: 5e1c741220c49364c83409b116a4249b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218297906330735869, guid: 5e1c741220c49364c83409b116a4249b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218297906330735869, guid: 5e1c741220c49364c83409b116a4249b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218297906330735869, guid: 5e1c741220c49364c83409b116a4249b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218297906330735869, guid: 5e1c741220c49364c83409b116a4249b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e1c741220c49364c83409b116a4249b, type: 3}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 330585546}
+  - {fileID: 410087041}
+  - {fileID: 6899314877470634000}
+  - {fileID: 3701315197800977731}
+  - {fileID: 809143345347462245}
+  - {fileID: 2374693331462362699}
+  - {fileID: 1494758364934650821}
+  - {fileID: 8059852727302233054}
+  - {fileID: 3087095086307128549}
+  - {fileID: 8215724060530159443}
+  - {fileID: 9180640550543767324}
+  - {fileID: 8267165934803300536}
+  - {fileID: 4937576507035573402}
+  - {fileID: 1085939946767928468}
+  - {fileID: 4100324658570121600}
+  - {fileID: 3267596572148109745}
+  - {fileID: 946779584115620794}
+  - {fileID: 3811535596251170558}
+  - {fileID: 4399703349371068963}
+  - {fileID: 2530336707606440997}
+  - {fileID: 8006252869987506182}
+  - {fileID: 5570574296070502224}
+  - {fileID: 7010077552762504509}
+  - {fileID: 5265006963484371588}
+  - {fileID: 8546769410039351144}
+  - {fileID: 759582031826743822}
+  - {fileID: 3254881235459698506}
+  - {fileID: 4997300907446711903}
+  - {fileID: 5170910650835338251}
+  - {fileID: 4400569599135718300}
+  - {fileID: 7238668764537398499}
+  - {fileID: 4580042407850345528}
+  - {fileID: 8563215948758635044}
+  - {fileID: 2361059969385917068}
+  - {fileID: 4494359698464283712}
+  - {fileID: 7942686666714940179}
+  - {fileID: 7621294706216676316}
+  - {fileID: 1516602090424969198}
+  - {fileID: 9146407655598648161}
+  - {fileID: 2113702254916457108}
+  - {fileID: 5951653957826250206}
+  - {fileID: 5909826972953652272}
+  - {fileID: 8847517569484361084}
+  - {fileID: 4611778786594071208}
+  - {fileID: 8705098966347485154}
+  - {fileID: 218284738741454496}
+  - {fileID: 541067546598070226}
+  - {fileID: 8263165675034027555}
+  - {fileID: 2966428509724133178}
+  - {fileID: 5677068281970203722}
+  - {fileID: 4627435038782168307}
+  - {fileID: 2221799115062365285}
+  - {fileID: 8097594164675894571}
+  - {fileID: 6264309755428405222}
+  - {fileID: 8395057463128468811}
+  - {fileID: 5411934476227775667}
+  - {fileID: 8517052895018194724}
+  - {fileID: 6891573425541511085}
+  - {fileID: 9168148840703704723}
+  - {fileID: 8855369133140620944}
+  - {fileID: 6272155980815523561}
+  - {fileID: 2370975775018830870}
+  - {fileID: 4303844990566221705}
+  - {fileID: 4107925978837498110}
+  - {fileID: 3003601230019994759}
+  - {fileID: 4151803682979246692}
+  - {fileID: 7738592043940312461}
+  - {fileID: 9153103463990776272}
+  - {fileID: 4236854162346227267}
+  - {fileID: 230223570244972670}
+  - {fileID: 1190899875205939011}
+  - {fileID: 2729190883667348944}
+  - {fileID: 8570530212913508017}
+  - {fileID: 527632538957851622}
