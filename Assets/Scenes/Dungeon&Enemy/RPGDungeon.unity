@@ -1080,94 +1080,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &534382702
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 2061401126}
-    m_Modifications:
-    - target: {fileID: 1441455109089380498, guid: f6bd16d6768c0554cb292a19913fa8d5,
-        type: 3}
-      propertyPath: m_Name
-      value: Zombie
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254829398828093992, guid: f6bd16d6768c0554cb292a19913fa8d5,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254829398828093992, guid: f6bd16d6768c0554cb292a19913fa8d5,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254829398828093992, guid: f6bd16d6768c0554cb292a19913fa8d5,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254829398828093992, guid: f6bd16d6768c0554cb292a19913fa8d5,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254829398828093992, guid: f6bd16d6768c0554cb292a19913fa8d5,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254829398828093992, guid: f6bd16d6768c0554cb292a19913fa8d5,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254829398828093992, guid: f6bd16d6768c0554cb292a19913fa8d5,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254829398828093992, guid: f6bd16d6768c0554cb292a19913fa8d5,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254829398828093992, guid: f6bd16d6768c0554cb292a19913fa8d5,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254829398828093992, guid: f6bd16d6768c0554cb292a19913fa8d5,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254829398828093992, guid: f6bd16d6768c0554cb292a19913fa8d5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254829398828093992, guid: f6bd16d6768c0554cb292a19913fa8d5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254829398828093992, guid: f6bd16d6768c0554cb292a19913fa8d5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2324071404796126129, guid: f6bd16d6768c0554cb292a19913fa8d5,
-        type: 3}
-      propertyPath: enemyHp
-      value: 50
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f6bd16d6768c0554cb292a19913fa8d5, type: 3}
 --- !u!1 &558044423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1787,12 +1699,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 294802411}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1720908247 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2254829398828093992, guid: f6bd16d6768c0554cb292a19913fa8d5,
-    type: 3}
-  m_PrefabInstance: {fileID: 534382702}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1845732321
 GameObject:
   m_ObjectHideFlags: 0
@@ -2038,8 +1944,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1441455109089380498, guid: f6bd16d6768c0554cb292a19913fa8d5,
     type: 3}
-  spawnInterval: 3
-  maxEnemies: 10
+  spawnCool: 5
+  maxEnemies: 5
   planeManager: {fileID: 0}
 --- !u!4 &2021372294
 Transform:
@@ -2093,7 +1999,6 @@ Transform:
   m_Children:
   - {fileID: 1110495929}
   - {fileID: 558044424}
-  - {fileID: 1720908247}
   m_Father: {fileID: 1845732322}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2061401127
@@ -2396,7 +2301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlanePrefab: {fileID: 0}
+  m_PlanePrefab: {fileID: 2707328084050734606, guid: 62d8c56056bc6374a96c742065b19ff1,
+    type: 3}
   m_DetectionMode: 1
 --- !u!1001 &410925811830930222
 PrefabInstance:

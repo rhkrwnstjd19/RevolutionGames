@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyPrefab; // 생성할 적의 프리팹
 
     [Header("스폰 설정")]
-    public float spawnInterval = 5f; // 스폰 간격 (초)
+    public float spawnCool = 5f; // 스폰 간격 (초)
     public int maxEnemies = 10; // 동시에 존재할 수 있는 최대 적 수
 
     [Header("AR 관련 설정")]
@@ -45,7 +45,7 @@ public class EnemySpawner : MonoBehaviour
                 SpawnEnemyOnRandomPlane();
             }
 
-            yield return new WaitForSeconds(spawnInterval);
+            yield return new WaitForSeconds(spawnCool);
         }
     }
 
@@ -75,11 +75,26 @@ public class EnemySpawner : MonoBehaviour
 
         ARPlane selectedPlane = activePlanes[Random.Range(0, activePlanes.Count)];
 
-        // 평면 내에서 랜덤한 위치 선택
-        Vector3 randomPosition = selectedPlane.transform.position + 
-            new Vector3(Random.Range(-selectedPlane.size.x / 2, selectedPlane.size.x / 2),
-                        0,
-                        Random.Range(-selectedPlane.size.y / 2, selectedPlane.size.y / 2));
+        // 평면의 경계를 사용하여 랜덤한 위치 선택
+        Vector2 randomPoint2D = new Vector2(Random.Range(-selectedPlane.size.x / 2, selectedPlane.size.x / 2), Random.Range(-selectedPlane.size.y / 2, selectedPlane.size.y / 2));
+        Vector3 randomPosition = selectedPlane.transform.TransformPoint(new Vector3(randomPoint2D.x+2, 0, randomPoint2D.y+2));
+
+        // 소환 위치가 기존 적과 너무 가까운지 확인
+        float minDistance = 1f; // 최소 거리 설정 (필요에 따라 조정)
+        bool isTooClose = false;
+        foreach (var enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+        {
+            if (Vector3.Distance(randomPosition, enemy.transform.position) < minDistance)
+            {
+                isTooClose = true;
+                break;
+            }
+        }
+        if (isTooClose)
+        {
+            // 소환 위치가 너무 가까우면 소환을 건너뜁니다.
+            return;
+        }
 
         // 평면의 회전과 일치하도록 설정 (옵션)
         Quaternion rotation = Quaternion.Euler(0, Random.Range(0f, 360f), 0);

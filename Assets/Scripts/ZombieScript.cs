@@ -12,16 +12,24 @@ public class ZombieScript : MonoBehaviour
     public AudioClip zombieWalk;
     public AudioClip zombieDead;
 
+    public Transform HPBar;
+    private float initialScaleY;
+
     AudioSource zombieSound;
     Rigidbody rb;
     GameObject target;
     Vector3 direction;
     [SerializeField]
-    private int enemyHp = 3;
+    private float enemyHp = 3;
+    private float maxHP = 3;
     private int attackAmount = 2;
     private bool isDead;
     private bool isAttack=false;
     private Animator animator;
+
+    void Awake(){
+        initialScaleY = HPBar.localScale.y;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +39,7 @@ public class ZombieScript : MonoBehaviour
         animator = GetComponent<Animator>();
         zombieSound.clip = zombieWalk;
         zombieSound.Play();
+        maxHP = enemyHp;
     }
     private void Update()
     {
@@ -65,9 +74,18 @@ public class ZombieScript : MonoBehaviour
         isAttack = false;
     }
     
+    
+    void UpdateHPBar()
+    {
+        float hpPercentage = enemyHp / maxHP;
+        Vector3 newScale = HPBar.localScale;
+        newScale.y = initialScaleY * hpPercentage;
+        HPBar.localScale = newScale;
+    }
     public void decreaseEnemyHp(int attack)
     {
         enemyHp -= attack;
+        UpdateHPBar();
         if (enemyHp <= 0)
         {
             //zombieSound.PlayOneShot(zombieDead);
@@ -75,8 +93,8 @@ public class ZombieScript : MonoBehaviour
             // DataManager.Instance.UpdateExp(enemyExp);
             // DataManager.Instance.UpdateMoney(moneyDrop);
             animator.SetBool("IsDead", isDead);
-            
-            Destroy(this.gameObject, 3f);
+            gameObject.GetComponent<Collider>().enabled = false;
+            Destroy(this.gameObject, 2f);
             //GameManager.Instance.EnemyDefeated();
         }
     }
