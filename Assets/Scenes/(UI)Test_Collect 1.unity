@@ -3047,8 +3047,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cba3fb3b078fdec499b4d6161d76b2a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StageListUI: {fileID: 0}
-  GameSelectButton: {fileID: 0}
+  CollectSceneButton: {fileID: 0}
+  StageSelectButton: {fileID: 0}
 --- !u!4 &1980609562
 Transform:
   m_ObjectHideFlags: 0
