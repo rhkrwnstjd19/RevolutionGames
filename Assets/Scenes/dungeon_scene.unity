@@ -1090,7 +1090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
-  captureButton: {fileID: 0}
+  captureButton: {fileID: 1014491163}
   dungeon_menu: {fileID: 0}
   exit_menu: {fileID: 1707021343}
   obj: {fileID: 0}
@@ -1807,6 +1807,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1014491160}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1014491163 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7224983615695812697, guid: 7a7207825d33c4b4aa8c774285d0c5e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1014491160}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1059827473
 GameObject:
   m_ObjectHideFlags: 0

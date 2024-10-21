@@ -10,7 +10,10 @@ Library: C:\Users\djaxo\Documents\GitHub\gwakpro\RevolutionGames\Temp\BurstOutpu
 --assembly-defines=Assembly-CSharp-firstpass;
 --assembly-defines=Assembly-CSharp;
 --assembly-defines=Castle.Core;
+--assembly-defines=CFXRDemo;
+--assembly-defines=CFXRRuntime;
 --assembly-defines=DOTween;
+--assembly-defines=KinoBloom.Runtime;
 --assembly-defines=Mono.Security;
 --assembly-defines=mscorlib;
 --assembly-defines=Newtonsoft.Json;
@@ -77,7 +80,10 @@ Library: C:\Users\djaxo\Documents\GitHub\gwakpro\RevolutionGames\Temp\BurstOutpu
 --assembly-defines=Assembly-CSharp-firstpass;
 --assembly-defines=Assembly-CSharp;
 --assembly-defines=Castle.Core;
+--assembly-defines=CFXRDemo;
+--assembly-defines=CFXRRuntime;
 --assembly-defines=DOTween;
+--assembly-defines=KinoBloom.Runtime;
 --assembly-defines=Mono.Security;
 --assembly-defines=mscorlib;
 --assembly-defines=Newtonsoft.Json;
