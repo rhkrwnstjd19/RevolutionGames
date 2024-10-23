@@ -99,6 +99,10 @@ public class EnemySpawner : MonoBehaviour
         // 평면의 회전과 일치하도록 설정 (옵션)
         Quaternion rotation = Quaternion.Euler(0, Random.Range(0f, 360f), 0);
 
+        var tmp = enemyPrefab.GetComponent<DungeonEnemy>().enemyType;
+        if(tmp == DungeonEnemy.EnemyType.Flying){
+            randomPosition.y += 0.5f;
+        }
         // 적 생성
         Instantiate(enemyPrefab, randomPosition, rotation);
     }

@@ -20,7 +20,6 @@ namespace GoMap
 	[ExecuteInEditMode]
 	public class GOMap : MonoBehaviour 
 	{
-
         public BaseLocationManager locationManager;
 		[Range (0,8)]  public int tileBuffer = 2;
 		[ShowOnly] public int zoomLevel = 0;

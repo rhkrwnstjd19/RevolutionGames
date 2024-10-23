@@ -14,6 +14,8 @@ public class ScriptablePlayer : ScriptableObject
     public float basicAttackCooldown;
     public List<ScriptableSkill> skill;
     public void LevelUp(){
+        currentExp = 0;
+        MaxExp *= 2f;
         Level++;
         attackVal += 10;
         defenseVal += 10;

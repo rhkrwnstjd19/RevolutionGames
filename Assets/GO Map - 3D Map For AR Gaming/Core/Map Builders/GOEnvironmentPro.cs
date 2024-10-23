@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using GoShared;
+using static GoMap.GOLayer;
 
 namespace GoMap {
 
 	public class GOEnvironmentPro : MonoBehaviour {
-
+		public GameObject CustomBuildingPrefab;
 		public GOMap goMap;
 		public GOEnvironmentKind[] floatingEnvironment;
 		public GOEnvironmentKind[] featureEnvironment;
@@ -31,7 +32,6 @@ namespace GoMap {
 					GORoutine.start (SpawnPrefabsInTile (tile, tile.gameObject, kind), this);
 			}
 		}
-
 		public void OnFeatureLoad (GOFeature feature, GameObject featureObject) {
 
 
