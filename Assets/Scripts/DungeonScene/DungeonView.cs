@@ -18,6 +18,8 @@ public class DungeonView : MonoBehaviour
     DungeonPresenter presenter;
     public ScriptableSkill Skill;
     public Button fireButton;
+
+    [Header("Fire positions for skills")]
     public Transform FirePosition1;
     public Transform FirePosition2;
 

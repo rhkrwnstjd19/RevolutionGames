@@ -17,6 +17,7 @@ public class DungeonPresenter : MonoBehaviour
     void LoadPlayer(){
         var player = model.player;
         view.InitPlayer(player);
+        SwitchSkill(0);
     }
 
     public void LevelUp(){
@@ -57,8 +58,9 @@ public class DungeonPresenter : MonoBehaviour
         else if(skill.attackType == Enums.AttackType.MultipleAttack){
             skill.SkillEffect.GetComponent<Explosion>().Init();
         }
+        //보스 공격
         else if(skill.attackType == Enums.AttackType.SingleAttack){
-            
+            MissileManager.Instance.Init();
         }
 
 

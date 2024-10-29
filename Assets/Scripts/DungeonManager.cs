@@ -9,9 +9,6 @@ namespace Game
     public class DungeonManager : Singleton<DungeonManager>
     {
         public DungeonView dungeonView;
-
-        // Start is called before the first frame update
-
         public void UpdateExp(float exp){
             dungeonView.UpdateExp(exp);
         }
