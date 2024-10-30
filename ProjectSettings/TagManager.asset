@@ -9,6 +9,7 @@ TagManager:
   - Dungeon
   - RPGDungeon
   - BossDungeon
+  - EnemyBoss
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - UI
   - Enemy
   - shop
-  - 
+  - EnemyBoss
   - 
   - 
   - 

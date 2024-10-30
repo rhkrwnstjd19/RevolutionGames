@@ -62,5 +62,16 @@ public class Fireball : MonoBehaviour
             Destroy(tmp.gameObject, 1f);
             Destroy(gameObject);
         }
+        else if(other.gameObject.CompareTag("EnemyBoss"))
+        {
+            other.GetComponent<DungeonBoss>().TakeDamage(skill.AttackVal);
+            Debug.Log("Fireball hit boss");
+            // other.GetComponent<ZombieScript>().decreaseEnemyHp(skill.AttackVal);
+            Vector3 hitpos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z + 0.5f);
+            var tmp = Instantiate(fireballHitEffect, hitpos, Quaternion.identity);
+            tmp.Play();
+            Destroy(tmp.gameObject, 1f);
+            Destroy(gameObject);
+        }
     }
 }

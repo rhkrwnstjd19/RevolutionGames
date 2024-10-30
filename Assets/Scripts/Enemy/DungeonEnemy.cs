@@ -12,6 +12,7 @@ public interface IEnemy
 }
 public class DungeonEnemy : MonoBehaviour
 {
+    //적이 공중형인지 지상형인지 구분 후 y축을 조절하여 생성된다.
     public enum EnemyType { Flying, Walking }
     public EnemyType enemyType;
     public float enemyHp = 50;
@@ -36,16 +37,15 @@ public class DungeonEnemy : MonoBehaviour
     }
 
     private void Update()
-    {
+    {   //플레이어 위치를 탐색해 플레이어에게 이동
         if (target != null)
         {
             transform.LookAt(target.transform);
-            // Vector3 currentRotation = transform.eulerAngles;
-            // transform.eulerAngles = new Vector3(0, currentRotation.y, 0);
             Vector3 direction = (target.transform.position - transform.position).normalized;
             
             if(Vector3.Distance(transform.position, target.transform.position) < 5f)
             {
+                //플레이어와의 거리가 5f 이하일 때 공격
                 animator.SetBool("Attack", true);
                 if(!isAttack)StartCoroutine(Attack(damage));
             }
@@ -85,6 +85,8 @@ public class DungeonEnemy : MonoBehaviour
         animator.SetBool("GetHit",false);
     }
     void Die(){
+        // 사망후 추가 상호작용이 생기므로 콜라이더를 비활성화 시킨후 사망 애니메이션을 실행
+        // 사망한 Enemy는 플레이어에게 경험치를 전달.
         StopAllCoroutines();
         animator.SetTrigger("Die");
         GetComponent<Collider>().enabled = false;
