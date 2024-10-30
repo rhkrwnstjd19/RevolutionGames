@@ -8,4 +8,5 @@ public class MonsterData : ScriptableObject
     public string monsterName;
     public Sprite monsterImage;
     public string monsterDescription;
+    public bool isCaptured = false;
 }

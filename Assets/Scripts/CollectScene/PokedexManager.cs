@@ -4,39 +4,31 @@ using UnityEngine.UI;
 
 public class PokedexManager : MonoBehaviour
 {
-    public GameObject pokedexPanel; // 도감 UI 패널
-    public Transform pokedexContent; // 도감 내용이 표시될 위치
-    public GameObject pokedexEntryPrefab; // 도감 항목 프리팹
+    public List<MonsterData> monsters;  // 몬스터 정보를 저장하는 리스트
+    public List<GameObject> monsterSlots;  // UI에서 각 몬스터 슬롯을 연결
 
-    void Start()
+    // 몬스터가 포획될 때 호출
+    public void CaptureMonster(int monsterIndex)
     {
-        pokedexPanel.SetActive(false); // 처음엔 도감이 보이지 않음
-    }
-
-    public void UpdatePokedex(List<Enemy> capturedMonsters)
-    {
-        foreach (Transform child in pokedexContent)
+        if (monsterIndex < monsters.Count && !monsters[monsterIndex].isCaptured)
         {
-            Destroy(child.gameObject); // 기존 항목 제거
-        }
-
-        foreach (Enemy enemy in capturedMonsters)
-        {
-            GameObject entry = Instantiate(pokedexEntryPrefab, pokedexContent);
-            entry.transform.Find("MonsterName").GetComponent<Text>().text = enemy.enemyName;
-            entry.transform.Find("MonsterDescription").GetComponent<Text>().text = enemy.enemyDescription;
-            entry.transform.Find("MonsterImage").GetComponent<Image>().sprite = enemy.enemyImage;
+            monsters[monsterIndex].isCaptured = true;
+            UpdatePokedex(monsterIndex);
         }
     }
 
-    public void OpenPokedex()
+    // 도감 UI를 업데이트
+    private void UpdatePokedex(int monsterIndex)
     {
-        pokedexPanel.SetActive(true);
-        UpdatePokedex(GameManager.Instance.capturedMonsters);
-    }
+        GameObject slot = monsterSlots[monsterIndex];
+        MonsterData monster = monsters[monsterIndex];
 
-    public void ClosePokedex()
-    {
-        pokedexPanel.SetActive(false);
+        // 해당 몬스터의 이미지, 이름, 설명을 표시
+        slot.transform.Find("MonsterImage").GetComponent<Image>().sprite = monster.monsterImage;
+        slot.transform.Find("MonsterName").GetComponent<Text>().text = monster.monsterName;
+        slot.transform.Find("MonsterDescription").GetComponent<Text>().text = monster.monsterDescription;
+
+        // 몬스터 슬롯을 활성화
+        slot.SetActive(true);
     }
 }
