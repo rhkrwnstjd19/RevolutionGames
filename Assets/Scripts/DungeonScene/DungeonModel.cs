@@ -17,4 +17,8 @@ public class DungeonModel : MonoBehaviour
         player = playerdata.Result;
         OnModelLoaded?.Invoke();
     }
+
+    public void LevelUp(){
+        player.LevelUp();
+    }
 }

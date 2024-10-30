@@ -1062,7 +1062,7 @@ MonoBehaviour:
   lastLocations: []
   currentMotionState: 0
   useLocationServices: 1
-  demoLocation: 1
+  demoLocation: 12
   updateDistance: 0.1
   simulateMotion: 1
   useWsadInEditor: 1

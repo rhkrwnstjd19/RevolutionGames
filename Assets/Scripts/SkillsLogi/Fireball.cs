@@ -8,6 +8,7 @@ public class Fireball : MonoBehaviour
     public ParticleSystem fireballHitEffect;
     public float speed = 10f; // Fireball의 속도
     public float lifetime = 5f; // Fireball의 생존 시간
+    private AudioSource audioSource;
     
     [Header("발사 각도")]
     static float horizontalAngle = 5f; // 5도로 설정
@@ -15,6 +16,7 @@ public class Fireball : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         StartCoroutine(ShootFire());
     }
 
@@ -51,8 +53,9 @@ public class Fireball : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
+            other.GetComponent<DungeonEnemy>().TakeDamage(skill.AttackVal);
             Debug.Log("Fireball hit enemy");
-            other.GetComponent<ZombieScript>().decreaseEnemyHp(skill.AttackVal);
+            // other.GetComponent<ZombieScript>().decreaseEnemyHp(skill.AttackVal);
             Vector3 hitpos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z + 0.5f);
             var tmp = Instantiate(fireballHitEffect, hitpos, Quaternion.identity);
             tmp.Play();

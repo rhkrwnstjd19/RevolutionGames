@@ -734,6 +734,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11458246, guid: 2eb893fe48df34d2f8555a95c4675ac6, type: 3}
+      propertyPath: pois.renderingOptions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458246, guid: 2eb893fe48df34d2f8555a95c4675ac6, type: 3}
       propertyPath: layers.Array.data[0].useRealHeight
       value: 0
       objectReference: {fileID: 0}
@@ -789,6 +793,14 @@ PrefabInstance:
       propertyPath: layers.Array.data[4].avoid.Array.data[1]
       value: ferry
       objectReference: {fileID: 0}
+    - target: {fileID: 11458246, guid: 2eb893fe48df34d2f8555a95c4675ac6, type: 3}
+      propertyPath: pois.renderingOptions.Array.data[0].kind
+      value: 237
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458246, guid: 2eb893fe48df34d2f8555a95c4675ac6, type: 3}
+      propertyPath: pois.renderingOptions.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 191634, guid: 45ab07dc58f034ade95a5bfaa0fca008, type: 3}
     - target: {fileID: 11458246, guid: 2eb893fe48df34d2f8555a95c4675ac6, type: 3}
       propertyPath: layers.Array.data[4].OnFeatureLoad.m_TypeName
       value: GoMap.GOEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
