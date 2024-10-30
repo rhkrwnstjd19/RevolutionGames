@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class ButtonClick : MonoBehaviour
 {
-    public GameObject CollectSceneButton;
     public GameObject StageSelectButton;
     public void OnButtonClickCollect() //수집형 던전 버튼
     {

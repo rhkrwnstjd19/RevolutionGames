@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class RouletteManager : MonoBehaviour
+public class SpinRoulette : MonoBehaviour
 {
     public Transform rouletteWheel; // ∑Í∑ø ø¿∫Í¡ß∆Æ¿« Transform
     public GameObject rouletteObject;
@@ -9,6 +9,9 @@ public class RouletteManager : MonoBehaviour
     public bool isSpinning;
     public int stopSpeed;
     public SpawnMonster spawnMonster;
+
+    public bool isRouletteOn = true;
+
     void Start()
     {
         isSpinning = true;
@@ -47,11 +50,14 @@ public class RouletteManager : MonoBehaviour
 
     IEnumerator DisableRoulette()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         if (rouletteObject != null)
         {
+            isRouletteOn = false;
             rouletteObject.SetActive(false);
+
+            spawnMonster.Spawn();
         }
     }
 }

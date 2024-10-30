@@ -15,7 +15,10 @@ public class SpawnMonster : MonoBehaviour
     public int selectedMonsterIndex = -1;   //monster select
 
     public Text messagePanel;
-    public GameObject GotoMainButton;
+    public GameObject Swipe;
+    public GameObject Result;
+
+
 
     private void Start()
     {
@@ -26,13 +29,10 @@ public class SpawnMonster : MonoBehaviour
 
     private void Update()
     {
-        if (selectedMonsterIndex > -1)
-        {
-            Spawn();
-        }
+
     }
 
-    void Spawn()
+    public void Spawn()
     {
         if (!objectSpawn)
         {
@@ -50,44 +50,17 @@ public class SpawnMonster : MonoBehaviour
                 Instantiate(selectedMonster, hitPose.position, hitPose.rotation);
                 objectSpawn = true;
 
-                //ShowMessage("몬스터 생성 완료!");
+                Swipe.SetActive(true);
 
-                Invoke("EndStage", 2f);
+                Invoke("DeactivateSwipe", 6f);
+
             }
             else
             {
                 ShowMessage("지면 인식 실패.");
             }
         }
-
-
-
-        /*
-        // 터치 입력 확인
-        if (Input.touchCount > 0 && !objectSpawn)
-        {
-            Touch touch = Input.GetTouch(0);
-
-            // 터치가 시작될 때 레이캐스트 실행
-            if (touch.phase == TouchPhase.Began)
-            {
-                // 터치한 위치를 기준으로 레이캐스트
-                if (raycastManager.Raycast(touch.position, hit, TrackableType.PlaneWithinPolygon))
-                {
-                    Pose hitPose = hit[0].pose;
-
-
-                }
-                else
-                {
-                    // 레이캐스트 실패 시
-                    ShowMessage("지면 인식 실패.");
-                }
-            }
-        }
-        */
     }
-    // 메시지 패널에 텍스트 표시
     private void ShowMessage(string message)
     {
         if (messagePanel != null)
@@ -96,13 +69,20 @@ public class SpawnMonster : MonoBehaviour
         }
     }
 
+    private void DeactivateSwipe()
+    {
+        Swipe.SetActive(false);
+
+        Invoke("EndStage", 6f);
+
+    }
     private void EndStage()
     {
-        GotoMainButton.SetActive(true);
+        Result.SetActive(true);
     }
 
     public void SetSelectedMonster(int index)
     {
-        selectedMonsterIndex = index;    
+        selectedMonsterIndex = index;
     }
 }
