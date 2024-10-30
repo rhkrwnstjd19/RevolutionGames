@@ -68,8 +68,34 @@ public class BCtest : MonoBehaviour
         rb.velocity = Vector3.zero; // 공의 속도 초기화
         isReady = true; // 공 준비
     }
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log($"collsion : {other.gameObject.tag}");
+
+        // 충돌한 오브젝트가 "Enemy" 태그를 가지고 있을 때만 처리
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log($"compared tag : {other.gameObject.name}");
+            float draw = Random.Range(0, 1.0f);
+            if (draw <= captureRate)
+            {
+                result.text = "Catch!!";
+            }
+            else
+            {
+                result.text = "fail..";
+            }
+
+            Instantiate(effect, other.transform.position, Camera.main.transform.rotation);
+
+            Destroy(other.gameObject);
+            gameObject.SetActive(false);
+        }
+
+    }
     void OnCollisionEnter(Collision collision)
     {
+        Debug.Log($"collsion : {collision.gameObject.name}");
         if (isReady)
             return;
 
