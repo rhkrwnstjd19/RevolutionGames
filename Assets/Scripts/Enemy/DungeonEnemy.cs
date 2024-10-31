@@ -91,6 +91,7 @@ public class DungeonEnemy : MonoBehaviour
         animator.SetTrigger("Die");
         GetComponent<Collider>().enabled = false;
         DungeonManager.Instance.UpdateExp(exp);
+        DungeonManager.Instance.DefeatedEnemyCount++;
         Destroy(gameObject, 1f);
     }
 }
