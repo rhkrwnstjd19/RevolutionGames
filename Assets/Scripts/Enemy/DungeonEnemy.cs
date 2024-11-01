@@ -69,6 +69,7 @@ public class DungeonEnemy : MonoBehaviour
     public void TakeDamage(float amount){
         animator.SetBool("GetHit", true);
         audioSource.Play();
+        DamageNumberManager.Instance.ShowDamageNumber(transform.position, amount);
         enemyHp -= amount;
         UpdateHPBar();
         if(enemyHp <= 0){

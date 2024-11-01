@@ -401,7 +401,6 @@ namespace GoMap
         public GameObject dropLine(List<Vector3> polyline, float witdh, float height, Material material, GOUVMappingStyle uvMappingStyle,bool curved = false) {
 		
 			GameObject line = new GameObject ("Polyline");
-
 			MeshFilter filter = line.AddComponent<MeshFilter>();
 			MeshRenderer renderer = line.AddComponent<MeshRenderer>();
 
