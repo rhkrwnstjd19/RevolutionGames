@@ -17,11 +17,15 @@ namespace Game
         public DungeonView dungeonView;
 
         public void UpdateExp(float exp){
-            dungeonView.UpdateExp(exp);
             TotalExp += exp;
-        }
+            dungeonView.UpdateExp(exp);
 
-        
+        }
+        public void UpdateGold(int gold){
+            TotalGold += gold;
+            dungeonView.UpdateGold(gold);
+
+        }
         
 
     }

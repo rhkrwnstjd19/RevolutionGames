@@ -26,6 +26,8 @@ public class DungeonEnemy : MonoBehaviour
     public Transform HPBar;
     private float initialScaleY;
     private bool isAttack = false;
+
+    public GameObject gold;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -92,6 +94,8 @@ public class DungeonEnemy : MonoBehaviour
         GetComponent<Collider>().enabled = false;
         DungeonManager.Instance.UpdateExp(exp);
         DungeonManager.Instance.DefeatedEnemyCount++;
-        Destroy(gameObject, 1f);
+        Vector3 pos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z - 0.2f);
+        var a = Instantiate(gold, pos, Quaternion.identity);
+        Destroy(gameObject, 5f);
     }
 }

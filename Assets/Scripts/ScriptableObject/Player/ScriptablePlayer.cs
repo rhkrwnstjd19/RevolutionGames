@@ -13,6 +13,7 @@ public class ScriptablePlayer : ScriptableObject
     public int maxHp;
     public float basicAttackCooldown;
     public List<ScriptableSkill> skill;
+    public ScriptableInventory inventory;
     public void LevelUp(){
         currentExp = 0;
         MaxExp *= 2f;
