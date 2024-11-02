@@ -6,22 +6,34 @@ using UnityEngine.SceneManagement;
 public class ButtonClick : MonoBehaviour
 {
     public GameObject StageSelectButton;
-    public void OnButtonClickCollect() //수집형 던전 버튼
+    public GameObject NoticeButton_First;
+
+    public void OnButtonClickCollect() //수집형 던전 아이콘을 누를 경우
     {
         StageSelectButton.SetActive(true);
     }
 
-    public void OnButtonClickBack_StageSelect()
+    public void OnButtonClickBack_StageSelect() //수집형 던전 리스트의 x 버튼을 누를 경우
     {
         StageSelectButton.SetActive(false);
     }
 
-    public void OnButtonClickStageOne() //수집형 던전 리스트 버튼
+    public void OnButtonClickStage_First() //첫번째 수집형 던전 버튼을 누를 경우
+    {
+        NoticeButton_First.SetActive(true);
+    }
+
+    public void OnButtonClickStage_First_Enter()    //첫번째 수집형 던전 안내창에서 들어가기를 누를 경우
     {
         SceneManager.LoadScene("(UI)Test_Collect 1");
     }
 
-    public void OnButtonClickGoToMain()
+    public void OnButtonClickStage_First_Back()    //첫번째 수집형 던전 안내창에서 뒤로가기를 누를 경우
+    {
+        NoticeButton_First.SetActive(false);
+    }
+
+    public void OnButtonClickGoToMain()     //메인으로 돌아가기 버튼을 누를 경우
     {
         SceneManager.LoadScene("(UI)Main Map - DungeonRPG 1");
     }
