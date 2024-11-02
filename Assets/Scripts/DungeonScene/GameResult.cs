@@ -66,15 +66,15 @@ public class GameResult : MonoBehaviour
 
 
     void CheckNewRecord(){
-        if(result.Gold < gold){
+        if(result.Gold > gold){
             result.Gold = gold;
             NewRecordGold.SetActive(true);
         }
-        if(result.EnemyCount < enemyCount){
+        if(result.EnemyCount > enemyCount){
             result.EnemyCount = enemyCount;
             NewRecordEnemy.SetActive(true);
         }
-        if(result.Exp < exp){
+        if(result.Exp > exp){
             result.Exp = exp;
             NewRecordExp.SetActive(true);
         }
