@@ -26,6 +26,8 @@ public class DungeonEnemy : MonoBehaviour
     public Transform HPBar;
     private float initialScaleY;
     private bool isAttack = false;
+
+    public GameObject gold;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -67,6 +69,7 @@ public class DungeonEnemy : MonoBehaviour
     public void TakeDamage(float amount){
         animator.SetBool("GetHit", true);
         audioSource.Play();
+        DamageNumberManager.Instance.ShowDamageNumber(transform.position, amount);
         enemyHp -= amount;
         UpdateHPBar();
         if(enemyHp <= 0){
@@ -91,6 +94,9 @@ public class DungeonEnemy : MonoBehaviour
         animator.SetTrigger("Die");
         GetComponent<Collider>().enabled = false;
         DungeonManager.Instance.UpdateExp(exp);
-        Destroy(gameObject, 1f);
+        DungeonManager.Instance.DefeatedEnemyCount++;
+        Vector3 pos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z - 0.2f);
+        var a = Instantiate(gold, pos, Quaternion.identity);
+        Destroy(gameObject, 5f);
     }
 }

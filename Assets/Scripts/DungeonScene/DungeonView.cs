@@ -46,6 +46,8 @@ public class DungeonView : MonoBehaviour
         PlayerLevel.text = "Level : " + player.Level;
         CurrentExp.text = $"{(player.currentExp / player.MaxExp) * 100:F2}%";
         ExpSlider.maxValue = player.MaxExp;
+        ExpSlider.value = player.currentExp;
+        CurrentGold.text = "Gold : " + player.inventory.gold.ToString();
     }
 
     public void InitPlayer(ScriptablePlayer player){
@@ -113,5 +115,11 @@ public class DungeonView : MonoBehaviour
     void LevelUp(){
         Debug.Log($"Player Level UP : {player.currentExp} / {player.MaxExp}");
         presenter.LevelUp();
+    }
+
+    public void UpdateGold(int gold)
+    {
+        player.inventory.gold += gold;
+        UpdatePlayerView();
     }
 }
