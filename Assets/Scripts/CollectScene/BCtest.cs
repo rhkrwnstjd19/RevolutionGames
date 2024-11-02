@@ -9,6 +9,7 @@ public class BCtest : MonoBehaviour
     public float captureRate = 1.0f;
     public TMP_Text result;
     public GameObject effect;
+    public PokedexManager pokedexManager;
 
     Rigidbody rb;
     bool isReady = true;
@@ -29,7 +30,8 @@ public class BCtest : MonoBehaviour
             return;
         }
 
-        SetBallPosition(Camera.main.transform); // 볼을 카메라 전방 위치에 고정한다.
+        // SetBallPosition(Camera.main.transform.position + new Vector3(0, 0, 0.5f)); // 볼을 카메라 전방 위치에 고정한다.
+
 
         if (Input.touchCount > 0 && isReady) // 한 개 이상의 터치가 있을 때
         {
@@ -56,17 +58,20 @@ public class BCtest : MonoBehaviour
         }
     }
 
-    void SetBallPosition(Transform anchor)
+    void SetBallPosition(Vector3 position)
     {
-        Vector3 offset = anchor.forward * 0.5f + anchor.up * -0.2f; // 카메라 위치에서 일정한 거리만큼 오프셋 설정.
-        transform.position = anchor.position + offset; // 카메라 위치에서 일정한 거리만큼 공을 위치.
+        Vector3 offset = Camera.main.transform.forward * 0.5f + Camera.main.transform.up * -0.2f; // 카메라 위치에서 일정한 거리만큼 오프셋 설정.
+        transform.position = position + offset; // 카메라 위치에서 일정한 거리만큼 공을 위치.
     }
 
     void ResetBall()
     {
         rb.isKinematic = true; // 물리 비활성화
+        transform.position = new Vector3(0, -0.2f, 0.75f); // 공을 초기 위치로 이동
         rb.velocity = Vector3.zero; // 공의 속도 초기화
+        result.text = ""; // 결과 텍스트 초기화
         isReady = true; // 공 준비
+        gameObject.SetActive(true); // 공 다시 활성화
     }
     void OnTriggerEnter(Collider other)
     {
@@ -80,6 +85,7 @@ public class BCtest : MonoBehaviour
             if (draw <= captureRate)
             {
                 result.text = "Catch!!";
+                pokedexManager.CaptureMonster(GetMonsterIndex(other.gameObject.name));
             }
             else
             {
@@ -90,10 +96,24 @@ public class BCtest : MonoBehaviour
 
             Destroy(other.gameObject);
             gameObject.SetActive(false);
+            Invoke("ResetBall", 3.0f); // 3초 뒤에 공을 다시 나타나게 한다.
         }
 
     }
-    void OnCollisionEnter(Collision collision)
+    int GetMonsterIndex(string monsterName)
+    {
+        // 몬스터 이름을 기반으로 인덱스를 결정 (추후 확장 또는 변경)
+        switch (monsterName)
+        {
+            case "Monster1": return 0;
+            case "Monster2": return 1;
+            case "Monster3": return 2;
+            case "Monster4": return 3;
+            case "Monster5": return 4;
+            default: return -1;
+        }
+    }
+    /*void OnCollisionEnter(Collision collision)
     {
         Debug.Log($"collsion : {collision.gameObject.name}");
         if (isReady)
@@ -118,5 +138,5 @@ public class BCtest : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-    }
+    }*/
 }
