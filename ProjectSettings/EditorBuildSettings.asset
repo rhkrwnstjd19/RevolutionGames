@@ -17,9 +17,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/(UI)Test_Collect 1.unity
     guid: addecb6b8a86d144e8fe1bb1bce4a3fa
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test_Collect_Dup2.unity
-    guid: 04cfd3a15e2286441a8e5e22fc83d3df
+    guid: 642e1d65c7824424a96a250c40a850e7
+  - enabled: 1
+    path: Assets/Scenes/(UI)Main Map - DungeonRPG 1.unity
+    guid: da253992001d0a6488056792c309f086
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: cd6ca4369b7f3ec4bb265c15bb631314,
       type: 2}
