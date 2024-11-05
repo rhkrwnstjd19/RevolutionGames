@@ -1,0 +1,54 @@
+{
+    "users": [
+        {
+            "id": "Admin",
+            "Level": 99,
+            "currentExp": 0.0,
+            "MaxExp": 0.0,
+            "attackVal": 9999,
+            "defenseVal": 9999,
+            "maxHp": 9999,
+            "basicAttackCooldown": 0.0,
+            "Stamina": 100.0,
+            "skill": [
+                {
+                    "instanceID": 37256
+                },
+                {
+                    "instanceID": 38092
+                },
+                {
+                    "instanceID": 36770
+                }
+            ],
+            "inventory": {
+                "instanceID": 37232
+            }
+        },
+        {
+            "id": "test",
+            "Level": 4,
+            "currentExp": 90.0,
+            "MaxExp": 400.0,
+            "attackVal": 30,
+            "defenseVal": 30,
+            "maxHp": 300,
+            "basicAttackCooldown": 0.0,
+            "Stamina": 0.0,
+            "skill": [
+                {
+                    "instanceID": 37256
+                },
+                {
+                    "instanceID": 38092
+                },
+                {
+                    "instanceID": 36770
+                }
+            ],
+            "inventory": {
+                "instanceID": 37232
+            }
+        }
+    ]
+}

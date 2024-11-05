@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DungeonPresenter : MonoBehaviour
 {
@@ -10,11 +11,15 @@ public class DungeonPresenter : MonoBehaviour
     public DungeonPresenter(DungeonView view){
         this.view = view;
         model = new DungeonModel();
+        Debug.Log("presenter Invoke model.GetPlayerData");
         this.model.GetPlayerData();
+        Debug.Log("presenter LoadPlayer");
         this.model.OnModelLoaded += LoadPlayer;
+        LoadPlayer();
     }
 
     void LoadPlayer(){
+        Debug.Log("presenter LoadPlayer");
         var player = model.player;
         view.InitPlayer(player);
         SwitchSkill(0);
@@ -62,11 +67,11 @@ public class DungeonPresenter : MonoBehaviour
         else if(skill.attackType == Enums.AttackType.SingleAttack){
             MissileManager.Instance.Init();
         }
+    }
 
-
-
-        //보스 공격
-        
+    public void ExitDungeon(){
+        model.SavePlayerData(view.player);
+        SceneManager.LoadScene("Main Map - DungeonRPG");
     }
 
 

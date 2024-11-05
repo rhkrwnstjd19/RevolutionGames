@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
+    [Header("Current Player")]
+    public ScriptablePlayer currentPlayer = new ScriptablePlayer();
     [HideInInspector]
     public bool isCleared = false;
 
@@ -12,7 +15,7 @@ public class GameManager : Singleton<GameManager>
     public DungeonInfo dungeonInfo;
     public bool isPlayerDead=false;
 
-    public static GameManager Instance;
+
     public List<Enemy> capturedMonsters = new List<Enemy>();
 
     private void Start()
@@ -47,17 +50,7 @@ public class GameManager : Singleton<GameManager>
         SceneManager.LoadScene(nam);
     }
 
-    void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+
 
     public void CaptureMonster(GameObject monster)
     {

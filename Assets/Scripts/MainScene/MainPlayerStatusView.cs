@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
 
 public class MainPlayerStatusView : MonoBehaviour
@@ -11,18 +12,25 @@ public class MainPlayerStatusView : MonoBehaviour
     public TMP_Text CurrentExp;
     public Slider ExpSlider;
     
-    public ScriptablePlayer player;
+    public ScriptablePlayer currentPlayer;
 
-    // Start is called before the first frame update
+    void Awake(){
+        GetPlayerData();
+    }
+    public async void GetPlayerData()
+    {
+        var playerdata = Addressables.LoadAssetAsync<ScriptablePlayer>("PlayerData");
+        await playerdata.Task;
+        currentPlayer = playerdata.Result;
+        UpdatePlayerView();
+    }
     void Start()
     {
-        PlayerLevel.text = player.Level.ToString();
-        CurrentGold.text = player.inventory.gold.ToString();
+        
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void UpdatePlayerView(){
+        PlayerLevel.text = currentPlayer.Level.ToString();
+        CurrentGold.text = "Gold : " + currentPlayer.inventory.gold.ToString();
     }
 }
