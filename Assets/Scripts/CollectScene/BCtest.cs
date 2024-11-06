@@ -33,63 +33,61 @@ public class BCtest : MonoBehaviour
     Vector3 startPos;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         // 각 볼 버튼에 클릭 이벤트 추가
         for (int i = 0; i < balls.Length; i++)
         {
             int index = i; // 버튼 클릭 시 사용하기 위한 로컬 변수
             Button ballButton = ballPanel.transform.GetChild(i).GetComponent<Button>();
-            ballButton.onClick.AddListener(() => SelectBall(index));
+            //ballButton.onClick.AddListener(() => SelectBall(index));
         }
 
         // 게임 시작 시 레벨 1의 볼 생성
-        SpawnInitialBall();
+        InitialBall();
     }
 
-    void SpawnInitialBall()
+    void InitialBall()
     {
-        if (balls.Length == 0)
-        {
-            //Debug.LogError("Ball prefabs are not assigned.");
-            return;
-        }
+        Debug.Log("InitialBall");
+
 
         // 레벨 1의 볼을 화면 중앙 하단부에 생성
-        currentBall = Instantiate(balls[currentBallIndex].ballPrefab, ballSpawnPoint.position, Quaternion.identity);
-        rb = currentBall.GetComponent<Rigidbody>();
+        //currentBall = Instantiate(balls[currentBallIndex].ballPrefab, ballSpawnPoint.position, Quaternion.identity);  
+        rb = gameObject.GetComponent<Rigidbody>();
         rb.isKinematic = true;
+        SetBallPosition();
     }
 
     // 볼 선택 및 교체
-    void SelectBall(int index)
-    {
-        if (index < 0 || index >= balls.Length)
-        {
-            Debug.LogError("Invalid ball index");
-            return;
-        }
+    // void SelectBall(int index)
+    // {
+    //     if (index < 0 || index >= balls.Length)
+    //     {
+    //         Debug.LogError("Invalid ball index");
+    //         return;
+    //     }
 
-        // 선택된 볼 인덱스 업데이트
-        currentBallIndex = index;
-        Debug.Log($"Selected Ball: {balls[currentBallIndex].ballName}");
+    //     // 선택된 볼 인덱스 업데이트
+    //     currentBallIndex = index;
+    //     Debug.Log($"Selected Ball: {balls[currentBallIndex].ballName}");
 
-        // 현재 존재하는 공을 삭제하고 새로운 공을 생성
-        if (currentBall != null)
-        {
-            Destroy(currentBall);
-        }
+    //     // 현재 존재하는 공을 삭제하고 새로운 공을 생성
+    //     if (currentBall != null)
+    //     {
+    //         Destroy(currentBall);
+    //     }
 
-        // 새로운 공 생성: 현재 공의 위치와 회전을 유지
-        Vector3 spawnPosition = ballSpawnPoint.position;
-        Quaternion spawnRotation = Quaternion.identity;
+    //     // 새로운 공 생성: 현재 공의 위치와 회전을 유지
+    //     Vector3 spawnPosition = ballSpawnPoint.position;
+    //     Quaternion spawnRotation = Quaternion.identity;
 
-        currentBall = Instantiate(balls[currentBallIndex].ballPrefab, spawnPosition, spawnRotation);
-        rb = currentBall.GetComponent<Rigidbody>();
-        rb.isKinematic = true;
+    //     currentBall = Instantiate(balls[currentBallIndex].ballPrefab, spawnPosition, spawnRotation);
+    //     rb = currentBall.GetComponent<Rigidbody>();
+    //     rb.isKinematic = true;
 
-        isReady = true; // 새로운 볼이 준비됨
-    }
+    //     isReady = true; // 새로운 볼이 준비됨
+    // }
 
     // Update is called once per frame
     void Update()
@@ -124,10 +122,10 @@ public class BCtest : MonoBehaviour
         }
     }
 
-    void SetBallPosition(Vector3 position)
+    void SetBallPosition()
     {
-        Vector3 offset = Camera.main.transform.forward * 0.5f + Camera.main.transform.up * -0.2f; // 카메라 위치에서 일정한 거리만큼 오프셋 설정.
-        transform.position = position + offset; // 카메라 위치에서 일정한 거리만큼 공을 위치.
+        Debug.Log("SetBallPosition");   
+        transform.position = new Vector3(0, -0.2f, 0.75f);
     }
 
     void ResetBall()
@@ -152,7 +150,9 @@ public class BCtest : MonoBehaviour
             if (draw <= captureRate)
             {
                 result.text = "Catch!!";
-                pokedexManager.CaptureMonster(GetMonsterIndex(other.gameObject.name));
+                int a = GetMonsterIndex(other.gameObject.name);
+                Debug.Log($"monster index : {a}");  
+                pokedexManager.CaptureMonster(a);
             }
             else
             {
@@ -169,6 +169,7 @@ public class BCtest : MonoBehaviour
 
     int GetMonsterIndex(string monsterName)
     {
+        Debug.LogWarning(monsterName);  
         // 몬스터 이름을 기반으로 인덱스를 결정 (추후 확장 또는 변경)
         switch (monsterName)
         {

@@ -13,11 +13,10 @@ GameObject:
   - component: {fileID: 3971030329812570225}
   - component: {fileID: 3000311779157644625}
   - component: {fileID: 6671897506324234453}
-  - component: {fileID: 8839273421520882753}
   - component: {fileID: 5514589853907710188}
   m_Layer: 0
   m_Name: Ball-Lv2
-  m_TagString: Untagged
+  m_TagString: CatchBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7364519135318851040}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.072, y: 0.148, z: 0.85}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -102,7 +101,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -135,26 +134,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8839273421520882753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7364519135318851040}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 797ed3c7ed3774349b0466ca7b365346, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetTime: 3
-  captureRate: 1
-  result: {fileID: 0}
-  effect: {fileID: 8791802859087666345, guid: ae07f2a45f14a82428409cfe410e6002, type: 3}
-  monsterManager: {fileID: 0}
-  pokedexManager: {fileID: 0}
-  targetMonsterIndex: 0
-  throwForceMultiplier: 5
 --- !u!114 &5514589853907710188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +146,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae661a6766f4bc489cf48a1081b1301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  balls: []
+  ballPanel: {fileID: 0}
   resetTime: 3
   captureRate: 0.4
-  result: {fileID: 0}
+  result: {fileID: 5204871561202729084, guid: 05f3cc4c94fed1a48a7ceceb388b7537, type: 3}
   effect: {fileID: 8791802859087666345, guid: ae07f2a45f14a82428409cfe410e6002, type: 3}
+  pokedexManager: {fileID: 1817977350401179763, guid: 4b458973ee70d124d9b9e1b3e48b33c6,
+    type: 3}
+  ballSpawnPoint: {fileID: 0}

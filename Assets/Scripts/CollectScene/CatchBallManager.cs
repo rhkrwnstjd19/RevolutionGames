@@ -42,6 +42,8 @@ public class CatchBallManager : MonoBehaviour
 
         // 패널을 처음에는 비활성화 상태로 설정
         catchBallPanel.SetActive(false);
+
+        activeBall = GameObject.FindWithTag("CatchBall");
     }
 
     // 볼 선택
@@ -56,9 +58,21 @@ public class CatchBallManager : MonoBehaviour
         // 선택된 볼 인덱스 업데이트
         currentBallIndex = index;
         Debug.Log($"Selected Ball: {balls[currentBallIndex].ballName}");
-        
+        SpawnBall();
         // 볼 선택 후 패널 닫기
         catchBallPanel.SetActive(false);
+    }
+
+    void SpawnBall()
+    {
+        // 기존에 사용 중인 볼이 있으면 삭제
+        if (activeBall != null)
+        {
+            Destroy(activeBall);
+        }
+
+        // 선택된 볼을 화면 중앙 하단부에 생성
+        activeBall = Instantiate(balls[currentBallIndex].ballPrefab);
     }
 
     // 현재 선택된 볼을 던질 때 호출

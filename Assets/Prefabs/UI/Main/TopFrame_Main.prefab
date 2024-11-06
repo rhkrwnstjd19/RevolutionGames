@@ -455,7 +455,8 @@ MonoBehaviour:
   CurrentGold: {fileID: 7927733609331156559}
   CurrentExp: {fileID: 0}
   ExpSlider: {fileID: 0}
-  player: {fileID: 11400000, guid: 17fa984275a91ae4aa6186997e0e5710, type: 2}
+  Stamina: {fileID: 0}
+  currentPlayer: {fileID: 0}
 --- !u!1 &1157682523487639730
 GameObject:
   m_ObjectHideFlags: 0
