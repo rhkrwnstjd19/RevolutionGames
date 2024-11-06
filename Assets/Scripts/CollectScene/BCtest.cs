@@ -2,14 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class BCtest : MonoBehaviour
 {
+    [System.Serializable]
+    public class BallInfo
+    {
+        public string ballName;
+        public GameObject ballPrefab;
+        public int ballCount; // 소모품인 볼의 갯수 (Lv 2~5)
+        public TMP_Text countText;
+    }
+
+    public BallInfo[] balls; // 볼 종류 정보 (Lv1~5)
+    private int currentBallIndex = 0; // 현재 선택된 볼의 인덱스
+    public GameObject ballPanel; // BallPanel 오브젝트
+
     public float resetTime = 3.0f;
     public float captureRate = 1.0f;
     public TMP_Text result;
     public GameObject effect;
     public PokedexManager pokedexManager;
+    public Transform ballSpawnPoint; // 공이 나타날 위치
+
+    private GameObject currentBall; // 현재 활성화된 공 오브젝트
 
     Rigidbody rb;
     bool isReady = true;
@@ -18,8 +35,60 @@ public class BCtest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        // 각 볼 버튼에 클릭 이벤트 추가
+        for (int i = 0; i < balls.Length; i++)
+        {
+            int index = i; // 버튼 클릭 시 사용하기 위한 로컬 변수
+            Button ballButton = ballPanel.transform.GetChild(i).GetComponent<Button>();
+            ballButton.onClick.AddListener(() => SelectBall(index));
+        }
+
+        // 게임 시작 시 레벨 1의 볼 생성
+        SpawnInitialBall();
+    }
+
+    void SpawnInitialBall()
+    {
+        if (balls.Length == 0)
+        {
+            //Debug.LogError("Ball prefabs are not assigned.");
+            return;
+        }
+
+        // 레벨 1의 볼을 화면 중앙 하단부에 생성
+        currentBall = Instantiate(balls[currentBallIndex].ballPrefab, ballSpawnPoint.position, Quaternion.identity);
+        rb = currentBall.GetComponent<Rigidbody>();
         rb.isKinematic = true;
+    }
+
+    // 볼 선택 및 교체
+    void SelectBall(int index)
+    {
+        if (index < 0 || index >= balls.Length)
+        {
+            Debug.LogError("Invalid ball index");
+            return;
+        }
+
+        // 선택된 볼 인덱스 업데이트
+        currentBallIndex = index;
+        Debug.Log($"Selected Ball: {balls[currentBallIndex].ballName}");
+
+        // 현재 존재하는 공을 삭제하고 새로운 공을 생성
+        if (currentBall != null)
+        {
+            Destroy(currentBall);
+        }
+
+        // 새로운 공 생성: 현재 공의 위치와 회전을 유지
+        Vector3 spawnPosition = ballSpawnPoint.position;
+        Quaternion spawnRotation = Quaternion.identity;
+
+        currentBall = Instantiate(balls[currentBallIndex].ballPrefab, spawnPosition, spawnRotation);
+        rb = currentBall.GetComponent<Rigidbody>();
+        rb.isKinematic = true;
+
+        isReady = true; // 새로운 볼이 준비됨
     }
 
     // Update is called once per frame
@@ -29,9 +98,6 @@ public class BCtest : MonoBehaviour
         {
             return;
         }
-
-        // SetBallPosition(Camera.main.transform.position + new Vector3(0, 0, 0.5f)); // 볼을 카메라 전방 위치에 고정한다.
-
 
         if (Input.touchCount > 0 && isReady) // 한 개 이상의 터치가 있을 때
         {
@@ -67,12 +133,13 @@ public class BCtest : MonoBehaviour
     void ResetBall()
     {
         rb.isKinematic = true; // 물리 비활성화
-        transform.position = new Vector3(0, -0.2f, 0.75f); // 공을 초기 위치로 이동
+        currentBall.transform.position = new Vector3(0, -0.2f, 0.75f); // 공을 초기 위치로 이동
         rb.velocity = Vector3.zero; // 공의 속도 초기화
         result.text = ""; // 결과 텍스트 초기화
         isReady = true; // 공 준비
-        gameObject.SetActive(true); // 공 다시 활성화
+        currentBall.SetActive(true); // 공 다시 활성화
     }
+
     void OnTriggerEnter(Collider other)
     {
         Debug.Log($"collsion : {other.gameObject.tag}");
@@ -95,11 +162,11 @@ public class BCtest : MonoBehaviour
             Instantiate(effect, other.transform.position, Camera.main.transform.rotation);
 
             Destroy(other.gameObject);
-            gameObject.SetActive(false);
+            currentBall.SetActive(false);
             Invoke("ResetBall", 3.0f); // 3초 뒤에 공을 다시 나타나게 한다.
         }
-
     }
+
     int GetMonsterIndex(string monsterName)
     {
         // 몬스터 이름을 기반으로 인덱스를 결정 (추후 확장 또는 변경)
@@ -113,30 +180,4 @@ public class BCtest : MonoBehaviour
             default: return -1;
         }
     }
-    /*void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log($"collsion : {collision.gameObject.name}");
-        if (isReady)
-            return;
-
-        // 충돌한 오브젝트가 "Enemy" 태그를 가지고 있을 때만 처리
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            float draw = Random.Range(0, 1.0f);
-            if (draw <= captureRate)
-            {
-                result.text = "Catch!!";
-            }
-            else
-            {
-                result.text = "fail..";
-            }
-
-            Instantiate(effect, collision.transform.position, Camera.main.transform.rotation);
-
-            Destroy(collision.gameObject);
-            gameObject.SetActive(false);
-        }
-
-    }*/
 }
