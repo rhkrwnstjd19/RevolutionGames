@@ -8,7 +8,7 @@ using UnityEngine.Events;
 
 
 public class MoveAvatar : MonoBehaviour {
-
+	public GameObject Stamina;
 	public GOMap goMap;
 	public GameObject avatarFigure;
 
@@ -23,7 +23,7 @@ public class MoveAvatar : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		Stamina.SetActive(false);
 		goMap.locationManager.onOriginSet.AddListener((Coordinates) => {OnOriginSet(Coordinates);});
 		goMap.locationManager.onLocationChanged.AddListener((Coordinates) => {OnLocationChanged(Coordinates);});
 		if (goMap.useElevation)
@@ -88,7 +88,7 @@ public class MoveAvatar : MonoBehaviour {
 	}
 
 	private IEnumerator move(Vector3 lastPosition, Vector3 currentPosition, float time) {
-
+		Stamina.SetActive(true);
 		float elapsedTime = 0;
 		Vector3 targetDir = currentPosition-lastPosition;
 		Quaternion finalRotation = Quaternion.LookRotation (targetDir);
@@ -116,7 +116,7 @@ public class MoveAvatar : MonoBehaviour {
 
 			yield return new WaitForEndOfFrame();
 		}
-
+		Stamina.SetActive(false);
 		animationState = AvatarAnimationState.Idle;
 		OnAnimationStateChanged.Invoke(animationState);
 

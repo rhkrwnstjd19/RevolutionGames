@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using NSubstitute;
+using TMPro;
 using UnityEngine;
 
 public class DatabaseManager : Singleton<DatabaseManager>
 {
     public UserDatabase userDatabase;
     private string filePath;
-
+    public ScriptablePlayer currentPlayer;
+    public TMP_Text DebugText;
     void Start(){
-        filePath = Path.Combine(Application.dataPath, "playerData1.json");
+        filePath = Path.Combine(Application.persistentDataPath, "playerData123.json");
         LoadUserDatabase();
     }
     private void LoadUserDatabase()
@@ -36,11 +38,13 @@ public class DatabaseManager : Singleton<DatabaseManager>
         string json = JsonUtility.ToJson(userDatabase, true);
         File.WriteAllText(filePath, json);
         Debug.Log("User database saved to: " + filePath);
+        DebugText.text += "User database saved to: " + filePath;
     }
 
     public void SavePlayerData(ScriptablePlayer player)
     {
         int userPos = userDatabase.users.FindIndex(x => x.id == player.id);
+        DebugText.text += "Exist!:" + userPos.ToString() + "\n";
         userDatabase.users[userPos].id = player.id;
         userDatabase.users[userPos].Level = player.Level;
         userDatabase.users[userPos].currentExp = player.currentExp;
@@ -54,4 +58,11 @@ public class DatabaseManager : Singleton<DatabaseManager>
         userDatabase.users[userPos].inventory = player.inventory;
         SaveUserDatabase();
     }
+
+    public void CurrentPlayerData(ScriptablePlayer player)
+    {
+        currentPlayer = player;
+    }
+
+    
 }

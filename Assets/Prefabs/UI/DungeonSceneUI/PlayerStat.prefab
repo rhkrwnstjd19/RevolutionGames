@@ -1835,7 +1835,11 @@ MonoBehaviour:
   ExpSlider: {fileID: 213878521204333901}
   Skill: {fileID: 0}
   fireButton: {fileID: 400021626876068020}
-  FirePosition: {fileID: 0}
+  ExitDungeon: {fileID: 48773641908241288, guid: 27becedc916aa124980632df089f3663,
+    type: 3}
+  FirePosition1: {fileID: 0}
+  FirePosition2: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &7195020905431736515
 GameObject:
   m_ObjectHideFlags: 0

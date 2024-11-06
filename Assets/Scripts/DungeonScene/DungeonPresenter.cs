@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,9 +13,9 @@ public class DungeonPresenter : MonoBehaviour
         this.view = view;
         model = new DungeonModel();
         Debug.Log("presenter Invoke model.GetPlayerData");
-        this.model.GetPlayerData();
+        model.GetPlayerData();
         Debug.Log("presenter LoadPlayer");
-        this.model.OnModelLoaded += LoadPlayer;
+        model.OnModelLoaded1 +=LoadPlayer;
         LoadPlayer();
     }
 
@@ -70,9 +71,14 @@ public class DungeonPresenter : MonoBehaviour
     }
 
     public void ExitDungeon(){
-        model.SavePlayerData(view.player);
+        view.dubuggingText.text = "Exit Dungeon Clicked\n!";
+        view.dubuggingText.text += "STart SavePlayerData\n";
+        DatabaseManager.Instance.SavePlayerData(view.player);
+        view.dubuggingText.text += "End SavePlayerData\n";
+
         SceneManager.LoadScene("Main Map - DungeonRPG");
     }
+
 
 
 }

@@ -29,7 +29,7 @@ public class DungeonView : MonoBehaviour
     private float pendingExp = 0f;
     private bool isAnimatingExp = false;
 
-
+    public TMP_Text dubuggingText;
     void Awake()
     {
         presenter = new DungeonPresenter(this);
@@ -54,8 +54,6 @@ public class DungeonView : MonoBehaviour
 
     public void InitPlayer(ScriptablePlayer player){
         this.player = player;
-        ExpSlider.value = player.currentExp;
-        ExpSlider.maxValue = player.MaxExp;
         UpdatePlayerView();
     }
     public void UpdateExp(float exp)

@@ -42,7 +42,7 @@ public class LoginManager : MonoBehaviour
     }
     public async void GetPlayerData()
     {
-        var playerdata = Addressables.LoadAssetAsync<ScriptablePlayer>("PlayerData");
+        var playerdata = Addressables.LoadAssetAsync<ScriptablePlayer>("SO/MAIN");
         await playerdata.Task;
         currentPlayer = playerdata.Result;
     }
@@ -85,6 +85,7 @@ public class LoginManager : MonoBehaviour
         currentPlayer.Stamina = loadedData.Stamina;
         currentPlayer.skill = loadedData.skill;
         currentPlayer.inventory = loadedData.inventory;
+        DatabaseManager.Instance.CurrentPlayerData(currentPlayer);
     }
 
     //유저 데이터 로드
@@ -120,8 +121,9 @@ public class LoginManager : MonoBehaviour
         newUser.inventory = playerData.inventory;
 
         DatabaseManager.Instance.userDatabase.users.Add(newUser);
-        InitCurrentPlayer(newUser);
         DatabaseManager.Instance.SaveUserDatabase(); //
+        InitCurrentPlayer(newUser);
+        
         Debug.Log("User registered successfully!");
     }
 

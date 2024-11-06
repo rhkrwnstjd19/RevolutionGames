@@ -22,7 +22,7 @@ public class GameResult : MonoBehaviour
 
     public ScriptableResult result;
 
-    async void Start(){
+    void Start(){
         AddressablesLoad();
         SetResult();
     }
