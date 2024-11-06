@@ -33,8 +33,6 @@ namespace SharpUI.Source.Common.UI.Elements.ModalViews
 
         private void SetUp()
         {
-            if(closeButton == null)  return;
-            if(collapseButton == null) return;
             if (closeButton.gameObject.activeSelf)
                 closeButton.GetEventListener().ObserveOnClicked().SubscribeWith(this,
                     _ => CloseModalView());
@@ -69,7 +67,6 @@ namespace SharpUI.Source.Common.UI.Elements.ModalViews
             if (_isCollapsed)
                 Collapse();
             else
-                if(closeButton == null|| collapseButton == null) return;
                 Expand();
         }
 

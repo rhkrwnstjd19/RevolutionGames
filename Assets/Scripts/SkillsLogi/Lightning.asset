@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378fb4eec0f59ac4c95c0d5b227aa85e, type: 3}
-  m_Name: SimulationEnvironmentAssetsManager
+  m_Script: {fileID: 11500000, guid: c1c5051d7a8da7b4294bb2e6d02b81ff, type: 3}
+  m_Name: Lightning
   m_EditorClassIdentifier: 
-  m_EnvironmentPrefabPaths:
-  - Packages/com.unity.xr.arfoundation/Assets/Prefabs/DefaultSimulationEnvironment.prefab
-  m_FallbackAtEndOfList: 0
+  skillName: Lightnig
+  description: Targetin Enmey Attack
+  skillIcon: {fileID: 21300000, guid: c7983f142b364304a82bb8158574b413, type: 3}
+  cooldown: 5
+  damage: 2
+  skillPrefab: {fileID: 0}

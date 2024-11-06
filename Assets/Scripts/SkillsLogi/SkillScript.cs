@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-public enum AttackTypes
+public enum AttackType
 {
     Throw,
     Target,

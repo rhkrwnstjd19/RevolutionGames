@@ -6,21 +6,16 @@ TagManager:
   tags:
   - Attack
   - Enemy
-  - Dungeon
-  - RPGDungeon
-  - BossDungeon
-  - EnemyBoss
-  - Buildings
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - GOTerrain
+  - 
   - Water
   - UI
-  - Enemy
+  - 
   - shop
-  - EnemyBoss
+  - 
   - 
   - 
   - 

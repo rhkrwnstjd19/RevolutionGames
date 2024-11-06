@@ -11,13 +11,9 @@ public class UIManager : MonoBehaviour
     float longitude = 0;
     float latitude = 0;
 
-    public Transform spawnPoint;
-    public Button captureButton;
-
     public GameObject dungeon_menu;
     public GameObject exit_menu;
     public GameObject obj;
-    public GameObject monsterBallPrefab;
     public SpawnMode spawnMode;
 
     public TMP_Text result1;
@@ -43,8 +39,7 @@ public class UIManager : MonoBehaviour
         
     void Start()
     {
-        //player = GameObject.FindWithTag("Player").GetComponent<Player>();
-        captureButton.onClick.AddListener(SpawnMonsterBall);
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
         if (obj != null)
         {
             obj.SetActive(false);
@@ -148,12 +143,6 @@ public class UIManager : MonoBehaviour
     public void Main_Scene()
     {
         SceneManager.LoadScene("gps_scene");
-    }
-
-    public void SpawnMonsterBall()
-    {
-        // 몬스터볼 생성
-        Instantiate(monsterBallPrefab, spawnPoint.position, Quaternion.identity);
     }
 }
 

@@ -9,14 +9,14 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //curHp = DataManager.Instance.PlayerMaxHp;
+        curHp = DataManager.Instance.PlayerMaxHp;
         isDead = false;
-        //GameManager.Instance.isPlayerDead = isDead;
+        GameManager.Instance.isPlayerDead = isDead;
     }
     
     public void decreaseHp(int attackAmount)
     {
-        //HP ï¿½ï¿½ï¿½ï¿½
+        //HP °¨¼Ò
         curHp -= attackAmount;
         if (curHp <= 0)
         {

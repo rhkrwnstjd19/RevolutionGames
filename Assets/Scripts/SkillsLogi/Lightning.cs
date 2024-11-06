@@ -11,7 +11,7 @@ public class Lightning : MonoBehaviour
     {
         
         lightning.StartObject.transform.position = Camera.main.transform.position;
-        //targetEnemy.GetComponent<ZombieScript>().decreaseEnemyHp(skill.damage);
+        targetEnemy.GetComponent<ZombieScript>().decreaseEnemyHp(skill.damage);
     }
     private void Update()
     {

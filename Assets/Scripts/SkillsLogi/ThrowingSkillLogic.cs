@@ -19,11 +19,12 @@ public class ThrowingSkillLogic : MonoBehaviour, ISkillLogic
             StartCoroutine(Cooltime(skillData.cooldown));
             pos = Camera.main.transform.position;
 
-            Vector3 screenCenter = new Vector3(0.5f, 0.5f, 0.5f); 
+            Vector3 screenCenter = new Vector3(0.5f, 0.5f, 0.5f); // z °ªÀº Ä«¸Þ¶ó¿¡¼­ ¾ó¸¶³ª ¸Ö¸® ¶³¾îÁ® ÀÖ´ÂÁö¸¦ °áÁ¤
             Vector3 fireStartPosition = Camera.main.ViewportToWorldPoint(screenCenter);
 
             GameObject throwSkill = Instantiate(throwSkillPrefab, fireStartPosition, Quaternion.identity);
             StartCoroutine(DestroySkill(throwSkill));
+            // ÆÄÀÌ¾îº¼¿¡ ¸®Áöµå¹Ùµð ÄÄÆ÷³ÍÆ®°¡ ÀÖ´ÂÁö È®ÀÎÇÏ°í, ¼Óµµ¸¦ ¼³Á¤ÇÕ´Ï´Ù.
             Rigidbody rb = throwSkill.GetComponent<Rigidbody>();
             if (rb != null)
             {
@@ -43,7 +44,7 @@ public class ThrowingSkillLogic : MonoBehaviour, ISkillLogic
     {
         yield return new WaitForSeconds(aliveTime);
 
-        // ï¿½Ì¹ï¿½ ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾Ò´Ù¸ï¿½ ï¿½Ä±ï¿½
+        // ÀÌ¹Ì ÆÄ±«µÇÁö ¾Ê¾Ò´Ù¸é ÆÄ±«
         if (skill!=null)
         {
             Destroy(skill);
