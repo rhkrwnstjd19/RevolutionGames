@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
+    [Header("Current Player")]
+    public ScriptablePlayer currentPlayer = new ScriptablePlayer();
     [HideInInspector]
     public bool isCleared = false;
 
@@ -11,6 +14,9 @@ public class GameManager : Singleton<GameManager>
     private Player player;
     public DungeonInfo dungeonInfo;
     public bool isPlayerDead=false;
+
+
+    public List<Enemy> capturedMonsters = new List<Enemy>();
 
     private void Start()
     {
@@ -42,5 +48,18 @@ public class GameManager : Singleton<GameManager>
     public void SceneChange(string nam)
     {
         SceneManager.LoadScene(nam);
+    }
+
+
+
+    public void CaptureMonster(GameObject monster)
+    {
+        Enemy enemyData = monster.GetComponent<Enemy>();
+        if (!capturedMonsters.Contains(enemyData))
+        {
+            capturedMonsters.Add(enemyData);
+            Debug.Log(enemyData.enemyName + " has been added to your collection.");
+            // 도감 UI 업데이트 - 도감 스크립트에서 처리
+        }
     }
 }
