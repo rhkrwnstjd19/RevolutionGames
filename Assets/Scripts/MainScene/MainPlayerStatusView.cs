@@ -20,6 +20,7 @@ public class MainPlayerStatusView : MonoBehaviour
 
     void Awake(){
         presenter = new MainPlayerStatusPresenter(this);
+        UpdatePlayerView();
     }
 
     public void UpdatePlayerView(){

@@ -368,7 +368,7 @@ namespace GoShared {
 
             if (!v.Equals(current)) {
 				currentLocation = Coordinates.convertVectorToCoordinates (v);
-				if (onLocationChanged != null) {
+				if (onLocationChanged != null&&currentLocation!=null) {
 					onLocationChanged.Invoke (currentLocation);
 				}
 			}

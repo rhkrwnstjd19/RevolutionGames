@@ -36,6 +36,7 @@ public class DungeonView : MonoBehaviour
         SwitchSkill.onValueChanged.AddListener(delegate { presenter.SwitchSkill(SwitchSkill.value); });
         fireButton.onClick.AddListener(delegate{presenter.Fire(Skill);} );
         ExitDungeon.onClick.AddListener(delegate{presenter.ExitDungeon();});
+        UpdatePlayerView();
     }
 
     // Update is called once per frame

@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.IO;
 using NSubstitute;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEditor.AddressableAssets.Build;
 using UnityEngine;
 
-public class DatabaseManager : Singleton<DatabaseManager>
+public class DatabaseManager : SingletonWithDontDestroyOnLoad<DatabaseManager>
 {
     public UserDatabase userDatabase;
     private string filePath;
     public ScriptablePlayer currentPlayer;
     public TMP_Text DebugText;
     void Start(){
+        
         filePath = Path.Combine(Application.persistentDataPath, "playerData123.json");
         LoadUserDatabase();
     }
@@ -30,7 +33,6 @@ public class DatabaseManager : Singleton<DatabaseManager>
             Debug.Log("No user database found, creating new one at: " + filePath);
         }
     }
-
     
     //데이터베이스 저장
     public void SaveUserDatabase()
@@ -63,6 +65,14 @@ public class DatabaseManager : Singleton<DatabaseManager>
     {
         currentPlayer = player;
     }
-
+    private void OnApplicationPause(bool pause)
+    {
+        if(pause)
+            SavePlayerData(currentPlayer);
+    }
+    private void OnApplicationQuit()
+    {
+        SavePlayerData(currentPlayer);
+    }
     
 }

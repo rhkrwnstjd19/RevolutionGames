@@ -17,4 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeon&Enemy/BossDungeon.unity
     guid: 565b7476d3948f644995eacfc0f8668e
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: da4120ff215dacf4c9afa2887af8f5bb,
+      type: 2}

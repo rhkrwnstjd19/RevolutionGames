@@ -15,7 +15,7 @@ public class PokedexManager : MonoBehaviour
     }
 
     public MonsterSlot[] monsterSlots = new MonsterSlot[5]; // 5개의 몬스터 슬롯 (추후 확장 가능)
-    private bool[] capturedMonsters; // 몬스터 포획 상태를 추적
+    public List<bool> capturedMonsters=new List<bool> (); // 몬스터 포획 상태를 추적
     public Button nextPageButton;
     public Button previousPageButton;
     private int currentPage = 0;
@@ -25,31 +25,47 @@ public class PokedexManager : MonoBehaviour
 
     void Awake()
     {
-        // 몬스터 포획 상태 배열 초기화 (초기는 미포획 상태로 시작)
-        capturedMonsters = new bool[monsterSlots.Length];
+        // 몬스터 포획 상태 배열 초기화
+        // for(int i=0;i<monsterSlots.Length;i++)
+        // {
+        //     capturedMonsters.Add(true);
+        // }
+        // // 몬스터 포획 상태 배열 초기화 (초기는 미포획 상태로 시작)
+        Debug.Log($"Captured monsters: {capturedMonsters.Count}");
+        Debug.Log($"Monster Array initialized");
 
-        for(int i = 0; i < capturedMonsters.Length; i++)
-        {
-            capturedMonsters[i] = false;
-        }
         // 모든 몬스터 슬롯을 초기 상태로 설정 (실루엣 및 비활성화)
         for (int i = 0; i < monsterSlots.Length; i++)
         {
             SetMonsterSlotInactive(i);
         }
-    }
+        StartCoroutine(CheckStatus());
 
+    }
+    float time = 0;
+    IEnumerator CheckStatus()
+    {
+        while(true){
+            time+=1f;
+            yield return new WaitForSeconds(time);
+            
+            Debug.Log($"Captured monster Status:{time} : {capturedMonsters.Count}");
+        }
+        
+    }
     // 몬스터를 포획했을 때 호출
     public void CaptureMonster(int monsterIndex)
     {
         Debug.Log($"Monster {monsterIndex} captured!"); 
-        // if (monsterIndex < 0 || monsterIndex >= capturedMonsters.Length)
-        // {
-        //     Debug.LogError("유효하지 않은 몬스터. 인덱스 수정 필요");
-        //     return;
-        // }
-
+        
+        Debug.Log(monsterIndex); // 0
+        Debug.Log(capturedMonsters.Count);//5
         // 포획된 상태로 설정
+        if (monsterIndex < 0 || monsterIndex >= capturedMonsters.Count)
+        {
+            Debug.LogError("유효하지 않은 몬스터. 인덱스 수정 필요");
+            return;
+        }//0,1,2,3,4
         capturedMonsters[monsterIndex] = true;
 
         // 해당 몬스터 슬롯 활성화
@@ -136,8 +152,8 @@ public class PokedexManager : MonoBehaviour
             }
         }
 
-        float progress = (float)capturedCount / capturedMonsters.Length;
+        float progress = (float)capturedCount / capturedMonsters.Count;
         progressBar.value = progress;
-        progressText.text = $"{capturedCount} / {capturedMonsters.Length}";
+        progressText.text = $"{capturedCount} / {capturedMonsters.Count}";
     }
 }

@@ -1379,7 +1379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userDatabase:
     users: []
-  currentPlayer: {fileID: 0}
+  currentPlayer: {fileID: 11400000, guid: b97634ce54ccf0b47916131e3255e1d7, type: 2}
   DebugText: {fileID: 1537950364}
 --- !u!1 &1522189341
 GameObject:

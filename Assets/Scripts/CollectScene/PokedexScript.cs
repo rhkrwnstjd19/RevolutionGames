@@ -16,7 +16,7 @@ public class PokedexScript : MonoBehaviour
         // 버튼에 클릭 이벤트 추가
         openButton.onClick.AddListener(ToggleBook);
         // 패널을 숨김
-        monsterBookPanel.SetActive(false);
+        // monsterBookPanel.SetActive(false);
     }
 
     public void ToggleBook()
