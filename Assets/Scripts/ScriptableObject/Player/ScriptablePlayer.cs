@@ -12,6 +12,7 @@ public class ScriptablePlayer : ScriptableObject
     public int defenseVal;
     public int maxHp;
     public float basicAttackCooldown;
+    public float Stamina = 0;
     public List<ScriptableSkill> skill;
     public ScriptableInventory inventory;
     public void LevelUp(){

@@ -17,11 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: f0ba915c949771d4bb507d2aba13ab2d
   m_SerializeEntries:
-  - m_GUID: 17fa984275a91ae4aa6186997e0e5710
-    m_Address: PlayerData
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b474e14cf5ceff244875422b4f265aa9
     m_Address: ResultSO
     m_ReadOnly: 0
@@ -29,6 +24,16 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a0befe13d4fce914e89ae6516c752300
     m_Address: Inventory
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b97634ce54ccf0b47916131e3255e1d7
+    m_Address: SO/MAIN
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a324a9e36771bbe4887cd784dfabd720
+    m_Address: PlayerTest
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

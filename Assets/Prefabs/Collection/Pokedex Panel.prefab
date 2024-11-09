@@ -1744,6 +1744,7 @@ MonoBehaviour:
   - monsterImage: {fileID: 7303205811585802040}
     monsterName: {fileID: 4526505129075312138}
     monsterDescription: {fileID: 558159346478403061}
+  capturedMonsters: 0000000000
   nextPageButton: {fileID: 3409798458378137007}
   previousPageButton: {fileID: 5923409298678732629}
   progressBar: {fileID: 3055407403930016090}

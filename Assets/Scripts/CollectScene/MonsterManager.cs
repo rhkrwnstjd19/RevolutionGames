@@ -15,7 +15,7 @@ public class MonsterManager : MonoBehaviour
     // 게임 시작 시 초기화
     void Start()
     {
-        pokedexPanel.SetActive(false);  // 처음에는 도감이 보이지 않음
+        // pokedexPanel.SetActive(false);  // 처음에는 도감이 보이지 않음
         //UpdatePokedex();  // 도감 UI 업데이트
         monsterUIElements = new GameObject[monsters.Count];
     }

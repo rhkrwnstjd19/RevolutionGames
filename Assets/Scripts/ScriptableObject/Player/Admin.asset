@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b57a56f205ffdbf42a49019f71cde038, type: 3}
+  m_Name: Admin
+  m_EditorClassIdentifier: 
+  id: 
+  Level: 99
+  currentExp: 0
+  MaxExp: 0
+  attackVal: 9999
+  defenseVal: 9999
+  maxHp: 9999
+  basicAttackCooldown: 0
+  Stamina: 100
+  skill:
+  - {fileID: 11400000, guid: 032dbbc224055124098d241e0e89e160, type: 2}
+  - {fileID: 11400000, guid: 592c8e41cfc931d4ea720a7accdee1ff, type: 2}
+  - {fileID: 11400000, guid: 128f62d0b64482e45a5873ffa18d0c4c, type: 2}
+  inventory: {fileID: 11400000, guid: a0befe13d4fce914e89ae6516c752300, type: 2}

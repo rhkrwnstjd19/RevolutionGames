@@ -11,6 +11,7 @@ TagManager:
   - BossDungeon
   - EnemyBoss
   - Buildings
+  - CatchBall
   layers:
   - Default
   - TransparentFX

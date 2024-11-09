@@ -1,0 +1,204 @@
+{
+    "users": [
+        {
+            "id": "Admin",
+            "Level": 99,
+            "currentExp": 0.0,
+            "MaxExp": 0.0,
+            "attackVal": 9999,
+            "defenseVal": 9999,
+            "maxHp": 9999,
+            "basicAttackCooldown": 0.0,
+            "Stamina": 100.0,
+            "skill": [
+                {
+                    "instanceID": 0
+                },
+                {
+                    "instanceID": 0
+                },
+                {
+                    "instanceID": 0
+                }
+            ],
+            "inventory": {
+                "instanceID": 0
+            }
+        },
+        {
+            "id": "test",
+            "Level": 4,
+            "currentExp": 310.0,
+            "MaxExp": 400.0,
+            "attackVal": 30,
+            "defenseVal": 30,
+            "maxHp": 300,
+            "basicAttackCooldown": 0.0,
+            "Stamina": 6.5,
+            "skill": [
+                {
+                    "instanceID": 0
+                },
+                {
+                    "instanceID": 0
+                },
+                {
+                    "instanceID": 0
+                }
+            ],
+            "inventory": {
+                "instanceID": 0
+            }
+        },
+        {
+            "id": "test2",
+            "Level": 1,
+            "currentExp": 0.0,
+            "MaxExp": 50.0,
+            "attackVal": 0,
+            "defenseVal": 0,
+            "maxHp": 0,
+            "basicAttackCooldown": 0.0,
+            "Stamina": 0.0,
+            "skill": [
+                {
+                    "instanceID": 37268
+                },
+                {
+                    "instanceID": 38110
+                },
+                {
+                    "instanceID": 36782
+                }
+            ],
+            "inventory": {
+                "instanceID": 37244
+            }
+        },
+        {
+            "id": "test23",
+            "Level": 3,
+            "currentExp": 180.0,
+            "MaxExp": 200.0,
+            "attackVal": 20,
+            "defenseVal": 20,
+            "maxHp": 200,
+            "basicAttackCooldown": 0.0,
+            "Stamina": 2.0,
+            "skill": [
+                {
+                    "instanceID": 37268
+                },
+                {
+                    "instanceID": 38110
+                },
+                {
+                    "instanceID": 36782
+                }
+            ],
+            "inventory": {
+                "instanceID": 37244
+            }
+        },
+        {
+            "id": "ㅅㄷㄴㅅ23",
+            "Level": 2,
+            "currentExp": 60.0,
+            "MaxExp": 100.0,
+            "attackVal": 10,
+            "defenseVal": 10,
+            "maxHp": 100,
+            "basicAttackCooldown": 0.0,
+            "Stamina": 0.5,
+            "skill": [
+                {
+                    "instanceID": 37268
+                },
+                {
+                    "instanceID": 38110
+                },
+                {
+                    "instanceID": 36782
+                }
+            ],
+            "inventory": {
+                "instanceID": 37244
+            }
+        },
+        {
+            "id": "ㅅㄷㄴㅅ123",
+            "Level": 3,
+            "currentExp": 70.0,
+            "MaxExp": 200.0,
+            "attackVal": 20,
+            "defenseVal": 20,
+            "maxHp": 200,
+            "basicAttackCooldown": 0.0,
+            "Stamina": 0.5,
+            "skill": [
+                {
+                    "instanceID": 37268
+                },
+                {
+                    "instanceID": 38110
+                },
+                {
+                    "instanceID": 36782
+                }
+            ],
+            "inventory": {
+                "instanceID": 37244
+            }
+        },
+        {
+            "id": "TESR1234",
+            "Level": 3,
+            "currentExp": 70.0,
+            "MaxExp": 200.0,
+            "attackVal": 20,
+            "defenseVal": 20,
+            "maxHp": 200,
+            "basicAttackCooldown": 0.0,
+            "Stamina": 0.5,
+            "skill": [
+                {
+                    "instanceID": 37268
+                },
+                {
+                    "instanceID": 38110
+                },
+                {
+                    "instanceID": 36782
+                }
+            ],
+            "inventory": {
+                "instanceID": 37244
+            }
+        },
+        {
+            "id": "ASDFB",
+            "Level": 3,
+            "currentExp": 70.0,
+            "MaxExp": 200.0,
+            "attackVal": 20,
+            "defenseVal": 20,
+            "maxHp": 200,
+            "basicAttackCooldown": 0.0,
+            "Stamina": 0.5,
+            "skill": [
+                {
+                    "instanceID": 37268
+                },
+                {
+                    "instanceID": 38110
+                },
+                {
+                    "instanceID": 36782
+                }
+            ],
+            "inventory": {
+                "instanceID": 37244
+            }
+        }
+    ]
+}

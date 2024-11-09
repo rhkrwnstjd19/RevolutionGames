@@ -25,7 +25,7 @@ public class PlayerData
 
 public class PlayerDataManager : MonoBehaviour
 {
-     [Serializable]
+    [Serializable]
     private class Serialization<T>
     {
         public List<T> Player;
@@ -104,6 +104,33 @@ public class PlayerDataManager : MonoBehaviour
     }
 
    
+    
+
+    [ContextMenu("To Json Data")]
+    public PlayerData UpdatePlayerData(PlayerData playerData)
+    {
+        
+
+       string path = Path.Combine(Application.dataPath, "playerData.json");
+        List<PlayerData> allPlayerData = new List<PlayerData>();
+
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            allPlayerData = JsonUtility.FromJson<Serialization<PlayerData>>(json).ToList();
+        }
+        foreach(var a in allPlayerData){
+            if (a.ID == playerData.ID) {
+                a.level +=1;
+                a.damage = 5 + (a.level-1)*5;
+                string updatedJson = JsonUtility.ToJson(new Serialization<PlayerData>(allPlayerData), true);
+                File.WriteAllText(path, updatedJson);
+                return a;
+            }
+        }
+
+        return null;
+    }
     // public async void LoadPlayerDataAsync(string playerID, System.Action<PlayerData> onCompleted)
     // {
     //     await databaseReference.Child("Player").GetValueAsync().ContinueWithOnMainThread(task =>
@@ -159,30 +186,4 @@ public class PlayerDataManager : MonoBehaviour
     //         }
     //     });
     // }
-
-    [ContextMenu("To Json Data")]
-    public PlayerData UpdatePlayerData(PlayerData playerData)
-    {
-        
-
-       string path = Path.Combine(Application.dataPath, "playerData.json");
-        List<PlayerData> allPlayerData = new List<PlayerData>();
-
-        if (File.Exists(path))
-        {
-            string json = File.ReadAllText(path);
-            allPlayerData = JsonUtility.FromJson<Serialization<PlayerData>>(json).ToList();
-        }
-        foreach(var a in allPlayerData){
-            if (a.ID == playerData.ID) {
-                a.level +=1;
-                a.damage = 5 + (a.level-1)*5;
-                string updatedJson = JsonUtility.ToJson(new Serialization<PlayerData>(allPlayerData), true);
-                File.WriteAllText(path, updatedJson);
-                return a;
-            }
-        }
-
-        return null;
-    }
 }

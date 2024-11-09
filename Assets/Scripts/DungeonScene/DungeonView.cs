@@ -18,22 +18,25 @@ public class DungeonView : MonoBehaviour
     DungeonPresenter presenter;
     public ScriptableSkill Skill;
     public Button fireButton;
+    public Button ExitDungeon;
 
     [Header("Fire positions for skills")]
     public Transform FirePosition1;
     public Transform FirePosition2;
 
-    ScriptablePlayer player;
+    public ScriptablePlayer player;
     
     private float pendingExp = 0f;
     private bool isAnimatingExp = false;
 
-
+    public TMP_Text dubuggingText;
     void Awake()
     {
         presenter = new DungeonPresenter(this);
         SwitchSkill.onValueChanged.AddListener(delegate { presenter.SwitchSkill(SwitchSkill.value); });
         fireButton.onClick.AddListener(delegate{presenter.Fire(Skill);} );
+        ExitDungeon.onClick.AddListener(delegate{presenter.ExitDungeon();});
+        UpdatePlayerView();
     }
 
     // Update is called once per frame
@@ -52,8 +55,6 @@ public class DungeonView : MonoBehaviour
 
     public void InitPlayer(ScriptablePlayer player){
         this.player = player;
-        ExpSlider.value = player.currentExp;
-        ExpSlider.maxValue = player.MaxExp;
         UpdatePlayerView();
     }
     public void UpdateExp(float exp)

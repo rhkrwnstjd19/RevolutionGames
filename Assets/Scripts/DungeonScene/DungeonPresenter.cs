@@ -1,42 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DungeonPresenter : MonoBehaviour
 {
     DungeonView view;
-    DungeonModel model;
+    //DungeonModel model;
     int firepos = 0;
     public DungeonPresenter(DungeonView view){
         this.view = view;
-        model = new DungeonModel();
-        this.model.GetPlayerData();
-        this.model.OnModelLoaded += LoadPlayer;
+        // model = new DungeonModel();
+        // Debug.Log("presenter Invoke model.GetPlayerData");
+        // model.GetPlayerData();
+        // Debug.Log("presenter LoadPlayer");
+        // model.OnModelLoaded1 +=LoadPlayer;
+        LoadPlayer();
     }
 
     void LoadPlayer(){
-        var player = model.player;
-        view.InitPlayer(player);
+        Debug.Log("presenter LoadPlayer");
+        //var player = model.player;
+        //view.InitPlayer(player);
         SwitchSkill(0);
     }
 
     public void LevelUp(){
-        model.LevelUp();
+        //model.LevelUp();
+        view.player.LevelUp();
         view.UpdatePlayerView();
     }
     public void SwitchSkill(int skillIndex){
         switch(skillIndex){
             case 0:
-                view.SkillImage.sprite = model.player.skill[0].SkillIcon;
-                view.Skill = model.player.skill[0];
+                view.SkillImage.sprite = view.player.skill[0].SkillIcon;
+                view.Skill = view.player.skill[0];
                 break;
             case 1:
-                view.SkillImage.sprite = model.player.skill[1].SkillIcon;
-                view.Skill = model.player.skill[1];
+                view.SkillImage.sprite = view.player.skill[1].SkillIcon;
+                view.Skill = view.player.skill[1];
                 break;
             case 2:
-                view.SkillImage.sprite = model.player.skill[2].SkillIcon;
-                view.Skill = model.player.skill[2];
+                view.SkillImage.sprite = view.player.skill[2].SkillIcon;
+                view.Skill = view.player.skill[2];
                 break;
         }
     }
@@ -62,12 +69,17 @@ public class DungeonPresenter : MonoBehaviour
         else if(skill.attackType == Enums.AttackType.SingleAttack){
             MissileManager.Instance.Init();
         }
-
-
-
-        //보스 공격
-        
     }
+
+    public void ExitDungeon(){
+        view.dubuggingText.text = "Exit Dungeon Clicked\n!";
+        view.dubuggingText.text += "STart SavePlayerData\n";
+        // DatabaseManager.Instance.SavePlayerData(view.player);
+        view.dubuggingText.text += "End SavePlayerData\n";
+
+        SceneManager.LoadScene("Main Map - DungeonRPG");
+    }
+
 
 
 }
