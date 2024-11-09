@@ -1199,32 +1199,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   balls:
   - ballName: Lv1
-    ballPrefab: {fileID: 6419680902269156779, guid: d4db0e321776c4349912e6b42a3f1f45,
-      type: 3}
+    ballPrefab: {fileID: 0}
     selectButton: {fileID: 1601065376}
     ballCount: 0
     countText: {fileID: 1522106402}
   - ballName: Lv2
-    ballPrefab: {fileID: 7931635756737792662, guid: a4ca2fb18b64dce48a0c3d029c5e2ca1,
-      type: 3}
+    ballPrefab: {fileID: 0}
     selectButton: {fileID: 557668479}
     ballCount: 5
     countText: {fileID: 2040323928}
   - ballName: Lv3
-    ballPrefab: {fileID: 275946379457998378, guid: 1753f3bcf2b238646a904d3dddc8547c,
-      type: 3}
+    ballPrefab: {fileID: 0}
     selectButton: {fileID: 619532491}
     ballCount: 5
     countText: {fileID: 1499156397}
   - ballName: Lv4
-    ballPrefab: {fileID: 8331180969315050289, guid: 40bc4f241bf357744901c5e38e36a8c4,
-      type: 3}
+    ballPrefab: {fileID: 0}
     selectButton: {fileID: 1312734831}
     ballCount: 5
     countText: {fileID: 511888948}
   - ballName: Lv5
-    ballPrefab: {fileID: 8891224022620358629, guid: c31b8691153f87b428c59832bdf5dd77,
-      type: 3}
+    ballPrefab: {fileID: 0}
     selectButton: {fileID: 64025978}
     ballCount: 5
     countText: {fileID: 572821588}

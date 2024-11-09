@@ -160,13 +160,14 @@ public class BCtest : MonoBehaviour
                 int a = GetMonsterIndex(other.gameObject.name);
                 Debug.Log($"monster index : {a}");
                 pokedexManager.CaptureMonster(a);
+                Instantiate(effect, other.transform.position, Camera.main.transform.rotation);
             }
             else
             {
                 result.text = "fail..";
             }
 
-            Instantiate(effect, other.transform.position, Camera.main.transform.rotation);
+            
 
             Destroy(other.gameObject);
             currentBall.SetActive(false);
