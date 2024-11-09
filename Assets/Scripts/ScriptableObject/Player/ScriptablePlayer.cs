@@ -15,6 +15,10 @@ public class ScriptablePlayer : ScriptableObject
     public float Stamina = 0;
     public List<ScriptableSkill> skill;
     public ScriptableInventory inventory;
+
+    public List<ScriptableBall> ballList;
+
+    public ScriptablePetList petList;
     public void LevelUp(){
         currentExp = 0;
         MaxExp *= 2f;

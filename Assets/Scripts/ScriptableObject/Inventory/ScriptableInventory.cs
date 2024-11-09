@@ -19,7 +19,7 @@ public class ScriptableInventory : ScriptableObject
 {
     [Header("Inventory")]
     public float gold = 0;
-    public List<GameObject> ballList = new();
+    public List<CaptureBall> ballList = new();
     [SerializeField]
     public List<CatchBallInfo> catchBallList = new();
 }

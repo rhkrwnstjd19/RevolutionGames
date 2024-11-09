@@ -12,6 +12,7 @@ TagManager:
   - EnemyBoss
   - Buildings
   - CatchBall
+  - Pet
   layers:
   - Default
   - TransparentFX
