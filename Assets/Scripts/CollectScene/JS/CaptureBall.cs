@@ -65,8 +65,8 @@ public class CaptureBall : MonoBehaviour
                 isReady = false;
 
                 rb.AddForce(throwAngle * dragDistance * 0.005f, ForceMode.VelocityChange);
-
-                Invoke("ResetBall", resetTime); // resetTime 뒤에 공의 위치 및 동작을 초기화한다.
+                captureManager.ThrowBall();
+                if(captureManager.GetBallCount() >0)Invoke("ResetBall", resetTime); // resetTime 뒤에 공의 위치 및 동작을 초기화한다.
             }
         }
         if (Input.GetMouseButtonDown(0)) // 마우스 왼쪽 버튼 클릭 시
@@ -94,8 +94,8 @@ public class CaptureBall : MonoBehaviour
                 isReady = false;
 
                 rb.AddForce(throwAngle * dragDistanceY * 0.001f, ForceMode.VelocityChange);
-
-                Invoke("ResetBall", resetTime); // resetTime 뒤에 공의 위치 및 동작을 초기화한다.
+                captureManager.ThrowBall();
+                if(captureManager.GetBallCount() >0)Invoke("ResetBall", resetTime); // resetTime 뒤에 공의 위치 및 동작을 초기화한다.
             }
             else Debug.Log("Not enough drag distance");
 

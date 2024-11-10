@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 001a136c2f1650549bff980e220262ec, type: 3}
   m_Name: BallSO
   m_EditorClassIdentifier: 
-  ballName: 
+  id: 0
   ballPrefab: {fileID: 6419680902269156779, guid: d4db0e321776c4349912e6b42a3f1f45,
     type: 3}
   catchRate: 0.2
-  ballSprite: {fileID: 0}
+  ballSprite: {fileID: 21300000, guid: b63345d6f91446d409f96cbe8e7ae869, type: 3}
   ballPrice: 0
-  ballCount: 10
+  ballCount: 7
+  ballCountMax: 50
