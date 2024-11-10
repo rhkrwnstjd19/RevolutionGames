@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Castle.Components.DictionaryAdapter.Xml;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
@@ -10,18 +11,19 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
 {
     public GameObject RPGDungeonPanel; // 확인 UI 패널
     public GameObject BossDungeonPanel; // 확인 UI 패널
+    public AdventureDetailPanel AdventurePanel;
     public GameObject Buttons;
     public Button Accept;
     public Button Diffuse;
     private bool isRPG = false;
-    void Awake()
+    void Start()
     {
         // 시작 시 확인 패널을 비활성화합니다.
         if (RPGDungeonPanel != null)
             RPGDungeonPanel.SetActive(false);
         if (BossDungeonPanel != null)
             BossDungeonPanel.SetActive(false);
-        if(Buttons != null)
+        if (Buttons != null)
             Buttons.SetActive(false);
         Accept.onClick.AddListener(OnAccept);
         Diffuse.onClick.AddListener(OnCancel);
@@ -54,9 +56,15 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
                         Debug.Log("123클릭한 오브젝트: " + hit.transform.name);
                         ShowConfirmation();
                     }
-                    
+                    else if (hit.transform.tag == "AdventureDungeon")
+                    {
+                        AdvDungeon touchedDungeon = hit.transform.GetComponent<AdvDungeon>();
+                        if (AdventurePanel == null) Debug.LogError("OMG, Adventure Detail Panel is null. \nplease put fucking panel into hierarchy");
+                        else if (touchedDungeon == null) Debug.LogError("OMG, Dungeon Script is null. \nDid you idiot forget to put script in prefab?");
+                        else AdventurePanel.Init(touchedDungeon);
                     }
                 }
+            }
         }
         // 마우스 클릭 처리 (에디터 테스트용)
         else if (Input.GetMouseButtonDown(0))
@@ -81,7 +89,13 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
                     Debug.Log("123클릭한 오브젝트: " + hit.transform.name);
                     ShowConfirmation();
                 }
-                
+                else if (hit.transform.tag == "AdventureDungeon")
+                {
+                    AdvDungeon touchedDungeon = hit.transform.GetComponent<AdvDungeon>();
+                    if (AdventurePanel == null) Debug.LogError("OMG, Adventure Detail Panel is null. please put fucking panel into hierarchy");
+                    else if (touchedDungeon == null) Debug.LogError("OMG, Dungeon Script is null. Did you idiot forget to put script in prefab?");
+                    else AdventurePanel.Init(touchedDungeon);
+                }
             }
         }
     }
@@ -91,7 +105,8 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
         Buttons.SetActive(true);
         if (isRPG)
             RPGDungeonPanel.SetActive(true);
-        else{
+        else
+        {
             BossDungeonPanel.SetActive(true);
         }
     }

@@ -18,5 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Dungeon&Enemy/BossDungeon.unity
     guid: 565b7476d3948f644995eacfc0f8668e
   m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: cd6ca4369b7f3ec4bb265c15bb631314,
+      type: 2}
     com.unity.addressableassets: {fileID: 11400000, guid: da4120ff215dacf4c9afa2887af8f5bb,
+      type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 9e37060332bc6834cb69c9a6fbf38600,
       type: 2}
