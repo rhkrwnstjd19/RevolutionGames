@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a10c005f08bfbc4d94f166bb33f0a05, type: 3}
   m_Name: InventorySO
   m_EditorClassIdentifier: 
-  gold: 0
-  CatchBalls: []
+  gold: 8
+  ballList: []
