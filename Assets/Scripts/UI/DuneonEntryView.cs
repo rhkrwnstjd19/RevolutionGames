@@ -82,7 +82,7 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
                     isRPG = false;
                     Debug.Log("123클릭한 오브젝트: " + hit.transform.name);
                     ShowConfirmation();
-                }
+                }   
                 else if (hit.transform.tag == "RPGDungeon")
                 {
                     isRPG = true;
