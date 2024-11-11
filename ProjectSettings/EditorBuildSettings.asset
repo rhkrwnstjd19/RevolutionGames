@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeon&Enemy/BossDungeon.unity
     guid: 565b7476d3948f644995eacfc0f8668e
+  - enabled: 1
+    path: Assets/Scenes/MainCollect.unity
+    guid: 50c4a74a76d8d924e94c43962391f095
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: cd6ca4369b7f3ec4bb265c15bb631314,
       type: 2}

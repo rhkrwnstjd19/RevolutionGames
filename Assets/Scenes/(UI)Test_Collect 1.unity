@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 906253801}
   - component: {fileID: 906253800}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PetSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -430,11 +430,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterPrefab:
-  - {fileID: 1524411113276028, guid: e039ba28c6ec4e1f8dc538cdefcaf55e, type: 3}
-  - {fileID: 1557585983417840, guid: c76daac06b7a420cb02fdd233a6a5de7, type: 3}
-  - {fileID: 875073071404757921, guid: ddcc91dc78d84fc7bfa7b0819b76b87c, type: 3}
-  - {fileID: 662468794185850985, guid: 0c3ad01813e34d40a2974028b3094053, type: 3}
-  - {fileID: 1931298151966786, guid: 596dc7dadc19403380aa123308e5fd8a, type: 3}
+  - {fileID: 5742016103932020672, guid: 5da308873ffc57d4f85c1a050c3efa31, type: 3}
+  - {fileID: 4388134500205757555, guid: 9f20f1c618fca1149a571d56c016a0ec, type: 3}
+  - {fileID: 4935377884059546488, guid: 26d2f7c8a429670478b031f863aa9df0, type: 3}
+  - {fileID: 3009303809453997569, guid: c663bae0cb73ce54cb337723fdb381ff, type: 3}
+  - {fileID: 5113560491688849703, guid: 9dee84f64d407994fac4aaad2ea248ab, type: 3}
   selectedMonsterIndex: -1
   messagePanel: {fileID: 0}
   Swipe: {fileID: 1261470319}
@@ -728,7 +728,7 @@ PrefabInstance:
     - target: {fileID: 2234999574358352392, guid: 05e897df58395904391c400217e0b8df,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4182973880855840634, guid: 05e897df58395904391c400217e0b8df,
         type: 3}

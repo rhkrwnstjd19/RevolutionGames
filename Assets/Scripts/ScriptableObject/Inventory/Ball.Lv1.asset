@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 001a136c2f1650549bff980e220262ec, type: 3}
+  m_Name: Ball.Lv1
+  m_EditorClassIdentifier: 
+  id: 0
+  ballPrefab: {fileID: 6419680902269156779, guid: d4db0e321776c4349912e6b42a3f1f45,
+    type: 3}
+  catchRate: 0.2
+  ballSprite: {fileID: 21300000, guid: b63345d6f91446d409f96cbe8e7ae869, type: 3}
+  ballPrice: 0
+  ballCount: 7
+  ballCountMax: 50

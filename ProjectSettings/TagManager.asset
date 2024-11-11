@@ -13,6 +13,7 @@ TagManager:
   - Buildings
   - CatchBall
   - AdventureDungeon
+  - Pet
   layers:
   - Default
   - TransparentFX
