@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 001a136c2f1650549bff980e220262ec, type: 3}
-  m_Name: BallSO
+  m_Name: Ball.Lv1
   m_EditorClassIdentifier: 
   id: 0
   ballPrefab: {fileID: 6419680902269156779, guid: d4db0e321776c4349912e6b42a3f1f45,

@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
@@ -22,6 +23,7 @@ public class CaptureManager : MonoBehaviour
     private int currentBallIndex = -1;
     private GameObject CurrentBall;
     
+    private bool[] InstantiateDonePet = new bool[100];
     void Start(){
         UpdateCapturedPet();
         UpdateBallCount();
@@ -36,17 +38,19 @@ public class CaptureManager : MonoBehaviour
 
     void UpdateCapturedPet(){
         for(int i = 0; i < player.petList.petList.Count; i++){
-        GameObject pet = Instantiate(PetFrame, addPet);
-        pet.transform.SetParent(addPet, false);
-        // 자식 오브젝트의 이름이 "Button"이라고 가정합니다.
-        Transform child = pet.transform.Find("Button");
-        if (child != null){
-            Image childImage = child.GetComponent<Image>();
-            if (childImage != null){
-                childImage.sprite = player.petList.petList[i].petSprite;
+            if(InstantiateDonePet[i]) continue;
+            GameObject pet = Instantiate(PetFrame, addPet);
+            pet.transform.SetParent(addPet, false);
+            // 자식 오브젝트의 이름이 "Button"이라고 가정합니다.
+            Transform child = pet.transform.Find("Button");
+            if (child != null){
+                Image childImage = child.GetComponent<Image>();
+                if (childImage != null){
+                    childImage.sprite = player.petList.petList[i].petSprite;
+                }
             }
+            InstantiateDonePet[i] = true;
         }
-    }
     }
 
     void UpdateBallCount(){

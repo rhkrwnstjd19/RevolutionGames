@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 001a136c2f1650549bff980e220262ec, type: 3}
-  m_Name: BallSO 1
+  m_Name: Ball.Lv5
   m_EditorClassIdentifier: 
   id: 0
-  ballPrefab: {fileID: 7931635756737792662, guid: a4ca2fb18b64dce48a0c3d029c5e2ca1,
+  ballPrefab: {fileID: 8891224022620358629, guid: c31b8691153f87b428c59832bdf5dd77,
     type: 3}
-  catchRate: 0.4
-  ballSprite: {fileID: 21300000, guid: b3138c71cf5ec4d449d2202fdd87a50a, type: 3}
+  catchRate: 1
+  ballSprite: {fileID: 21300000, guid: d258e607a168e484c9d7669032614932, type: 3}
   ballPrice: 0
-  ballCount: 9
+  ballCount: 8
   ballCountMax: 50

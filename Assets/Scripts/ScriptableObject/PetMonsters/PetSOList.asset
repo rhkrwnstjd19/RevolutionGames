@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8968ee438e827b34faed38a53a03c795, type: 3}
   m_Name: PetSOList
   m_EditorClassIdentifier: 
-  petList:
-  - {fileID: 11400000, guid: 960a30e3bbd9ca74cb9a31cf3f4cccb9, type: 2}
+  petList: []
