@@ -21,12 +21,15 @@ public class AdventureDetailPanel : MonoBehaviour
     private Vector2 closePosition;
     private List<PetButton> petButtons=new();
     private int currentSelectedIndex=-1;
+    private MainPlayerStatusView mainPlayerStatusView;
+
     private void Awake()
     {
         // 패널의 초기 위치를 저장합니다.
         originalPosition = transform.localPosition;
         closePosition = new Vector2(originalPosition.x, -Screen.height);
         transform.localPosition = closePosition;
+        mainPlayerStatusView = FindObjectOfType<MainPlayerStatusView>();
     }
 
     public void Init(AdvDungeon dungeon)
@@ -72,6 +75,7 @@ public class AdventureDetailPanel : MonoBehaviour
         // ***TODO***
         // return List<Pet>으로 변경
         // 받아온 Pet 데이터 기반 PetButton Init
+        //return mainPlayerStatusView.currentPlayer.petList;
     }
     private void SelectPet(int buttonNumber){
         if(currentSelectedIndex==-1){

@@ -26,13 +26,17 @@ public class CaptureManager : MonoBehaviour
     private bool[] InstantiateDonePet = new bool[100];
     void Start(){
         UpdateCapturedPet();
-        UpdateBallCount();
+       
 
-        for(int i = 0; i < ballButtons.Count; i++){
-            int i1 = i;
-            Debug.Log($"{i1} : ballButtons[{i1}]");
-            ballButtons[i1].onClick.AddListener(() => InstantiateBall(i1));
+        if(ballCounts ==null || ballButtons == null){
+            for(int i = 0; i < ballButtons.Count; i++){
+                int i1 = i;
+                Debug.Log($"{i1} : ballButtons[{i1}]");
+                ballButtons[i1].onClick.AddListener(() => InstantiateBall(i1));
+            }
+            UpdateBallCount();
         }
+        
 
     }
 

@@ -1181,7 +1181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   addPet: {fileID: 6286835681382115167}
-  player: {fileID: 11400000, guid: 17fa984275a91ae4aa6186997e0e5710, type: 2}
+  player: {fileID: 11400000, guid: b97634ce54ccf0b47916131e3255e1d7, type: 2}
   PetFrame: {fileID: 5703397230397193101, guid: 5cccf242c81d3744b9578b0710ff98c8,
     type: 3}
   ballCounts:
@@ -1197,6 +1197,8 @@ MonoBehaviour:
   - {fileID: 7316016143673187558}
   - {fileID: 9167339925692699380}
   MenuButton: {fileID: 933731882658986761}
+  CurrentBallImage: {fileID: 0}
+  CurrentBallCount: {fileID: 0}
 --- !u!1 &5496553990119421903
 GameObject:
   m_ObjectHideFlags: 0

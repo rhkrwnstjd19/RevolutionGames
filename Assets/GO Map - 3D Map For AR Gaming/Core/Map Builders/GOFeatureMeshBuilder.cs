@@ -98,6 +98,7 @@ namespace GoMap
 			if (feature.clips != null ) {
 				foreach (IList clipVerts in feature.clips) {
 					poly.holes.Add(GOFeature.CoordsToVerts(clipVerts,true));
+					Debug.Log("polygon hole");
 				}
 			}
 			Profiler.EndSample ();
@@ -521,7 +522,6 @@ namespace GoMap
 
 //			if (feature.layer.layerType == GOLayer.GOLayerType.Buildings && feature.height > 0 && feature.layer.useRealHeight)
 //				SimpleExtruder.FixUV (mesh, feature.preloadedMeshData.sliceHeight,10f);
-			
 			polygon.GetComponent<MeshFilter>().sharedMesh = mesh;
 
 

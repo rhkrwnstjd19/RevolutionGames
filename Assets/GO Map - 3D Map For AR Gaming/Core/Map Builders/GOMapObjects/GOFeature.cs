@@ -5,8 +5,16 @@ using GoShared;
 using System;
 using Mapbox.VectorTile.Geometry;
 using UnityEngine.Profiling;
+using GoMap;
+using Unity.VisualScripting;
 
+public static class BuildingList{
+    public static List<MeshFilter> buildingList = new ();
+    public static List<List<Vector3>> buildingPosition = new ();
+    public static List<GOFeature> buildingFeature = new ();
 
+    public static List<GameObject> Buildings= new();
+}
 namespace GoMap
 {
 
@@ -52,7 +60,7 @@ namespace GoMap
         [HideInInspector] public GOLabelsLayer labelsLayer;
         [HideInInspector] public GOTilesetLayer tilesetLayer;
 
-        [HideInInspector] public GOMesh preloadedMeshData;
+         public GOMesh preloadedMeshData;
         [HideInInspector] public GOSegment preloadedLabelData;
 
         [HideInInspector] public GORenderingOptions renderingOptions;
@@ -310,11 +318,14 @@ namespace GoMap
 
             Profiler.BeginSample("[GOFeature] CreatePolygon MESH");
             GameObject polygon = null;
-            if (preloadedMeshData != null)
+            if (preloadedMeshData != null){
+
                 polygon = builder.BuildPolygonFromPreloaded(this, parent);
+                BuildingList.buildingList.Add(polygon.GetComponent<MeshFilter>());
+                BuildingList.buildingFeature.Add(this);
+            }
 
             Profiler.EndSample();
-
             if (polygon == null)
                 yield break;
 
@@ -381,6 +392,8 @@ namespace GoMap
             {
                 GOFeatureBehaviour fb = polygon.AddComponent<GOFeatureBehaviour>();
                 fb.goFeature = this;
+                BuildingList.Buildings.Add(polygon);
+                BuildingList.buildingFeature.Add(this);
             }
 
             if (layer != null && layer.OnFeatureLoad != null)
@@ -392,7 +405,6 @@ namespace GoMap
                 tilesetLayer.OnFeatureLoad.Invoke(this, polygon);
             }
             Profiler.EndSample();
-
             preloadedMeshData = null;
 
             if (delayedLoad)
@@ -612,7 +624,8 @@ namespace GoMap
                         p.z -= noise;
                     }
                     convertedGeometry.Add(p);
-
+                    //BuildingList.buildingPosition.Add();
+                   // Debug.Log("polygon Center : " +  p);
                 }
                 else
                 { //Mapzen

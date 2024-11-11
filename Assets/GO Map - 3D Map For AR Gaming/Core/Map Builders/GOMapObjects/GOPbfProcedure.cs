@@ -185,6 +185,8 @@ namespace GoMap
                                     gf.geometry = geomWgs[0];
                                     gf.ConvertGeometries();
                                     AddFatureToList(gf, pl.goFeatures);
+                                    BuildingList.buildingFeature.Add(gf);
+                                    Debug.Log("Polygon");
                                     break;
                                 case GOFeatureType.MultiLine:
                                     foreach (IList geometry in geomWgs)
