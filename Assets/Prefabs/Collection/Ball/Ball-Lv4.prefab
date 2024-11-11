@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 4172407804830163227}
   - component: {fileID: 5260227607382964761}
   - component: {fileID: 1464152723911392333}
-  - component: {fileID: 6109163502047420452}
+  - component: {fileID: -4987955314126221671}
   m_Layer: 0
   m_Name: Ball-Lv4
   m_TagString: Untagged
@@ -169,7 +169,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6109163502047420452
+--- !u!114 &-4987955314126221671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,16 +178,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8331180969315050289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ae661a6766f4bc489cf48a1081b1301, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dc532fa6cc09484c990a4b043790da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balls: []
-  ballPanel: {fileID: 0}
   resetTime: 3
-  captureRate: 0.8
-  result: {fileID: 0}
-  effect: {fileID: 8791802859087666345, guid: ae07f2a45f14a82428409cfe410e6002, type: 3}
-  pokedexManager: {fileID: 0}
+  captureRate: 1
+  effect: {fileID: 0}
   ballSpawnPoint: {fileID: 0}
 --- !u!1 &8396951371879569633
 GameObject:
