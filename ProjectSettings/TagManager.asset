@@ -12,6 +12,7 @@ TagManager:
   - EnemyBoss
   - Buildings
   - CatchBall
+  - AdventureDungeon
   - Pet
   layers:
   - Default
