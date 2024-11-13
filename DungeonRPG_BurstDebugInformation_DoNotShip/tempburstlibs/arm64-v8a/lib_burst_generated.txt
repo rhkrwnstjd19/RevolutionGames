@@ -14,12 +14,14 @@ Library: C:\Users\user\Documents\GitHub\RevolutionGames\Temp\BurstOutput\tempbur
 --assembly-defines=Castle.Core;
 --assembly-defines=CFXRDemo;
 --assembly-defines=CFXRRuntime;
+--assembly-defines=Cinemachine;
 --assembly-defines=DamageNumbersPro;
 --assembly-defines=DOTween;
 --assembly-defines=KinoBloom.Runtime;
 --assembly-defines=Mono.Security;
 --assembly-defines=mscorlib;
 --assembly-defines=Newtonsoft.Json;
+--assembly-defines=ParticleImage;
 --assembly-defines=Polyperfect.Animals;
 --assembly-defines=Polyperfect.Common;
 --assembly-defines=SharpUIScriptsAssembly;
@@ -38,6 +40,7 @@ Library: C:\Users\user\Documents\GitHub\RevolutionGames\Temp\BurstOutput\tempbur
 --assembly-defines=Unity.InputSystem;
 --assembly-defines=Unity.InputSystem.ForUI;
 --assembly-defines=Unity.Mathematics;
+--assembly-defines=Unity.Postprocessing.Runtime;
 --assembly-defines=Unity.RenderPipeline.Universal.ShaderLibrary;
 --assembly-defines=Unity.RenderPipelines.Core.Runtime;
 --assembly-defines=Unity.RenderPipelines.Universal.Runtime;
@@ -53,6 +56,7 @@ Library: C:\Users\user\Documents\GitHub\RevolutionGames\Temp\BurstOutput\tempbur
 --assembly-defines=Unity.Services.Core.Telemetry;
 --assembly-defines=Unity.Services.Core.Threading;
 --assembly-defines=Unity.TextMeshPro;
+--assembly-defines=Unity.Timeline;
 --assembly-defines=Unity.XR.ARCore;
 --assembly-defines=Unity.XR.ARFoundation;
 --assembly-defines=Unity.XR.ARFoundation.InternalUtils;
@@ -83,12 +87,14 @@ Library: C:\Users\user\Documents\GitHub\RevolutionGames\Temp\BurstOutput\tempbur
 --assembly-defines=Castle.Core;
 --assembly-defines=CFXRDemo;
 --assembly-defines=CFXRRuntime;
+--assembly-defines=Cinemachine;
 --assembly-defines=DamageNumbersPro;
 --assembly-defines=DOTween;
 --assembly-defines=KinoBloom.Runtime;
 --assembly-defines=Mono.Security;
 --assembly-defines=mscorlib;
 --assembly-defines=Newtonsoft.Json;
+--assembly-defines=ParticleImage;
 --assembly-defines=Polyperfect.Animals;
 --assembly-defines=Polyperfect.Common;
 --assembly-defines=SharpUIScriptsAssembly;
@@ -107,6 +113,7 @@ Library: C:\Users\user\Documents\GitHub\RevolutionGames\Temp\BurstOutput\tempbur
 --assembly-defines=Unity.InputSystem;
 --assembly-defines=Unity.InputSystem.ForUI;
 --assembly-defines=Unity.Mathematics;
+--assembly-defines=Unity.Postprocessing.Runtime;
 --assembly-defines=Unity.RenderPipeline.Universal.ShaderLibrary;
 --assembly-defines=Unity.RenderPipelines.Core.Runtime;
 --assembly-defines=Unity.RenderPipelines.Universal.Runtime;
@@ -122,6 +129,7 @@ Library: C:\Users\user\Documents\GitHub\RevolutionGames\Temp\BurstOutput\tempbur
 --assembly-defines=Unity.Services.Core.Telemetry;
 --assembly-defines=Unity.Services.Core.Threading;
 --assembly-defines=Unity.TextMeshPro;
+--assembly-defines=Unity.Timeline;
 --assembly-defines=Unity.XR.ARCore;
 --assembly-defines=Unity.XR.ARFoundation;
 --assembly-defines=Unity.XR.ARFoundation.InternalUtils;

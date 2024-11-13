@@ -18,5 +18,5 @@ MonoBehaviour:
   catchRate: 0.8
   ballSprite: {fileID: 21300000, guid: 297ef376841f0034494a6bb48ad9b57f, type: 3}
   ballPrice: 0
-  ballCount: 0
+  ballCount: 10
   ballCountMax: 50

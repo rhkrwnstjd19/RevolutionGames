@@ -1,10 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using NSubstitute;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor.AddressableAssets.Build;
 using UnityEngine;
 
 public class DatabaseManager : SingletonWithDontDestroyOnLoad<DatabaseManager>
