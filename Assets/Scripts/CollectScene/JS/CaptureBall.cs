@@ -105,7 +105,7 @@ public class CaptureBall : MonoBehaviour
     void SetBallPosition()
     {
         Debug.Log("SetBallPosition");
-        transform.position = new Vector3(0, -0.2f, 0.75f);
+        transform.position = ballSpawnPoint.position;
     }
 
     void ResetBall()
@@ -129,6 +129,7 @@ public class CaptureBall : MonoBehaviour
             if (draw <= captureRate)
             {
                 captureManager.CapturePet(other.gameObject);
+                captureManager.SetResultPanel();
             }
             else
             {

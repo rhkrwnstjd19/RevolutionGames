@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Image = UnityEngine.UI.Image;
+using UnityEngine.SceneManagement;
 
 public class CaptureManager : MonoBehaviour
 {   
@@ -22,6 +23,8 @@ public class CaptureManager : MonoBehaviour
     private int currentBallIndex = -1;
     private GameObject CurrentBall;
     
+    public GameObject ResultPanel;
+    public Button Returnhome;
     private bool[] InstantiateDonePet = new bool[100];
     void Start(){
         UpdateCapturedPet();
@@ -31,9 +34,10 @@ public class CaptureManager : MonoBehaviour
             Debug.Log($"{i1} : ballButtons[{i1}]");
             ballButtons[i1].onClick.AddListener(() => InstantiateBall(i1));
         }
+        Returnhome.onClick.AddListener(() => BackToMain());
         UpdateBallCount();
     
-        
+        gameObject.SetActive(false);
 
     }
 
@@ -90,5 +94,13 @@ public class CaptureManager : MonoBehaviour
 
     public int GetBallCount(){
         return player.ballList[currentBallIndex].ballCount;
+    }
+
+    public void SetResultPanel(){
+        ResultPanel.SetActive(true);
+    }
+    void BackToMain(){
+        SceneManager.LoadScene("Main Map - DungeonRPG");
+
     }
 }

@@ -184,7 +184,8 @@ MonoBehaviour:
   resetTime: 3
   captureRate: 1
   effect: {fileID: 0}
-  ballSpawnPoint: {fileID: 0}
+  ballSpawnPoint: {fileID: 3360862188264579415, guid: de729c07107a66a4ead8fb8f67a0c3f7,
+    type: 3}
 --- !u!1 &8396951371879569633
 GameObject:
   m_ObjectHideFlags: 0
