@@ -9,7 +9,11 @@ public class ScriptablePet : ScriptableObject
     public string petName;
     public int level=1;
     public float currentExp;
-    public float maxExp;
+    public float maxExp{
+        get{
+            return level*150;
+        }
+    }
     public int attackVal=10;
 
     public Sprite petSprite;
@@ -17,7 +21,6 @@ public class ScriptablePet : ScriptableObject
     public void LevelUp()
     {
         level++;
-        maxExp = level * 100;
         currentExp = 0;
         attackVal += 10;
     }

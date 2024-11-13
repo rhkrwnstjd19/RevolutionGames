@@ -62,11 +62,15 @@ public class AdvDungeon : MonoBehaviour
     //detailpanel에 전달해줄 Dungeon 확대용 카메라
     public CinemachineVirtualCamera targetAheadCamera;
 
+    private List<GameObject> PetObjects = new();
+
     public bool isReadyToGetHit { get; private set; } = true;//캐릭터들이 공격 가능한지 여부를 판단하는 변수
     public bool isWorking { get; private set; }//현재 캐릭터들을 해당 탐험에 보냈는지 확인하는 변수
     private async void Start()
     {
         await CreateDungeon();
+
+        PetObjects = await PetObjectList.LoadPetObjects();
     }
 
     public async Task CreateDungeon()
