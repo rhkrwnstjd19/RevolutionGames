@@ -54,7 +54,7 @@ public class DungeonEnemy : MonoBehaviour
             else
             {
                 transform.position += direction * speed * Time.deltaTime;
-                animator.SetBool("IsAttack", false);
+                animator.SetBool("Attack", false);
             }
         }
             
