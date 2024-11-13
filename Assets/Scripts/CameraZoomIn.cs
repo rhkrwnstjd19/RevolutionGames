@@ -36,7 +36,6 @@ public class CameraZoomIn : MonoBehaviour
         // ��Ż ��ġ ����
         if (Input.GetMouseButtonDown(0)) // ����Ͽ����� ��ġ, PC������ ���콺 Ŭ������ �׽�Ʈ ����
         {
-            Debug.Log("��ġ����");
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
@@ -56,14 +55,11 @@ public class CameraZoomIn : MonoBehaviour
         // Debug.Log(isZoomingIn);
         if (isZoomingIn && targetPortal != null)
         {
-            Debug.Log("üũ�ߴ�");
             cameraTransform.position = Vector3.Lerp(cameraTransform.position, targetPortal.position - targetPortal.forward * zoomDistance, Time.deltaTime * zoomSpeed);
             cameraTransform.rotation = Quaternion.Slerp(cameraTransform.rotation, Quaternion.LookRotation(targetPortal.position - cameraTransform.position), Time.deltaTime * zoomSpeed);
-            Debug.Log("üũ�ߴ�2");
             if (Vector3.Distance(cameraTransform.position, targetPortal.position - targetPortal.forward * zoomDistance) < 0.1f)
             {
                 isZoomingIn = false;
-                Debug.Log("���ߴ�");
             }
         }
         else if (isReturning)
