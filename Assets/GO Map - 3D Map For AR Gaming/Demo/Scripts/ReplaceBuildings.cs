@@ -9,14 +9,13 @@ public class ReplaceBuildings : MonoBehaviour
 {
     public List<Mesh> mesh;
     public Material material;
-
     void Start(){
         Invoke("ReplaceMesh", 3);
     }
     public void ReplaceMesh(){
         Debug.Log("Building Counts = " + BuildingList.Buildings.Count);
         for(int i = 0 ; i < BuildingList.Buildings.Count; i++){
-            int randomNum = Random.Range(0,7);
+            int randomNum = Random.Range(0,8);
 
             //Debug.Log($"Building {i} : {BuildingList.buildingFeature[i].name}");
             if(BuildingList.Buildings[i].GetComponent<GOFeatureBehaviour>().goFeature.name == "building" && Random.Range(0,3) <1){
@@ -32,6 +31,7 @@ public class ReplaceBuildings : MonoBehaviour
 
 
         }
+        BuildingList.Buildings.Clear();
     }
 
     private Vector3 findCenter(List<Vector3> vertices){
