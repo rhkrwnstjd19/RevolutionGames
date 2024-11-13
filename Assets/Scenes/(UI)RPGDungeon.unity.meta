@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/(UI)RPGDungeon.unity.meta
 guid: 26cadc33dfbf9b946b3a34269efc3718
+========
+guid: 692a8b648b1d1db4998331a9e3581e80
+folderAsset: yes
+>>>>>>>> origin/NewDevelop:Assets/Prefabs/Monster/CollectionEnemy.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
