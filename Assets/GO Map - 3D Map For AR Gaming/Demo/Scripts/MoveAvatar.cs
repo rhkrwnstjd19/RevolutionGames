@@ -32,8 +32,14 @@ public class MoveAvatar : MonoBehaviour
 		goMap.locationManager.onLocationChanged.AddListener((Coordinates) => { OnLocationChanged(Coordinates); });
 		if (goMap.useElevation)
 			goMap.OnTileLoad.AddListener((GOTile) => { OnTileLoad(GOTile); });
+		StartCoroutine(CountBuilings());
 	}
-
+	IEnumerator CountBuilings(){
+		while(true){
+			Debug.Log($"Building Counts = {BuildingList.buildingList.Count}");
+			yield return new WaitForSeconds(5);
+		}
+	}
 	#region GoMap events
 
 	public void OnTileLoad(GOTile tile)

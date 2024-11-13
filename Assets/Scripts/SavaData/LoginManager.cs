@@ -21,7 +21,9 @@ public class UserData
     public float basicAttackCooldown;
     public float Stamina;
     public List<ScriptableSkill> skill;
-    public ScriptableInventory inventory;
+    // public ScriptableInventory inventory;
+    public List<ScriptableBall> ballList;
+    public List<ScriptablePet> petList;
 }
 [System.Serializable]
 public class UserDatabase
@@ -84,7 +86,10 @@ public class LoginManager : MonoBehaviour
         currentPlayer.basicAttackCooldown = loadedData.basicAttackCooldown;
         currentPlayer.Stamina = loadedData.Stamina;
         currentPlayer.skill = loadedData.skill;
-        currentPlayer.inventory = loadedData.inventory;
+        // currentPlayer.inventory = loadedData.inventory;
+        currentPlayer.ballList = loadedData.ballList;
+        currentPlayer.petList = loadedData.petList;
+
         DatabaseManager.Instance.CurrentPlayerData(currentPlayer);
     }
 
@@ -118,7 +123,9 @@ public class LoginManager : MonoBehaviour
         newUser.basicAttackCooldown = playerData.basicAttackCooldown;
         newUser.Stamina = playerData.Stamina;
         newUser.skill = playerData.skill;
-        newUser.inventory = playerData.inventory;
+       // newUser.inventory = playerData.inventory;
+        newUser.ballList = playerData.ballList;
+        newUser.petList = playerData.petList;
 
         DatabaseManager.Instance.userDatabase.users.Add(newUser);
         DatabaseManager.Instance.SaveUserDatabase(); //

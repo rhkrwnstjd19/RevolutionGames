@@ -13,12 +13,15 @@ public class ScriptablePlayer : ScriptableObject
     public int maxHp;
     public float basicAttackCooldown;
     public float Stamina = 0;
+    public float gold = 0;
     public List<ScriptableSkill> skill;
-    public ScriptableInventory inventory;
-
     public List<ScriptableBall> ballList;
+    public List<ScriptablePet> petList;
+    //public ScriptableInventory inventory;
 
-    public ScriptablePetList petList;
+    // public List<ScriptableBall> ballList;
+
+    // public ScriptablePetList petList;
     public void LevelUp(){
         currentExp = 0;
         MaxExp *= 2f;

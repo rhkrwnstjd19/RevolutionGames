@@ -18,8 +18,9 @@ namespace GoShared {
         TopFitSidesRatio,
         TopFitSidesSliced
     }
-
+    [System.Serializable]
 	public class GOMesh {
+
 
 		public string name;
 		

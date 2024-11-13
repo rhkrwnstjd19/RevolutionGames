@@ -57,7 +57,10 @@ public class DatabaseManager : SingletonWithDontDestroyOnLoad<DatabaseManager>
         userDatabase.users[userPos].basicAttackCooldown = player.basicAttackCooldown;
         userDatabase.users[userPos].Stamina = player.Stamina;
         userDatabase.users[userPos].skill = player.skill;
-        userDatabase.users[userPos].inventory = player.inventory;
+        // userDatabase.users[userPos].inventory = player.inventory;
+        userDatabase.users[userPos].ballList = player.ballList;
+        userDatabase.users[userPos].petList = player.petList;
+
         SaveUserDatabase();
     }
 

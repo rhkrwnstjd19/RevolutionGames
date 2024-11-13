@@ -26,7 +26,7 @@ public class MainPlayerStatusView : MonoBehaviour
 
     public void UpdatePlayerView(){
         PlayerLevel.text = currentPlayer.Level.ToString();
-        CurrentGold.text = "Gold : " + currentPlayer.inventory.gold.ToString();
+        CurrentGold.text = "Gold : " + currentPlayer.gold.ToString();
         Stamina.text = "+" + currentPlayer.Stamina.ToString();
         CurrentExp.text = currentPlayer.currentExp/currentPlayer.MaxExp * 100 + "%";
         ExpSlider.value = currentPlayer.currentExp / currentPlayer.MaxExp;

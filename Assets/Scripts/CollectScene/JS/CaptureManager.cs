@@ -26,18 +26,20 @@ public class CaptureManager : MonoBehaviour
     private bool[] InstantiateDonePet = new bool[100];
     void Start(){
         UpdateCapturedPet();
-        UpdateBallCount();
-
+       
         for(int i = 0; i < ballButtons.Count; i++){
             int i1 = i;
             Debug.Log($"{i1} : ballButtons[{i1}]");
             ballButtons[i1].onClick.AddListener(() => InstantiateBall(i1));
         }
+        UpdateBallCount();
+    
+        
 
     }
 
     void UpdateCapturedPet(){
-        for(int i = 0; i < player.petList.petList.Count; i++){
+        for(int i = 0; i < player.petList.Count; i++){
             if(InstantiateDonePet[i]) continue;
             GameObject pet = Instantiate(PetFrame, addPet);
             pet.transform.SetParent(addPet, false);
@@ -46,7 +48,7 @@ public class CaptureManager : MonoBehaviour
             if (child != null){
                 Image childImage = child.GetComponent<Image>();
                 if (childImage != null){
-                    childImage.sprite = player.petList.petList[i].petSprite;
+                    childImage.sprite = player.petList[i].petSprite;
                 }
             }
             InstantiateDonePet[i] = true;
@@ -77,7 +79,7 @@ public class CaptureManager : MonoBehaviour
 
     public void CapturePet(GameObject pet){
         Debug.Log("CapturePet");
-        player.petList.petList.Add(pet.GetComponent<Pet>().petData);
+        player.petList.Add(pet.GetComponent<Pet>().petData);
         UpdateCapturedPet();
     }
 

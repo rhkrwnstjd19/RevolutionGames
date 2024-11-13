@@ -8,7 +8,7 @@ using UnityEngine;
 
 using GoShared;
 using Mapbox.VectorTile;
-
+using Castle.Components.DictionaryAdapter.Xml;
 
 namespace GoMap
 {
@@ -19,6 +19,7 @@ namespace GoMap
 
         public override string GetLayersStrings(GOLayer layer)
         {
+            
             return layer.lyr();
         }
         public override string GetPoisStrings()

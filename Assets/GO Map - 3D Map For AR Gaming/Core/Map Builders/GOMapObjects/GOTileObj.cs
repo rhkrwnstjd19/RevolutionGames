@@ -92,7 +92,7 @@ namespace GoMap
             diagonalLenght = tileCenter.diagonalLenght(zoomLevel);
 
             name = tileCoordinates.x + "-" + tileCoordinates.y + "-" + zoomLevel;
-
+            Debug.LogWarning("Tile name: " + name);
             Vector3[] vs = tileCenter.tileVertices(zoomLevel).ToArray();
             vertices = vs.ToList();
 
