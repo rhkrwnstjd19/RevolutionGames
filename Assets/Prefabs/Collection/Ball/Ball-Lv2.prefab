@@ -122,10 +122,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   balls: []
-  ballPanel: {fileID: 0}
+  ballPanel: {fileID: 3008180518945852649, guid: b9af782abd78291458764264c1042c5c,
+    type: 3}
   resetTime: 3
   captureRate: 0.4
-  result: {fileID: 0}
+  result: {fileID: 5846111152995251610, guid: acb78134b928e954b9aedb5ff6516c2c, type: 3}
   effect: {fileID: 8791802859087666345, guid: ae07f2a45f14a82428409cfe410e6002, type: 3}
-  pokedexManager: {fileID: 0}
+  pokedexManager: {fileID: 1817977350401179763, guid: 4b458973ee70d124d9b9e1b3e48b33c6,
+    type: 3}
   ballSpawnPoint: {fileID: 0}

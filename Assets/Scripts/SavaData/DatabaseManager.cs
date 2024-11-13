@@ -4,7 +4,9 @@ using System.IO;
 using NSubstitute;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.AddressableAssets.Build;
+#if UNITY_EDITOR
+using UnityEditor.AddressableAssets; // 에디터 전용 코드로만 포함
+#endif
 using UnityEngine;
 
 public class DatabaseManager : SingletonWithDontDestroyOnLoad<DatabaseManager>

@@ -6,25 +6,26 @@ using UnityEngine.UI;
 
 public class SpawnMonster : MonoBehaviour
 {
-    public GameObject[] monsterPrefab; // ¸ó½ºÅÍ ¹è¿­
-    private ARRaycastManager raycastManager; // ·¹ÀÌÄ³½ºÆ® ¸Å´ÏÀú
+    public GameObject[] monsterPrefab; // ëª¬ìŠ¤í„° í”„ë¦¬íŒ¹ ë°°ì—´
+    private ARRaycastManager raycastManager; // ARRaycastManager ì»´í¬ë„ŒíŠ¸
 
-    private List<ARRaycastHit> hit = new List<ARRaycastHit>(); // ·¹ÀÌÄ³½ºÆ® È÷Æ® °á°ú
+    private List<ARRaycastHit> hit = new List<ARRaycastHit>(); // AR ë ˆì´ìºìŠ¤íŠ¸ íˆíŠ¸ ê²°ê³¼ ë¦¬ìŠ¤íŠ¸
 
-    private bool objectSpawn = false; // ¿ÀºêÁ§Æ®°¡ »ı¼ºµÇ¾ú´ÂÁö È®ÀÎ
-    public int selectedMonsterIndex = -1;   //monster select
+    private bool objectSpawn = false; // ì˜¤ë¸Œì íŠ¸ê°€ ìŠ¤í°ë˜ì—ˆëŠ”ì§€ ì—¬ë¶€ í™•ì¸
+    public int selectedMonsterIndex = -1;   // ì„ íƒëœ ëª¬ìŠ¤í„° ì¸ë±ìŠ¤
 
-    public Text messagePanel;
-    public GameObject Swipe;
-    public GameObject Result;
-
-
+    public Text messagePanel; // ë©”ì‹œì§€ë¥¼ í‘œì‹œí•  UI í…ìŠ¤íŠ¸ íŒ¨ë„
+    public GameObject Swipe; // ìŠ¤ì™€ì´í”„ UI ì˜¤ë¸Œì íŠ¸
+    public GameObject Result; // ê²°ê³¼ UI ì˜¤ë¸Œì íŠ¸
+    public SpinRoulette sr;
+    public BCtest bt;
+    public BCtest2 bt2;
 
     private void Start()
     {
         raycastManager = GetComponent<ARRaycastManager>();
 
-        ShowMessage("½ÃÀÛ Áß...");
+        ShowMessage("ì´ˆê¸°í™” ì¤‘...");
     }
 
     private void Update()
@@ -50,14 +51,14 @@ public class SpawnMonster : MonoBehaviour
                 Instantiate(selectedMonster, hitPose.position, hitPose.rotation);
                 objectSpawn = true;
 
+                //bt.InitialBall();
                 Swipe.SetActive(true);
 
                 Invoke("DeactivateSwipe", 6f);
-
             }
             else
             {
-                ShowMessage("Áö¸é ÀÎ½Ä ½ÇÆĞ.");
+                ShowMessage("í‰ë©´ ì¸ì‹ ì‹¤íŒ¨.");
             }
         }
     }
@@ -74,7 +75,6 @@ public class SpawnMonster : MonoBehaviour
         Swipe.SetActive(false);
 
         Invoke("EndStage", 6f);
-
     }
     private void EndStage()
     {

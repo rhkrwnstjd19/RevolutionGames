@@ -26,7 +26,7 @@ public class BCtest : MonoBehaviour
     public PokedexManager pokedexManager;
     public Transform ballSpawnPoint; // 공이 나타날 위치
 
-    private GameObject currentBall; // 현재 활성화된 공 오브젝트
+    public GameObject currentBall; // 현재 활성화된 공 오브젝트
 
     Rigidbody rb;
     bool isReady = true;
@@ -50,15 +50,12 @@ public class BCtest : MonoBehaviour
     /// <summary>
     /// 볼 생성 코드
     /// </summary>
-    void InitialBall()
+    public void InitialBall()
     {
         // 레벨 1의 볼을 화면 중앙 하단부에 생성
         currentBall = this.gameObject;
         rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
-#if UNITY_EDITOR
-    SetColliderVeryBig();
-#endif
         SetBallPosition();
     }
     void SetColliderVeryBig(){
@@ -187,6 +184,15 @@ public class BCtest : MonoBehaviour
             case "Monster4": return 3;
             case "Monster5": return 4;
             default: return -1;
+        }
+    }
+    public void ActivateBall()
+    {
+        if (currentBall != null)
+        {
+            currentBall.SetActive(true); // 몬스터볼 활성화
+            rb.isKinematic = true;
+            isReady = true; // 공 준비 상태로 설정
         }
     }
 }

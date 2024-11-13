@@ -40,6 +40,8 @@ public class PokedexManager : MonoBehaviour
             SetMonsterSlotInactive(i);
         }
         StartCoroutine(CheckStatus());
+        CaptureMonster(1);
+        CaptureMonster(2);
 
     }
     float time = 0;

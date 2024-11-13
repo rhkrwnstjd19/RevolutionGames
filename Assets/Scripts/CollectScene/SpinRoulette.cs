@@ -3,12 +3,13 @@ using System.Collections;
 
 public class SpinRoulette : MonoBehaviour
 {
-    public Transform rouletteWheel; // ·ê·¿ ¿ÀºêÁ§Æ®ÀÇ Transform
+    public Transform rouletteWheel; // ï¿½ê·¿ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Transform
     public GameObject rouletteObject;
-    public float spinSpeed; // È¸Àü ¼Óµµ
+    public float spinSpeed; // È¸ï¿½ï¿½ ï¿½Óµï¿½
     public bool isSpinning;
     public int stopSpeed;
     public SpawnMonster spawnMonster;
+    public BCtest ballController;
 
     public bool isRouletteOn = true;
 
@@ -23,13 +24,13 @@ public class SpinRoulette : MonoBehaviour
     {
         if (isSpinning)
         {
-            // ·ê·¿ È¸Àü
+            // ï¿½ê·¿ È¸ï¿½ï¿½
             rouletteWheel.Rotate(0, 0, spinSpeed * Time.deltaTime);
 
-            // ¼­¼­È÷ ¼Óµµ¸¦ ÁÙÀÓ
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             spinSpeed = Mathf.Lerp(spinSpeed, 0, Time.deltaTime * 1f);
 
-            // ¸ØÃã
+            // ï¿½ï¿½ï¿½ï¿½
             if (spinSpeed < 1f)
             {
                 isSpinning = false;
@@ -57,6 +58,7 @@ public class SpinRoulette : MonoBehaviour
             isRouletteOn = false;
             rouletteObject.SetActive(false);
 
+            //ballController.InitialBall();
             spawnMonster.Spawn();
         }
     }
