@@ -15,6 +15,7 @@ public class AdventureDetailPanel : MonoBehaviour
     public Button CloseButton;
     public PetButton petButton;
     public Button GoButton;
+    public GameObject PetFrame;
 
     public float animationSpeed = 1.5f;
     private Vector2 originalPosition;
@@ -22,7 +23,8 @@ public class AdventureDetailPanel : MonoBehaviour
     private List<PetButton> petButtons=new();
     private int currentSelectedIndex=-1;
     private MainPlayerStatusView mainPlayerStatusView;
-
+    private ScriptablePlayer player;
+    private bool[] InstantiateDonePet = new bool[100];
     private void Awake()
     {
         // 패널의 초기 위치를 저장합니다.
@@ -30,6 +32,7 @@ public class AdventureDetailPanel : MonoBehaviour
         closePosition = new Vector2(originalPosition.x, -Screen.height);
         transform.localPosition = closePosition;
         mainPlayerStatusView = FindObjectOfType<MainPlayerStatusView>();
+        player = mainPlayerStatusView.currentPlayer;
     }
 
     public void Init(AdvDungeon dungeon)
@@ -52,7 +55,7 @@ public class AdventureDetailPanel : MonoBehaviour
         });
         //내부 로직
         GetPetList();
-
+        UpdateCapturedPet();
         OpenAnimation();
     }
 
@@ -76,6 +79,23 @@ public class AdventureDetailPanel : MonoBehaviour
         // return List<Pet>으로 변경
         // 받아온 Pet 데이터 기반 PetButton Init
         //return mainPlayerStatusView.currentPlayer.petList;
+    }
+
+     void UpdateCapturedPet(){
+        for(int i = 0; i < player.petList.Count; i++){
+            if(InstantiateDonePet[i]) continue;
+            GameObject pet = Instantiate(PetFrame, buttonPanel);
+            pet.transform.SetParent(buttonPanel, false);
+            // 자식 오브젝트의 이름이 "Button"이라고 가정합니다.
+            Transform child = pet.transform.Find("Button");
+            if (child != null){
+                Image childImage = child.GetComponent<Image>();
+                if (childImage != null){
+                    childImage.sprite = player.petList[i].petSprite;
+                }
+            }
+            InstantiateDonePet[i] = true;
+        }
     }
     private void SelectPet(int buttonNumber){
         if(currentSelectedIndex==-1){
