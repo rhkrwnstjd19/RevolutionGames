@@ -102,12 +102,12 @@ GameObject:
   - component: {fileID: 3754018938145653985}
   - component: {fileID: 8843022957966106525}
   m_Layer: 5
-  m_Name: Particle Image
+  m_Name: EffectImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6589095202624401330
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1610,7 +1610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 9113288698155087431}
-  selectedEffect: {fileID: 0}
+  selectedEffect: {fileID: 4018208200267450567}
 --- !u!1 &9050287505997067004
 GameObject:
   m_ObjectHideFlags: 0

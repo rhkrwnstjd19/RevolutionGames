@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using Cinemachine;
 using UnityEngine.UI;
 using DG.Tweening;
 using System.Collections.Generic;
@@ -15,16 +14,14 @@ public class AdventureDetailPanel : MonoBehaviour
     public Button CloseButton;
     public PetButton petButton;
     public Button GoButton;
-    public GameObject PetFrame;
 
     public float animationSpeed = 1.5f;
     private Vector2 originalPosition;
     private Vector2 closePosition;
-    private List<PetButton> petButtons=new();
-    private int currentSelectedIndex=-1;
+    private List<PetButton> petButtons = new();
+    private int currentSelectedIndex = -1;
     private MainPlayerStatusView mainPlayerStatusView;
     private ScriptablePlayer player;
-    private bool[] InstantiateDonePet = new bool[100];
     private void Awake()
     {
         // 패널의 초기 위치를 저장합니다.
@@ -41,9 +38,9 @@ public class AdventureDetailPanel : MonoBehaviour
         //UI Setting
         dungeonName.text = dungeon.dungeonName;
         dungeonLevel.text = dungeon.dungeonLevel.ToString();
-        characterName.text="**캐릭터를 선택하세요**";
+        characterName.text = "**캐릭터를 선택하세요**";
         dungeon.targetAheadCamera.Priority = 30;
-        
+
         CloseButton.onClick.AddListener(() =>
         {
             dungeon.targetAheadCamera.Priority = 10;
@@ -54,8 +51,7 @@ public class AdventureDetailPanel : MonoBehaviour
             StartDungeon();
         });
         //내부 로직
-        GetPetList();
-        UpdateCapturedPet();
+        MakePetButtons();
         OpenAnimation();
     }
 
@@ -73,41 +69,42 @@ public class AdventureDetailPanel : MonoBehaviour
         .OnComplete(() => gameObject.SetActive(false));
     }
 
-    private void GetPetList()
+    private List<ScriptablePet> GetPetList() => player.petList;
+    void MakePetButtons()
     {
-        // ***TODO***
-        // return List<Pet>으로 변경
-        // 받아온 Pet 데이터 기반 PetButton Init
-        //return mainPlayerStatusView.currentPlayer.petList;
-    }
-
-     void UpdateCapturedPet(){
-        for(int i = 0; i < player.petList.Count; i++){
-            if(InstantiateDonePet[i]) continue;
-            GameObject pet = Instantiate(PetFrame, buttonPanel);
-            pet.transform.SetParent(buttonPanel, false);
-            // 자식 오브젝트의 이름이 "Button"이라고 가정합니다.
-            Transform child = pet.transform.Find("Button");
-            if (child != null){
-                Image childImage = child.GetComponent<Image>();
-                if (childImage != null){
-                    childImage.sprite = player.petList[i].petSprite;
-                }
-            }
-            InstantiateDonePet[i] = true;
-        }
-    }
-    private void SelectPet(int buttonNumber){
-        if(currentSelectedIndex==-1){
+        List<ScriptablePet> list = GetPetList();
+        //1. Pet List를 불러옵니다.
+        int petButtonCount = petButtons.Count;
+        Debug.Log($"Pet Button Count : {petButtonCount}");
+        //2.Pet List를 기반으로 버튼을 생성합니다.
+        //이때, 이미 생성된 버튼에 대해서는 더이상 생성하지 않습니다.
+        for (int i = petButtonCount; i < list.Count; i++)
+        {
             
-        }else{
-            petButtons[currentSelectedIndex].Deselect();
-            currentSelectedIndex=buttonNumber;
-            petButtons[currentSelectedIndex].WhenSelect();
+            PetButton pet = Instantiate(petButton, buttonPanel);
+            pet.transform.SetParent(buttonPanel, false);
+            petButtons.Add(pet);
         }
+        //3. 모든 버튼
+        for (int i = 0; i < petButtons.Count; i++)
+        {
+            petButtons[i].Init(list[i], i, SelectPet);
+        }
+    }
+    private void SelectPet(PetButton button)
+    {
+        if(currentSelectedIndex!=-1){
+            petButtons[currentSelectedIndex].Deselect();
+        }
+        currentSelectedIndex = button.buttonNumber;
+        petButtons[currentSelectedIndex].WhenSelect();
+        Debug.Log($"{petButtons[currentSelectedIndex].petData.petName} Selected");
     }
     public void StartDungeon()
     {
         // ***TODO***
+        //1. petButtons[currentSelectedIndex]의 ScriptableData를 받아온다.
+        //2. PetPrefab 리스트에서 ScriptableData Id를 매칭시켜서 프리팹을 주변에 소환시킨다.
+        //3. 던전 확인 후, 이미 공격중인 던전이라면 다른 패널 등장
     }
 }

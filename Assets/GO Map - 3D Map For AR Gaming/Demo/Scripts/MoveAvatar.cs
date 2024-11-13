@@ -23,7 +23,6 @@ public class MoveAvatar : MonoBehaviour
 		Run
 	};
 	public GOAvatarAnimationStateEvent OnAnimationStateChanged;
-	public List<AdvDungeon> advDungeons = new();
 	// Use this for initialization
 	void Start()
 	{
@@ -36,8 +35,8 @@ public class MoveAvatar : MonoBehaviour
 	}
 	IEnumerator CountBuilings(){
 		while(true){
-			Debug.Log($"Building Counts = {BuildingList.buildingList.Count}");
-			yield return new WaitForSeconds(5);
+			// Debug.Log($"Building Counts = {BuildingList.buildingList.Count}");
+			yield return new WaitForSeconds(10);
 		}
 	}
 	#region GoMap events

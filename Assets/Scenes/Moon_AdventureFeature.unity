@@ -2153,6 +2153,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4988640879705049659, guid: c2d610aeb5c611f448eca29afd061e6b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5045674126070217216, guid: c2d610aeb5c611f448eca29afd061e6b,
         type: 3}
       propertyPath: m_IsActive
@@ -2695,7 +2700,6 @@ MonoBehaviour:
   OnAnimationStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  advDungeons: []
 --- !u!4 &660223904
 Transform:
   m_ObjectHideFlags: 0
