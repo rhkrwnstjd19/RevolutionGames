@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Threading.Tasks;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using System.Threading;
 public static class PetObjectList
 {
    private static AsyncOperationHandle<IList<GameObject>> operationHandle;
@@ -34,110 +35,157 @@ public static class PetObjectList
 
 public class Pet : MonoBehaviour
 {
-   public ScriptablePet petData;
-   public AdvDungeon target { get; private set; }
-   private Animator animator;
-   private bool isAttacking = false;
-   private bool isInitialized = false;
+    public ScriptablePet petData;
+    public AdvDungeon target { get; private set; }
+    private Animator animator;
+    private bool isAttacking = false;
+    private bool isInitialized = false;
+    private Coroutine attackRoutine;
 
-   void Start()
-   {
-       if (petData == null)
-       {
-           Debug.LogError("PetData is not assigned!");
-           return;
-       }
+    void Start()
+    {
+        if (petData == null)
+        {
+            Debug.LogError("PetData is not assigned!");
+            return;
+        }
 
-       animator = GetComponent<Animator>();
-       if (animator == null)
-       {
-           Debug.LogWarning($"Animator not found on pet {petData.petName}");
-       }
-       else
-       {
-           // 시작시 Idle 상태로 설정
-           animator.SetBool("Attack", false);
-       }
+        animator = GetComponent<Animator>();
+        if (animator == null)
+        {
+            Debug.LogWarning($"Animator not found on pet {petData.petName}");
+        }
+        else
+        {
+            animator.SetBool("Attack", false);
+        }
 
-       isInitialized = true;
-       Debug.Log($"Pet {petData.petName} initialized");
-       
-       if (target != null && target.isReadyToGetHit)
-       {
-           StartCoroutine(AttackRoutine());
-       }
-   }
+        isInitialized = true;
+        Debug.Log($"Pet {petData.petName} initialized");
+        
+        if (target != null)
+        {
+            StartAttackProcess();
+        }
+    }
 
-   IEnumerator AttackRoutine()
-   {
-       while (target != null && target.isReadyToGetHit)
-       {
-           if (!isAttacking)
-           {
-               // 공격 시작 - 애니메이션 트리거
-               isAttacking = true;
-               if (animator != null)
-               {
-                   animator.SetBool("Attack", true);
-               }
-               
-               // 애니메이션이 시작되고 실제 데미지가 들어가기까지 약간의 딜레이
-               yield return new WaitForSeconds(0.5f);  // 애니메이션 타이밍에 맞게 조절 필요
-               
-               Debug.Log($"{petData.petName} dealing {petData.attackVal} damage to {target.dungeonName}");
-               target.GetDamage(petData.attackVal);
-               
-               // 공격 애니메이션이 끝나기를 기다림
-               yield return new WaitForSeconds(.3f);  // 애니메이션 타이밍에 맞게 조절 필요
-               
-               // Idle 상태로 돌아감
-               if (animator != null)
-               {
-                   animator.SetBool("Attack", false);
-               }
-               
-               // 다음 공격까지 대기
-               yield return new WaitForSeconds(1.5f);  // 총 3초의 공격 주기를 맞추기 위한 나머지 시간
-               
-               isAttacking = false;
-               Debug.Log($"{petData.petName} attack cooldown finished");
-           }
-           yield return null;
-       }
+    private void StartAttackProcess()
+    {
+        if (attackRoutine != null)
+        {
+            StopCoroutine(attackRoutine);
+        }
+        attackRoutine = StartCoroutine(WaitForTargetAndAttack());
+    }
 
-       if (animator != null)
-       {
-           animator.SetBool("Attack", false);
-       }
-   }
+    IEnumerator WaitForTargetAndAttack()
+    {
+        Debug.Log($"{petData.petName} waiting for target to be ready...");
+        
+        // 타겟이 준비될 때까지 대기
+        while (target != null && !target.isReadyToGetHit)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
 
-   public void SetTarget(AdvDungeon targetDungeon)
-   {
-       if (targetDungeon == null)
-       {
-           Debug.LogError("Attempted to set null target!");
-           return;
-       }
+        // 타겟이 있고 준비가 되었다면 공격 시작
+        if (target != null)
+        {
+            attackRoutine = StartCoroutine(AttackRoutine());
+        }
+    }
 
-       StopAllCoroutines(); // 기존 공격 루틴 중지
-       
-       if (animator != null)
-       {
-           animator.SetBool("Attack", false); // Idle 상태로 리셋
-       }
+    IEnumerator AttackRoutine()
+    {
+        Debug.Log($"{petData.petName} starting attack routine");
+        
+        while (target != null)
+        {
+            // 타겟이 준비되지 않았다면 다시 대기 상태로
+            if (!target.isReadyToGetHit)
+            {
+                Debug.Log($"{petData.petName}'s target not ready, waiting...");
+            yield return new WaitUntil(()=>target.isReadyToGetHit);
+            }
+            if (!isAttacking)
+            {
+                isAttacking = true;
+                
+                // 공격 애니메이션 시작
+                if (animator != null)
+                {
+                    animator.SetBool("Attack", true);
+                }
+                
+                // 애니메이션 시작 후 데미지 타이밍까지 대기
+                yield return new WaitForSeconds(0.5f);
+                
+                if (target != null) // 데미지 주기 직전에 한번 더 체크
+                {
+                    Debug.Log($"{petData.petName} dealing {petData.attackVal} damage to {target.dungeonName}");
+                    target.GetDamage(petData.attackVal);
+                }
+                
+                // 공격 애니메이션 완료 대기
+                yield return new WaitForSeconds(0.3f);
+                
+                // Idle 상태로 복귀
+                if (animator != null)
+                {
+                    animator.SetBool("Attack", false);
+                }
+                
+                // 다음 공격까지 쿨다운
+                yield return new WaitForSeconds(1.5f);
+                
+                isAttacking = false;
+                Debug.Log($"{petData.petName} attack cooldown finished");
+            }
+            yield return null;
+        }
 
-       target = targetDungeon;
-       Debug.Log($"New target set for {petData.petName}: {targetDungeon.dungeonName}");
-       
-       if (isInitialized && target.isReadyToGetHit)
-       {
-           StartCoroutine(AttackRoutine());
-       }
-   }
+        ResetAttackState();
+    }
 
-   private void OnDestroy()
-   {
-       Debug.Log($"Pet {petData.petName} destroyed");
-       StopAllCoroutines();
-   }
+    private void ResetAttackState()
+    {
+        if (animator != null)
+        {
+            animator.SetBool("Attack", false);
+        }
+        isAttacking = false;
+    }
+
+    public void SetTarget(AdvDungeon targetDungeon)
+    {
+        if (targetDungeon == null)
+        {
+            Debug.LogError("Attempted to set null target!");
+            return;
+        }
+
+        if (attackRoutine != null)
+        {
+            StopCoroutine(attackRoutine);
+        }
+        
+        ResetAttackState();
+
+        target = targetDungeon;
+        Debug.Log($"New target set for {petData.petName}: {targetDungeon.dungeonName}");
+        
+        if (isInitialized)
+        {
+            StartAttackProcess();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log($"Pet {petData.petName} destroyed");
+        if (attackRoutine != null)
+        {
+            StopCoroutine(attackRoutine);
+        }
+    }
 }

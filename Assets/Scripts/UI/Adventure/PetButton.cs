@@ -7,14 +7,12 @@ public class PetButton : MonoBehaviour
 {
     public Image image;
     public GameObject selectedEffect;
+    public GameObject workingEffect;
     public int buttonNumber { get; private set; }
     public bool isSelected { get; private set; } = false;
     public ScriptablePet petData{get;private set;}
     private Button button;
-
-    private void Awake()
-    {
-    }
+    
 
     public void Init(ScriptablePet petData, int number, UnityAction<PetButton> onClickEvent)
     {
@@ -25,8 +23,10 @@ public class PetButton : MonoBehaviour
         image.sprite=this.petData.petSprite;
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(() => onClickEvent(this));
+        //이미 탐험을 진행중인 펫은 선택 불가.
+        workingEffect.SetActive(petData.isAttacking);
+        button.interactable=!petData.isAttacking;
     }
-
     public void WhenSelect()
     {
         isSelected = true;

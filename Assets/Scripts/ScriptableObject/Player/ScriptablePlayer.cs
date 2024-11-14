@@ -13,7 +13,7 @@ public class ScriptablePlayer : ScriptableObject
     public int maxHp;
     public float basicAttackCooldown;
     public float Stamina = 0;
-    public float gold = 0;
+    public int gold = 0;
     public List<ScriptableSkill> skill;
     public List<ScriptableBall> ballList;
     public List<ScriptablePet> petList;
@@ -30,5 +30,8 @@ public class ScriptablePlayer : ScriptableObject
         defenseVal += 10;
         maxHp += 100;
 
+    }
+    public void AddGold(int gold){
+        this.gold+=gold;
     }
 }

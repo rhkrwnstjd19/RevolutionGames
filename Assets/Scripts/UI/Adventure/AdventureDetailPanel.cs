@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine.UI;
 using DG.Tweening;
 using System.Collections.Generic;
-using System.Linq;
+using AssetKits.ParticleImage;
 
 public class AdventureDetailPanel : MonoBehaviour
 {
@@ -20,8 +20,8 @@ public class AdventureDetailPanel : MonoBehaviour
     public Button stopButton;
     public Image healthImage;
     public TMP_Text healthText;
-
     public float animationSpeed = 1.5f;
+    public ParticleImage moneyAnimation;
     private Vector2 originalPosition;
     private Vector2 closePosition;
     private List<PetButton> petButtons = new();
@@ -29,8 +29,9 @@ public class AdventureDetailPanel : MonoBehaviour
     private MainPlayerStatusView mainPlayerStatusView;
     private ScriptablePlayer player;
     private AdvDungeon currentDungeon;
-    private List<GameObject> PetObjects = new();
-    private void Awake()
+    private List<GameObject> petObjects = new();
+    private Dictionary<string, GameObject> petObjectsMap = new();
+    private async void Awake()
     {
         // 패널의 초기 위치를 저장합니다.
         originalPosition = transform.localPosition;
@@ -39,6 +40,30 @@ public class AdventureDetailPanel : MonoBehaviour
         mainPlayerStatusView = FindObjectOfType<MainPlayerStatusView>();
         player = mainPlayerStatusView.currentPlayer;
 
+        var petObjects = await PetObjectList.LoadPetObjects();
+        foreach (var petObj in petObjects)
+        {
+            if (petObj.TryGetComponent<Pet>(out var pet))
+            {
+                petObjectsMap[pet.petData.petName] = petObj;
+                pet.petData.isAttacking = false;//공격 중인 상태에서 종료시, ScriptableObject 저장이 되는 관계로 임시 설정
+            }
+        }
+        InitializeButtonListeners();
+    }
+    private void InitializeButtonListeners()
+    {
+        closeButton.onClick.AddListener(() =>
+        {
+            if (currentDungeon != null)
+            {
+                currentDungeon.targetAheadCamera.Priority = 10;
+            }
+            CloseAnimation();
+        });
+
+        goButton.onClick.AddListener(StartDungeon);
+        stopButton.onClick.AddListener(StopDungeon);
     }
     private void ClearCurrentDungeon()
     {
@@ -49,21 +74,23 @@ public class AdventureDetailPanel : MonoBehaviour
             currentDungeon = null;
         }
     }
-    public async void Init(AdvDungeon dungeon)
+    public void Init(AdvDungeon dungeon)
     {
-        ClearCurrentDungeon();
-        if (PetObjects.Count == 0) PetObjects = await PetObjectList.LoadPetObjects();
-        Debug.Log(PetObjects.Count);
         gameObject.SetActive(true);
+        ClearCurrentDungeon();
+
 
         //공통 UI Setting
-       currentDungeon = dungeon;  // 새 던전 설정
+        currentDungeon = dungeon;  // 새 던전 설정
         dungeonName.text = dungeon.dungeonName;
         dungeonLevel.text = $"LV.{dungeon.dungeonLevel}";
         dungeon.targetAheadCamera.Priority = 30;
         healthText.text = dungeon.currentHealth.ToString();
         UpdateHealthBar(dungeon.currentHealth, dungeon.maxHealth);
-
+        currentDungeon.SetUICallback((current, max) =>
+                {
+                    UpdateHealthBar(current, max);
+                });
         // isWorking 상태에 따른 UI 전환
         if (dungeon.isWorking)
         {
@@ -73,8 +100,7 @@ public class AdventureDetailPanel : MonoBehaviour
             stopButton.gameObject.SetActive(true);
 
             // 현재 전투 중인 펫 찾기
-            var activePets = GameObject.FindObjectsOfType<Pet>();
-            var currentPet = activePets.FirstOrDefault(p => p.target == dungeon);
+            var currentPet = currentDungeon.petObject.GetComponent<Pet>();
             if (currentPet != null)
             {
                 petName.text = currentPet.petData.petName;
@@ -96,23 +122,6 @@ public class AdventureDetailPanel : MonoBehaviour
             OpenAnimation();
         }
 
-        AddListenersToButton();
-    }
-    private void AddListenersToButton()
-    {
-        closeButton.onClick.RemoveAllListeners();
-        closeButton.onClick.AddListener(() =>
-        {
-            currentDungeon.targetAheadCamera.Priority = 10;
-            CloseAnimation();
-        });
-        goButton.onClick.RemoveAllListeners();
-        goButton.onClick.AddListener(() =>
-        {
-            StartDungeon();
-        });
-        stopButton.onClick.RemoveAllListeners();
-        stopButton.onClick.AddListener(StopDungeon);
     }
     public void OpenAnimation()
     {
@@ -140,7 +149,6 @@ public class AdventureDetailPanel : MonoBehaviour
         for (int i = petButtonCount; i < list.Count; i++)
         {
             PetButton pet = Instantiate(petButton, buttonPanel);
-            pet.transform.SetParent(buttonPanel, false);
             petButtons.Add(pet);
         }
         //3. 모든 버튼
@@ -162,33 +170,26 @@ public class AdventureDetailPanel : MonoBehaviour
     }
     private void StartDungeon()
     {
-        if (currentSelectedIndex == -1)
+        if (currentSelectedIndex == -1 || currentDungeon == null)
         {
-            Debug.LogWarning("No pet selected!");
+            Debug.LogWarning("No pet selected or dungeon is null!");
             return;
         }
 
         ScriptablePet selectedPetData = petButtons[currentSelectedIndex].petData;
-        // PetObjects 리스트에서 선택된 펫의 이름과 일치하는 프리팹 찾기
-        GameObject matchingPet = PetObjects.Find(petObj =>
-        petObj.GetComponent<Pet>()?.petData.petName == selectedPetData.petName);
-
-
-        if (matchingPet != null)
+        selectedPetData.isAttacking = true;
+        if (petObjectsMap.TryGetValue(selectedPetData.petName, out GameObject matchingPet))
         {
-            if (currentDungeon != null)
-            {
-                currentDungeon.StartDungeonHit(matchingPet.gameObject,(current, max)=>{
-                    UpdateHealthBar(current,max);
+            currentDungeon.StartDungeonHit(matchingPet.gameObject, (current, max) =>
+                {
+                    UpdateHealthBar(current, max);
+                }, player, (moneyAmount) =>
+                {
+                    UpdateCoin(moneyAmount);
                 });
-                buttonPanel.gameObject.SetActive(false);
-                goButton.gameObject.SetActive(false);
-                stopButton.gameObject.SetActive(true);
-            }
-            else
-            {
-                Debug.LogError("Oh Well, currentDungeon is NULL. I dunno the fucking reason!");
-            }
+            buttonPanel.gameObject.SetActive(false);
+            goButton.gameObject.SetActive(false);
+            stopButton.gameObject.SetActive(true);
 
             // Start Effect 애니메이션
             startEffect.SetActive(true);
@@ -219,6 +220,7 @@ public class AdventureDetailPanel : MonoBehaviour
             // 패널 닫기 애니메이션
             transform.DOLocalMoveY(-halfScreenHeight, animationSpeed)
                 .SetEase(Ease.Linear);
+
         }
         else
         {
@@ -232,15 +234,30 @@ public class AdventureDetailPanel : MonoBehaviour
         buttonPanel.gameObject.SetActive(true);
         goButton.gameObject.SetActive(true);
         stopButton.gameObject.SetActive(false);
-        
+        ScriptablePet selectedPetData = petButtons[currentSelectedIndex].petData;
+        selectedPetData.isAttacking = false;
         // 패널 위치 원래대로
         transform.DOLocalMoveY(originalPosition.y, animationSpeed)
             .SetEase(Ease.Linear);
     }
-    private void UpdateHealthBar(int currentHealth,int maxHealth){
-        healthImage.fillAmount=(float)currentHealth/maxHealth;
-        healthText.text=currentHealth.ToString();
+    private void UpdateHealthBar(int currentHealth, int maxHealth)
+    {
+        healthImage.fillAmount = (float)currentHealth / maxHealth;
+        healthText.text = currentHealth.ToString();
     }
+    private void UpdateCoin(int moneyAmount)
+    {
+        if (moneyAnimation.attractorTarget != null) moneyAnimation.Play();
+        else Debug.LogError("Oh My God, no Attractor Target in Particle Image. plzplzplz set target in it(메인_동전)");
+        player.AddGold(moneyAmount);
+       DOTween.To(() => player.gold - moneyAmount, // 시작값
+        (value) => mainPlayerStatusView.UpdateCoinView(value), // 업데이트
+        player.gold, // 목표값
+        1f) // 애니메이션 시간
+        .SetDelay(2f) // 2초 딜레이
+        .SetEase(Ease.OutQuad);
+    }
+    
     private void OnDisable()
     {
         ClearCurrentDungeon();

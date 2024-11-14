@@ -32,7 +32,9 @@ public class MainPlayerStatusView : MonoBehaviour
         ExpSlider.value = currentPlayer.currentExp / currentPlayer.MaxExp;
         StaminaSlider.value = currentPlayer.Stamina/ 100f;
     }
-
+    public void UpdateCoinView(int temporaryValue){
+        CurrentGold.text = "Gold : " + temporaryValue.ToString("N0");
+    }
     public void InitPlayer(ScriptablePlayer player){
         currentPlayer = player;
         UpdatePlayerView();

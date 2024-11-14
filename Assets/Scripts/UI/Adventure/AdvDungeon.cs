@@ -23,17 +23,22 @@ public class AdvDungeon : MonoBehaviour
     public GameObject TargetShape;
     //detailpanel에 전달해줄 Dungeon 확대용 카메라
     public CinemachineVirtualCamera targetAheadCamera;
-    public float distanceFromDungeon=10f;
+    public float distanceFromDungeon = 10f;
 
-    private GameObject petObject;
+    public GameObject petObject { get; private set; }
+    private Pet currentPet;
     public bool isReadyToGetHit { get; private set; } = true;//캐릭터들이 공격 가능한지 여부를 판단하는 변수
     public bool isWorking { get; private set; }//현재 캐릭터들을 해당 탐험에 보냈는지 확인하는 변수
+    ScriptablePlayer player;
+
+    DamageNumberManager damageNumberManager;
     private async void Start()
     {
         await CreateDungeon();
 
     }
-    UnityAction<int,int> uiEvent;
+    UnityAction<int, int> uiEvent;
+    UnityAction<int> moneyEvent;
     public async Task CreateDungeon()
     {
         Debug.Log("Start Creating Dungeon...");
@@ -42,8 +47,15 @@ public class AdvDungeon : MonoBehaviour
         {
             Debug.Log($"{dungeonName} Loaded");
             currentHealth = maxHealth;
+            switch(dungeonInfo.size){
+                case Size.소형: gameObject.transform.localScale=new Vector3(5,5,5);break;
+                case Size.중형:gameObject.transform.localScale=new Vector3(7,7,7);break;
+                case Size.대형:gameObject.transform.localScale=new Vector3(8,8,8);break;
+            }
+           
             isReadyToGetHit = true;
             isWorking = false;
+            damageNumberManager=DamageNumberManager.Instance;
         }
         else
         {
@@ -51,33 +63,38 @@ public class AdvDungeon : MonoBehaviour
         }
     }
 
-    public void StartDungeonHit(GameObject petAI,UnityAction<int,int> updateUI)
+    public void StartDungeonHit(GameObject petAI, UnityAction<int, int> updateUI,ScriptablePlayer player,UnityAction<int> moneyAnimation)
     {
         // 이미 작업 중인 던전이면 리턴
         if (isWorking) return;
         ClearUICallback();
         isWorking = true;
         isReadyToGetHit = true;
-        uiEvent=updateUI;
+        uiEvent = updateUI;
         uiEvent?.Invoke(currentHealth, maxHealth);
-
+        moneyEvent=moneyAnimation;
+        this.player=player;
         SpawnCharactersAroundDungeon(petAI);
     }
-     public void ClearUICallback()
+    public void ClearUICallback()
     {
         uiEvent = null;
     }
-
+    public void SetUICallback(UnityAction<int, int> updateUI){
+        uiEvent = updateUI;
+        uiEvent?.Invoke(currentHealth, maxHealth);
+    }
     public void ExitDungeonHit()
     {
         isWorking = false;
         isReadyToGetHit = false;
         ClearUICallback();
-       // 생성된 모든 펫 캐릭터들을 제거
-        if(petObject != null && petObject.GetComponent<Pet>().target == this)
+        // 생성된 모든 펫 캐릭터들을 제거
+        if (petObject != null && petObject.GetComponent<Pet>().target == this)
         {
             Destroy(petObject);
             petObject = null;
+            currentPet=null;
         }
     }
     /// <summary>
@@ -102,16 +119,15 @@ public class AdvDungeon : MonoBehaviour
 
         // 펫 오브젝트 생성
         GameObject petObject = Instantiate(petAI, randomPosition, Quaternion.identity);
-
+        currentPet=petObject.GetComponent<Pet>();
         // 펫이 던전을 바라보도록 회전
         Vector3 directionToDungeon = (transform.position - randomPosition).normalized;
         petObject.transform.rotation = Quaternion.LookRotation(directionToDungeon);
-        this.petObject=petObject;
+        this.petObject = petObject;
         // Pet 컴포넌트 초기화
-        Pet pet = petObject.GetComponent<Pet>();
-        if (pet != null)
+        if (currentPet != null)
         {
-            pet.SetTarget(this);  // 공격 대상 던전 설정
+            currentPet.SetTarget(this);  // 공격 대상 던전 설정
         }
         else
         {
@@ -121,9 +137,10 @@ public class AdvDungeon : MonoBehaviour
     public void GetDamage(int damage)
     {
         currentHealth -= damage;
+        damageNumberManager.ShowDamageNumber(this.transform.position,damage);
         if (currentHealth <= 0)
         {
-            currentHealth=0;
+            currentHealth = 0;
             SetDie();
         }
         uiEvent?.Invoke(currentHealth, maxHealth);
@@ -134,6 +151,7 @@ public class AdvDungeon : MonoBehaviour
         //체력 초기화
         currentHealth = maxHealth;
         isReadyToGetHit = true;
+        uiEvent?.Invoke(currentHealth, maxHealth);
     }
     private void SetDie()
     {
@@ -143,5 +161,10 @@ public class AdvDungeon : MonoBehaviour
         TargetShape.SetActive(false);
         Invoke(nameof(SetRevive), 5f);
         isReadyToGetHit = false;
+        GiveReward();
+    }
+    private void GiveReward(){
+        currentPet.petData.AddExp(expAmount);
+        moneyEvent?.Invoke(moneyAmount);
     }
 }
