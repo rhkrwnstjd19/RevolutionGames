@@ -1,96 +1,92 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+// using System.Collections;
+// using System.Collections.Generic;
+// using UnityEngine;
 
-public class CameraZoomIn : MonoBehaviour
-{
-    public float zoomSpeed = 2.0f;            // ÁÜÀÎ ¼Óµµ
-    public float zoomDistance = 5.0f;         // ÁÜÀÎÇÒ °Å¸®
-    public Transform cameraTransform;        // ¸ÞÀÎ Ä«¸Þ¶ó Transform
-    private Vector3 originalPosition;         // Ä«¸Þ¶óÀÇ ¿ø·¡ À§Ä¡
-    private Quaternion originalRotation;      // Ä«¸Þ¶óÀÇ ¿ø·¡ È¸Àü°ª
-    private bool isZoomingIn = false;         // ÁÜÀÎ ÁßÀÎÁö È®ÀÎ
-    private bool isReturning = false;         // ¿ø·¡ À§Ä¡·Î µ¹¾Æ°¡´Â ÁßÀÎÁö È®ÀÎ
-    private Transform targetPortal;           // Å¬¸¯ÇÑ Æ÷Å»ÀÇ À§Ä¡
+// public class CameraZoomIn : MonoBehaviour
+// {
+//     public float zoomSpeed = 2.0f;            // ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½
+//     public float zoomDistance = 5.0f;         // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½
+//     public Transform cameraTransform;        // ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½Þ¶ï¿½ Transform
+//     private Vector3 originalPosition;         // Ä«ï¿½Þ¶ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
+//     private Quaternion originalRotation;      // Ä«ï¿½Þ¶ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½
+//     private bool isZoomingIn = false;         // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+//     private bool isReturning = false;         // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½Æ°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+//     private Transform targetPortal;           // Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å»ï¿½ï¿½ ï¿½ï¿½Ä¡
 
-    void Start()
-    {
-        // MainCamera ÅÂ±×¸¦ °¡Áø Ä«¸Þ¶ó Ã£±â
-        GameObject cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
-        if (cameraObject != null)
-        {
-            cameraTransform = cameraObject.transform;
-            originalPosition = cameraTransform.position;
-            originalRotation = cameraTransform.rotation;
-        }
-        else
-        {
-            Debug.LogError("Ä«¸Þ¶ó¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
-        }
-    }
+//     void Start()
+//     {
+//         // MainCamera ï¿½Â±×¸ï¿½ ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½Þ¶ï¿½ Ã£ï¿½ï¿½
+//         GameObject cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
+//         if (cameraObject != null)
+//         {
+//             cameraTransform = cameraObject.transform;
+//             originalPosition = cameraTransform.position;
+//             originalRotation = cameraTransform.rotation;
+//         }
+//         else
+//         {
+//             Debug.LogError("Ä«ï¿½Þ¶ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+//         }
+//     }
 
-    void Update()
-    {
-        if (cameraTransform == null) return;
+//     void Update()
+//     {
+//         if (cameraTransform == null) return;
 
-        // Æ÷Å» ÅÍÄ¡ °¨Áö
-        if (Input.GetMouseButtonDown(0)) // ¸ð¹ÙÀÏ¿¡¼­´Â ÅÍÄ¡, PC¿¡¼­´Â ¸¶¿ì½º Å¬¸¯À¸·Î Å×½ºÆ® °¡´É
-        {
-            Debug.Log("ÅÍÄ¡¸ÔÀ½");
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit))
-            {
-                if (hit.transform.CompareTag("RPGDungeon"))
-                {
-                    Debug.Log("ÀÎ½ÄÇÔ");
-                    ZoomInToPortal(hit.transform);
-                }
-            }
-        }
-        ZoomIn();
+//         // ï¿½ï¿½Å» ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
+//         if (Input.GetMouseButtonDown(0)) // ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡, PCï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ì½º Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+//         {
+//             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+//             if (Physics.Raycast(ray, out RaycastHit hit))
+//             {
+//                 if (hit.transform.CompareTag("RPGDungeon"))
+//                 {
+//                     Debug.Log("ï¿½Î½ï¿½ï¿½ï¿½");
+//                     ZoomInToPortal(hit.transform);
+//                 }
+//             }
+//         }
+//         ZoomIn();
 
-    }
+//     }
 
-    void ZoomIn()
-    {
-        Debug.Log(isZoomingIn);
-        if (isZoomingIn && targetPortal != null)
-        {
-            Debug.Log("Ã¼Å©Çß´Ù");
-            cameraTransform.position = Vector3.Lerp(cameraTransform.position, targetPortal.position - targetPortal.forward * zoomDistance, Time.deltaTime * zoomSpeed);
-            cameraTransform.rotation = Quaternion.Slerp(cameraTransform.rotation, Quaternion.LookRotation(targetPortal.position - cameraTransform.position), Time.deltaTime * zoomSpeed);
-            Debug.Log("Ã¼Å©Çß´Ù2");
-            if (Vector3.Distance(cameraTransform.position, targetPortal.position - targetPortal.forward * zoomDistance) < 0.1f)
-            {
-                isZoomingIn = false;
-                Debug.Log("ÁÜÇß´Ù");
-            }
-        }
-        else if (isReturning)
-        {
-            // ¿ø·¡ À§Ä¡·Î µ¹¾Æ°¡´Â Áß
-            cameraTransform.position = Vector3.Lerp(cameraTransform.position, originalPosition, Time.deltaTime * zoomSpeed);
-            cameraTransform.rotation = Quaternion.Slerp(cameraTransform.rotation, originalRotation, Time.deltaTime * zoomSpeed);
+//     void ZoomIn()
+//     {
+//         // Debug.Log(isZoomingIn);
+//         if (isZoomingIn && targetPortal != null)
+//         {
+//             cameraTransform.position = Vector3.Lerp(cameraTransform.position, targetPortal.position - targetPortal.forward * zoomDistance, Time.deltaTime * zoomSpeed);
+//             cameraTransform.rotation = Quaternion.Slerp(cameraTransform.rotation, Quaternion.LookRotation(targetPortal.position - cameraTransform.position), Time.deltaTime * zoomSpeed);
+//             if (Vector3.Distance(cameraTransform.position, targetPortal.position - targetPortal.forward * zoomDistance) < 0.1f)
+//             {
+//                 isZoomingIn = false;
+//             }
+//         }
+//         else if (isReturning)
+//         {
+//             // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½Æ°ï¿½ï¿½ï¿½ ï¿½ï¿½
+//             cameraTransform.position = Vector3.Lerp(cameraTransform.position, originalPosition, Time.deltaTime * zoomSpeed);
+//             cameraTransform.rotation = Quaternion.Slerp(cameraTransform.rotation, originalRotation, Time.deltaTime * zoomSpeed);
 
-            // ¿ø·¡ À§Ä¡ º¹±Í ¿Ï·á È®ÀÎ
-            if (Vector3.Distance(cameraTransform.position, originalPosition) < 0.1f)
-            {
-                isReturning = false;
-            }
-        }
-    }
-    // Æ÷Å»À» ÅÍÄ¡ÇßÀ» ¶§ È£ÃâµÇ´Â ÇÔ¼ö
-    private void ZoomInToPortal(Transform portalTransform)
-    {
-        targetPortal = portalTransform;
-        isZoomingIn = true;
-        isReturning = false;
-    }
+//             // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ È®ï¿½ï¿½
+//             if (Vector3.Distance(cameraTransform.position, originalPosition) < 0.1f)
+//             {
+//                 isReturning = false;
+//             }
+//         }
+//     }
+//     // ï¿½ï¿½Å»ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ È£ï¿½ï¿½Ç´ï¿½ ï¿½Ô¼ï¿½
+//     private void ZoomInToPortal(Transform portalTransform)
+//     {
+//         targetPortal = portalTransform;
+//         isZoomingIn = true;
+//         isReturning = false;
+//     }
 
-    // "¾Æ´Ï¿À" ¹öÆ°À» ´©¸£¸é È£ÃâµÇ´Â ÇÔ¼ö
-    public void ReturnToOriginalPosition()
-    {
-        isReturning = true;
-        isZoomingIn = false;
-    }
-}
+//     // "ï¿½Æ´Ï¿ï¿½" ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½Ç´ï¿½ ï¿½Ô¼ï¿½
+//     public void ReturnToOriginalPosition()
+//     {
+//         isReturning = true;
+//         isZoomingIn = false;
+//     }
+// }

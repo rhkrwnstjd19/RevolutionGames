@@ -6,7 +6,48 @@ using GoShared;
 using System;
 using UnityEngine.Events;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using UnityEngine.AddressableAssets;
+public static class AdvDungeonInfoList
+{
+    private static List<ScriptableDungeon> dungeonInfos = new();
+    public static async Task LoadDungeonInfos()
+    {
+        if (dungeonInfos.Count == 0) // 데이터가 비어 있을 때만 로드
+        {
+            dungeonInfos = await GetInfosFromAddressable();
+        }
+    }
 
+    public static async Task<ScriptableDungeon> GetRandomDungeonInfo()
+    {
+        // dungeonInfos가 비어 있을 때 데이터를 로드
+        if (dungeonInfos.Count == 0)
+        {
+            Debug.Log("Dungeon infos are empty. Loading data from Addressables...");
+            await LoadDungeonInfos();
+
+            // 데이터 로드 후에도 비어 있으면 에러 반환
+            if (dungeonInfos.Count == 0)
+            {
+                Debug.LogError("Failed to load dungeon info data.");
+                return null;
+            }
+        }
+
+        // 랜덤 인덱스 추출 (범위: 0부터 시작)
+        int input = UnityEngine.Random.Range(0, dungeonInfos.Count);
+        return dungeonInfos[input];
+    }
+
+    private static async Task<List<ScriptableDungeon>> GetInfosFromAddressable()
+    {
+        var result = new List<ScriptableDungeon>();
+        result.AddRange(await Addressables.LoadAssetsAsync<ScriptableDungeon>("AdvDungeonInfo", null).Task);
+        return result;
+    }
+
+}
 
 public class MoveAvatar : MonoBehaviour
 {
@@ -23,7 +64,6 @@ public class MoveAvatar : MonoBehaviour
 		Run
 	};
 	public GOAvatarAnimationStateEvent OnAnimationStateChanged;
-	public List<AdvDungeon> advDungeons = new();
 	// Use this for initialization
 	void Start()
 	{
@@ -36,8 +76,8 @@ public class MoveAvatar : MonoBehaviour
 	}
 	IEnumerator CountBuilings(){
 		while(true){
-			Debug.Log($"Building Counts = {BuildingList.buildingList.Count}");
-			yield return new WaitForSeconds(5);
+			// Debug.Log($"Building Counts = {BuildingList.buildingList.Count}");
+			yield return new WaitForSeconds(10);
 		}
 	}
 	#region GoMap events

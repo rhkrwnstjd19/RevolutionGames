@@ -6,21 +6,32 @@ using UnityEngine;
 public class ScriptablePet : ScriptableObject
 {
     public string petName;
-    public int level=1;
-    public float currentExp;
-    public float maxExp{
-        get{
-            return level*150;
+    public int level = 1;
+    public int currentExp;
+    public int maxExp
+    {
+        get
+        {
+            return level * 50;
         }
     }
-    public int attackVal=10;
-
+    public int attackVal{
+        get{
+            return level*50;
+        }
+    }
+    public bool isAttacking;
     public Sprite petSprite;
-
+    public void AddExp(int addedExp){   
+        currentExp+=addedExp;
+        if(currentExp>=maxExp){
+            LevelUp();
+        }
+    }
     public void LevelUp()
     {
         level++;
-        currentExp = 0;
-        attackVal += 10;
+        currentExp-=maxExp;
+        Debug.Log($"{petName} level up! current Level={level}");
     }
 }

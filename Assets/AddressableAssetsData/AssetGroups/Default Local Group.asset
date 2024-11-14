@@ -110,12 +110,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - PetObjects
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 62a007d1cb3efc44d86ace2f6df03ac6
-    m_Address: Assets/Prefabs/Monster/CollectionEnemy/Monster/MonsterPlantPBRDefault.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PetObjects
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 26d2f7c8a429670478b031f863aa9df0
     m_Address: Assets/Prefabs/Monster/CollectionEnemy/Monster/MushroomAngryPet.prefab
     m_ReadOnly: 0
@@ -142,6 +136,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: eda288ce8c2fd3140af9d72d6e299d79
     m_Address: Assets/Prefabs/Monster/CollectionEnemy/Monster/WormMonsterPet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PetObjects
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 62a007d1cb3efc44d86ace2f6df03ac6
+    m_Address: Assets/Prefabs/Monster/CollectionEnemy/Monster/MonsterPlantPBRDefault.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - PetObjects
