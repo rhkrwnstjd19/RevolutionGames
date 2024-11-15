@@ -2,6 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Castle.Components.DictionaryAdapter.Xml;
+using Cinemachine;
+using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
@@ -15,7 +18,15 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
     public GameObject Buttons;
     public Button Accept;
     public Button Diffuse;
+    public GameObject ShopUI;
     private bool isRPG = false;
+    public CinemachineVirtualCamera targetAheadCamera;
+    
+    
+    private GameObject CurrentPanel;
+    private Vector2 originalPosition;
+    private Vector2 closePosition;
+    public float animationSpeed = 1.5f;
     void Start()
     {
         // 시작 시 확인 패널을 비활성화합니다.
@@ -46,14 +57,14 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
                     // 터치한 오브젝트의 이름과 태그를 디버그 로그로 출력합니다.
                     if (hit.transform.tag == "BossDungeon")
                     {
-                        isRPG = false;
                         Debug.Log("123클릭한 오브젝트: " + hit.transform.name);
+                        CurrentPanel = BossDungeonPanel;
                         ShowConfirmation();
                     }
                     else if (hit.transform.tag == "RPGDungeon")
                     {
-                        isRPG = true;
                         Debug.Log("123클릭한 오브젝트: " + hit.transform.name);
+                        CurrentPanel = RPGDungeonPanel;
                         ShowConfirmation();
                     }
                     else if (hit.transform.tag == "AdventureDungeon")
@@ -62,6 +73,11 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
                         if (AdventurePanel == null) Debug.LogError("OMG, Adventure Detail Panel is null. \nplease put fucking panel into hierarchy");
                         else if (touchedDungeon == null) Debug.LogError("OMG, Dungeon Script is null. \nDid you idiot forget to put script in prefab?");
                         else AdventurePanel.Init(touchedDungeon);
+                    }
+                    else if(hit.transform.tag == "Shop")
+                    {
+                        Debug.Log("Shop Clicked");
+                        hit.transform.gameObject.GetComponent<Shopper>().InitCamera(ShopUI);
                     }
                 }
             }
@@ -79,14 +95,14 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
 
                 if (hit.transform.tag == "BossDungeon")
                 {
-                    isRPG = false;
                     Debug.Log("123클릭한 오브젝트: " + hit.transform.name);
+                    CurrentPanel = BossDungeonPanel;
                     ShowConfirmation();
                 }   
                 else if (hit.transform.tag == "RPGDungeon")
                 {
-                    isRPG = true;
                     Debug.Log("123클릭한 오브젝트: " + hit.transform.name);
+                    CurrentPanel = RPGDungeonPanel;
                     ShowConfirmation();
                 }
                 else if (hit.transform.tag == "AdventureDungeon")
@@ -96,19 +112,19 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
                     else if (touchedDungeon == null) Debug.LogError("OMG, Dungeon Script is null. Did you idiot forget to put script in prefab?");
                     else AdventurePanel.Init(touchedDungeon);
                 }
+                else if(hit.transform.tag == "Shop")
+                {
+                    Debug.Log("Shop Clicked");
+                    hit.transform.gameObject.GetComponent<Shopper>().InitCamera(ShopUI);
+                }
             }
         }
     }
 
     void ShowConfirmation()
     {
-        Buttons.SetActive(true);
-        if (isRPG)
-            RPGDungeonPanel.SetActive(true);
-        else
-        {
-            BossDungeonPanel.SetActive(true);
-        }
+        
+        PanelPosition();
     }
 
     // 수락 버튼 클릭 시 호출되는 함수
@@ -124,5 +140,29 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
         RPGDungeonPanel.SetActive(false);
         BossDungeonPanel.SetActive(false);
         Buttons.SetActive(false);
+    }
+
+
+    void PanelPosition(){
+
+        originalPosition = CurrentPanel.transform.localPosition;
+        closePosition = new Vector2(originalPosition.x, -Screen.height);
+        CurrentPanel.transform.localPosition = closePosition;
+        CurrentPanel.SetActive(true);
+        Buttons.SetActive(true);
+        OpenAnimation();
+    }
+    public void OpenAnimation()
+    {
+        // 패널 애니메이션(Linear로 올라옴)
+        CurrentPanel.transform.DOLocalMoveY(originalPosition.y, animationSpeed)
+        .SetEase(Ease.Linear);
+    }
+    public void CloseAnimation()
+    {
+        // 패널 애니메이션(Linear로 내려감)
+        transform.DOLocalMoveY(closePosition.y, animationSpeed)
+        .SetEase(Ease.Linear)
+        .OnComplete(() => gameObject.SetActive(false));
     }
 }

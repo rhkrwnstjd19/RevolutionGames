@@ -216,7 +216,7 @@ public class AdventureDetailPanel : MonoBehaviour
                             canvasGroup.alpha = 1f; // 다음 사용을 위해 초기화
                         });
                 });
-            float halfScreenHeight = Screen.height * 0.5f;
+            float halfScreenHeight = Screen.height * 0.8f;
             // 패널 닫기 애니메이션
             transform.DOLocalMoveY(-halfScreenHeight, animationSpeed)
                 .SetEase(Ease.Linear);

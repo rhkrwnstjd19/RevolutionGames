@@ -7,7 +7,11 @@ public class ScriptablePlayer : ScriptableObject
     public string id;
     public int Level = 1;
     public float currentExp = 0;
-    public float MaxExp = 50;
+    public float MaxExp{
+        get{
+            return 100*Level;
+        }
+    }
     public int attackVal;
     public int defenseVal;
     public int maxHp;
@@ -24,7 +28,6 @@ public class ScriptablePlayer : ScriptableObject
     // public ScriptablePetList petList;
     public void LevelUp(){
         currentExp = 0;
-        MaxExp *= 2f;
         Level++;
         attackVal += 10;
         defenseVal += 10;

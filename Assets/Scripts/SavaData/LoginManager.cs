@@ -79,7 +79,6 @@ public class LoginManager : MonoBehaviour
         currentPlayer.id = loadedData.id;
         currentPlayer.Level = loadedData.Level;
         currentPlayer.currentExp = loadedData.currentExp;
-        currentPlayer.MaxExp = loadedData.MaxExp;
         currentPlayer.attackVal = loadedData.attackVal;
         currentPlayer.defenseVal = loadedData.defenseVal;
         currentPlayer.maxHp = loadedData.maxHp;
