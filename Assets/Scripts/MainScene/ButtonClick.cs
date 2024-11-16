@@ -7,6 +7,9 @@ public class ButtonClick : MonoBehaviour
 {
     public GameObject StageSelectButton;
     public GameObject NoticeButton_First;
+    public AudioSource audioSource;     // 오디오 소스
+    public AudioClip enterSound;
+    public AudioClip backSound;
 
     public void OnButtonClickCollect() //������ ���� �������� ���� ���
     {
@@ -25,6 +28,7 @@ public class ButtonClick : MonoBehaviour
 
     public void OnButtonClickStage_First_Enter()    //ù��° ������ ���� �ȳ�â���� ���⸦ ���� ���
     {
+        audioSource.PlayOneShot(enterSound);
         SceneManager.LoadScene("MainCollect");
     }
 
@@ -35,6 +39,7 @@ public class ButtonClick : MonoBehaviour
 
     public void OnButtonClickGoToMain()     //�������� ���ư��� ��ư�� ���� ���
     {
+        audioSource.PlayOneShot(backSound);
         SceneManager.LoadScene("(UI)Main Map - DungeonRPG 1");
     }
 }

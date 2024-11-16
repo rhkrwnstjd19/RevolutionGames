@@ -16,11 +16,17 @@ public class CaptureBall : MonoBehaviour
     Vector3 startPos;
     Camera mainCamera;
 
+    public AudioSource audioSource;  // 오디오 소스 참조
+    public AudioClip throwSound;     // 공 던질 때 사운드
+    public AudioClip captureSound;   // 수집 성공 사운드
+
     void Awake()
     {
         InitialBall();
         mainCamera = Camera.main;
         captureManager = FindObjectOfType<CaptureManager>();
+
+        audioSource = GetComponent<AudioSource>();
     }
     /// <summary>
     /// 볼 생성 코드
@@ -29,9 +35,7 @@ public class CaptureBall : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
-#if UNITY_EDITOR
-    SetColliderVeryBig();
-#endif
+
         SetBallPosition();
     }
     void SetColliderVeryBig(){
@@ -65,6 +69,9 @@ public class CaptureBall : MonoBehaviour
                 isReady = false;
 
                 rb.AddForce(throwAngle * dragDistance * 0.005f, ForceMode.VelocityChange);
+                
+                // 던질 때 사운드 재생
+                audioSource.PlayOneShot(throwSound);
                 captureManager.ThrowBall();
                 if(captureManager.GetBallCount() >0)Invoke("ResetBall", resetTime); // resetTime 뒤에 공의 위치 및 동작을 초기화한다.
             }
@@ -94,6 +101,10 @@ public class CaptureBall : MonoBehaviour
                 isReady = false;
 
                 rb.AddForce(throwAngle * dragDistanceY * 0.001f, ForceMode.VelocityChange);
+                
+                // 던질 때 사운드 재생
+                audioSource.PlayOneShot(throwSound);
+
                 captureManager.ThrowBall();
                 if(captureManager.GetBallCount() >0)Invoke("ResetBall", resetTime); // resetTime 뒤에 공의 위치 및 동작을 초기화한다.
             }
@@ -130,20 +141,24 @@ public class CaptureBall : MonoBehaviour
             {
                 captureManager.CapturePet(other.gameObject);
                 captureManager.SetResultPanel();
+
+                // 몬스터 잡을 때 사운드 재생
+                audioSource.PlayOneShot(captureSound);
+                Instantiate(effect, other.transform.position, Camera.main.transform.rotation);
             }
             else
             {
                 Debug.Log("Fail to capture");
             }
 
-//            Instantiate(effect, other.transform.position, Camera.main.transform.rotation);
+            //Instantiate(effect, other.transform.position, Camera.main.transform.rotation);
 
             Destroy(other.gameObject);
             gameObject.SetActive(false);
             Invoke("ResetBall", 3.0f); // 3초 뒤에 공을 다시 나타나게 한다.
         }
 
-}
+    }
 }
 
     
