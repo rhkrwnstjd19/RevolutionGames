@@ -1089,6 +1089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dad600fce2bb474094a91fb301030e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Stamina: {fileID: 0}
   goMap: {fileID: 244822101}
   avatarFigure: {fileID: 543951415}
   animationState: 0
@@ -1265,6 +1266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RPGDungeonPanel: {fileID: 0}
   BossDungeonPanel: {fileID: 0}
+  AdventurePanel: {fileID: 0}
   Buttons: {fileID: 0}
   Accept: {fileID: 0}
   Diffuse: {fileID: 0}
