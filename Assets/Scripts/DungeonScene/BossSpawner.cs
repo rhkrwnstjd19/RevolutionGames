@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 public class BossSpawner : MonoBehaviour
@@ -18,6 +17,8 @@ public class BossSpawner : MonoBehaviour
     public ARPlaneManager planeManager; // ARPlaneManager 참조
 
     private Camera mainCamera;
+    public AudioSource audioSource;     // 오디오 소스
+    public AudioClip bossSpawnSound;
 
     void Start()
     {
@@ -31,8 +32,10 @@ public class BossSpawner : MonoBehaviour
             }
         }
 
+        audioSource = GetComponent<AudioSource>();
         mainCamera = Camera.main;
         StartCoroutine(SpawnBossOnPlane());
+        audioSource.PlayOneShot(bossSpawnSound);
     }
 
     IEnumerator SpawnBossOnPlane()

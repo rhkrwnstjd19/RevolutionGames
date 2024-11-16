@@ -22,6 +22,9 @@ public class GameResult : MonoBehaviour
 
     public ScriptableResult result;
 
+    public AudioSource audioSource;     // 오디오 소스
+    public AudioClip resultSound;
+
     void Start(){
         AddressablesLoad();
         SetResult();
@@ -33,6 +36,7 @@ public class GameResult : MonoBehaviour
         this.exp = DungeonManager.Instance.TotalExp;
 
         StartCoroutine(ShowResult());
+        audioSource = GetComponent<AudioSource>();
     }
 
     async void AddressablesLoad()
@@ -46,6 +50,7 @@ public class GameResult : MonoBehaviour
         yield return StartCoroutine(AnimateValue(Gold, 0, gold, 0.5f, "Gold : "));
         yield return StartCoroutine(AnimateValue(EnemyCount, 0, enemyCount, 0.5f, "Enemy : "));
         yield return StartCoroutine(AnimateValue(Exp, 0, exp, 0.5f, "Total Exp : "));
+        audioSource.PlayOneShot(resultSound);
         CheckNewRecord();
     }
 

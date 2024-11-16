@@ -6,25 +6,27 @@ using UnityEngine.UI;
 
 public class SpawnMonster : MonoBehaviour
 {
-    public GameObject[] monsterPrefab; // ¸ó½ºÅÍ ¹è¿­
-    private ARRaycastManager raycastManager; // ·¹ÀÌÄ³½ºÆ® ¸Å´ÏÀú
+    public GameObject[] monsterPrefab; // ëª¬ìŠ¤í„° ë°°ì—´
+    private ARRaycastManager raycastManager; // ARRaycast ë§¤ë‹ˆì €
 
-    private List<ARRaycastHit> hit = new List<ARRaycastHit>(); // ·¹ÀÌÄ³½ºÆ® È÷Æ® °á°ú
+    private List<ARRaycastHit> hit = new List<ARRaycastHit>(); // Raycast íˆíŠ¸ ê²°ê³¼ ì €ì¥
 
-    private bool objectSpawn = false; // ¿ÀºêÁ§Æ®°¡ »ı¼ºµÇ¾ú´ÂÁö È®ÀÎ
-    public int selectedMonsterIndex = -1;   //monster select
+    private bool objectSpawn = false; // ì˜¤ë¸Œì íŠ¸ê°€ ìƒì„±ë˜ì—ˆëŠ”ì§€ í™•ì¸
+    public int selectedMonsterIndex = -1;   // ì„ íƒëœ ëª¬ìŠ¤í„° ì¸ë±ìŠ¤
 
     public Text messagePanel;
     public GameObject Swipe;
     public GameObject Result;
 
-
+    public AudioSource audioSource;     // ì˜¤ë””ì˜¤ ì†ŒìŠ¤
+    public AudioClip spawnSound;        // ëª¬ìŠ¤í„° ìŠ¤í° íš¨ê³¼ìŒ
 
     private void Start()
     {
         raycastManager = GetComponent<ARRaycastManager>();
+        ShowMessage("ìŠ¤ìº” ì¤‘...");
 
-        ShowMessage("½ÃÀÛ Áß...");
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -50,6 +52,9 @@ public class SpawnMonster : MonoBehaviour
                 Instantiate(selectedMonster, hitPose.position, hitPose.rotation);
                 objectSpawn = true;
 
+                // ëª¬ìŠ¤í„° ìŠ¤í° íš¨ê³¼ìŒ ì¬ìƒ
+                audioSource.PlayOneShot(spawnSound);
+
                 Swipe.SetActive(true);
 
                 Invoke("DeactivateSwipe", 6f);
@@ -57,10 +62,11 @@ public class SpawnMonster : MonoBehaviour
             }
             else
             {
-                ShowMessage("Áö¸é ÀÎ½Ä ½ÇÆĞ.");
+                ShowMessage("í‰ë©´ ì¸ì‹ ì‹¤íŒ¨.");
             }
         }
     }
+
     private void ShowMessage(string message)
     {
         if (messagePanel != null)

@@ -25,6 +25,10 @@ public class AdventureDetailPanel : MonoBehaviour
     private MainPlayerStatusView mainPlayerStatusView;
     private ScriptablePlayer player;
     private bool[] InstantiateDonePet = new bool[100];
+
+    public AudioSource audioSource;     // 오디오 소스
+    public AudioClip openSound;
+    public AudioClip closeSound;
     private void Awake()
     {
         // 패널의 초기 위치를 저장합니다.
@@ -33,6 +37,8 @@ public class AdventureDetailPanel : MonoBehaviour
         transform.localPosition = closePosition;
         mainPlayerStatusView = FindObjectOfType<MainPlayerStatusView>();
         player = mainPlayerStatusView.currentPlayer;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Init(AdvDungeon dungeon)
@@ -61,12 +67,14 @@ public class AdventureDetailPanel : MonoBehaviour
 
     public void OpenAnimation()
     {
+        audioSource.PlayOneShot(openSound);
         // 패널 애니메이션(Linear로 올라옴)
         transform.DOLocalMoveY(originalPosition.y, animationSpeed)
         .SetEase(Ease.Linear);
     }
     public void CloseAnimation()
     {
+        audioSource.PlayOneShot(closeSound);
         // 패널 애니메이션(Linear로 내려감)
         transform.DOLocalMoveY(closePosition.y, animationSpeed)
         .SetEase(Ease.Linear)

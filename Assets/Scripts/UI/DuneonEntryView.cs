@@ -16,6 +16,10 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
     public Button Accept;
     public Button Diffuse;
     private bool isRPG = false;
+    public AudioSource audioSource;     // 오디오 소스
+    public AudioClip enterSound;
+    public AudioClip backSound;
+
     void Start()
     {
         // 시작 시 확인 패널을 비활성화합니다.
@@ -114,13 +118,17 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
     // 수락 버튼 클릭 시 호출되는 함수
     public void OnAccept()
     {
-        if (isRPG) SceneManager.LoadScene("RPGDungeon");
+        if (isRPG){
+            audioSource.PlayOneShot(enterSound);
+            SceneManager.LoadScene("RPGDungeon");
+        }
         else SceneManager.LoadScene("BossDungeon");
     }
 
     // 취소 버튼 클릭 시 호출되는 함수
     public void OnCancel()
     {
+        audioSource.PlayOneShot(backSound);
         RPGDungeonPanel.SetActive(false);
         BossDungeonPanel.SetActive(false);
         Buttons.SetActive(false);
