@@ -67,6 +67,16 @@ public class Pet : MonoBehaviour
         {
             StartAttackProcess();
         }
+
+        if(target==null) LookMainCamera();
+    }
+
+    private void LookMainCamera()
+    {
+        if (Camera.main != null)
+        {
+            transform.LookAt(Camera.main.transform);
+        }
     }
 
     private void StartAttackProcess()

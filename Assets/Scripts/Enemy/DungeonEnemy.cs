@@ -97,6 +97,6 @@ public class DungeonEnemy : MonoBehaviour
         DungeonManager.Instance.DefeatedEnemyCount++;
         Vector3 pos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z - 0.2f);
         var a = Instantiate(gold, pos, Quaternion.identity);
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 0.5f);
     }
 }

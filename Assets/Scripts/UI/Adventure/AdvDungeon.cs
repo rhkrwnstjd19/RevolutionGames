@@ -115,7 +115,7 @@ public class AdvDungeon : MonoBehaviour
         Vector3 randomPosition = transform.position + (Quaternion.Euler(0, randomAngle, 0) * Vector3.forward * radius);
 
         // 지면 높이에 맞추기
-        randomPosition.y = transform.position.y;
+        randomPosition.y = transform.position.y + 0.5f;
 
         // 펫 오브젝트 생성
         GameObject petObject = Instantiate(petAI, randomPosition, Quaternion.identity);
@@ -123,6 +123,7 @@ public class AdvDungeon : MonoBehaviour
         // 펫이 던전을 바라보도록 회전
         Vector3 directionToDungeon = (transform.position - randomPosition).normalized;
         petObject.transform.rotation = Quaternion.LookRotation(directionToDungeon);
+        petObject.transform.localScale = new Vector3(10f, 10f, 10f);
         this.petObject = petObject;
         // Pet 컴포넌트 초기화
         if (currentPet != null)

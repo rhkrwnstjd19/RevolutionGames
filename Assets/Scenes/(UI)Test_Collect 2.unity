@@ -608,6 +608,7 @@ MonoBehaviour:
   messagePanel: {fileID: 0}
   Swipe: {fileID: 1261470319}
   Result: {fileID: 2059609223}
+  spawnSound: {fileID: 0}
 --- !u!114 &906253801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1589,7 +1590,7 @@ PrefabInstance:
     - target: {fileID: 6540949252658415340, guid: 05e897df58395904391c400217e0b8df,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6551134312779357882, guid: 05e897df58395904391c400217e0b8df,
         type: 3}
@@ -1601,6 +1602,11 @@ PrefabInstance:
       propertyPath: spawnMonster
       value: 
       objectReference: {fileID: 906253800}
+    - target: {fileID: 7520168258753396907, guid: 05e897df58395904391c400217e0b8df,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7673254102219130654, guid: 05e897df58395904391c400217e0b8df,
         type: 3}
       propertyPath: m_SizeDelta.y

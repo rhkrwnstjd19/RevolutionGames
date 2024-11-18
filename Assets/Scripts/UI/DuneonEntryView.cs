@@ -22,7 +22,9 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
     private bool isRPG = false;
     public CinemachineVirtualCamera targetAheadCamera;
     
-    
+    private AudioSource audioSource;     // 오디오 소스
+    public AudioClip enterSound;
+    public AudioClip backSound;
     private GameObject CurrentPanel;
     private Vector2 originalPosition;
     private Vector2 closePosition;
@@ -38,6 +40,7 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
             Buttons.SetActive(false);
         Accept.onClick.AddListener(OnAccept);
         Diffuse.onClick.AddListener(OnCancel);
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -59,12 +62,14 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
                     {
                         Debug.Log("123클릭한 오브젝트: " + hit.transform.name);
                         CurrentPanel = BossDungeonPanel;
+                        isRPG = false;
                         ShowConfirmation();
                     }
                     else if (hit.transform.tag == "RPGDungeon")
                     {
                         Debug.Log("123클릭한 오브젝트: " + hit.transform.name);
                         CurrentPanel = RPGDungeonPanel;
+                        isRPG = true;
                         ShowConfirmation();
                     }
                     else if (hit.transform.tag == "AdventureDungeon")
@@ -97,12 +102,14 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
                 {
                     Debug.Log("123클릭한 오브젝트: " + hit.transform.name);
                     CurrentPanel = BossDungeonPanel;
+                    isRPG = false;
                     ShowConfirmation();
                 }   
                 else if (hit.transform.tag == "RPGDungeon")
                 {
                     Debug.Log("123클릭한 오브젝트: " + hit.transform.name);
                     CurrentPanel = RPGDungeonPanel;
+                    isRPG = true;
                     ShowConfirmation();
                 }
                 else if (hit.transform.tag == "AdventureDungeon")
@@ -130,6 +137,7 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
     // 수락 버튼 클릭 시 호출되는 함수
     public void OnAccept()
     {
+        audioSource.PlayOneShot(enterSound);
         if (isRPG) SceneManager.LoadScene("RPGDungeon");
         else SceneManager.LoadScene("BossDungeon");
     }
@@ -137,6 +145,7 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
     // 취소 버튼 클릭 시 호출되는 함수
     public void OnCancel()
     {
+        audioSource.PlayOneShot(backSound);
         RPGDungeonPanel.SetActive(false);
         BossDungeonPanel.SetActive(false);
         Buttons.SetActive(false);

@@ -9,6 +9,7 @@ public class ReplaceBuildings : MonoBehaviour
 {
     public List<Mesh> mesh;
     public Material material;
+    public GameObject BossDungeon;
     void Start(){
         Invoke("ReplaceMesh", 3);
     }
@@ -24,6 +25,11 @@ public class ReplaceBuildings : MonoBehaviour
                 BuildingList.Buildings[i].gameObject.transform.rotation = Quaternion.Euler(0,-7,0);
                 //Debug.Log("Building Position : " + BuildingList.Buildings[i].gameObject.transform.position);
                 //BuildingList.buildingList[i].gameObject.transform.position = BuildingList.buildingPosition[i][0];
+            }
+            else if(randomNum < 3){
+                Vector3 DungeonPos = BuildingList.Buildings[i].gameObject.transform.position =findCenter(BuildingList.Buildings[i].GetComponent<GOFeatureBehaviour>().goFeature.convertedGeometry);
+                var a = Instantiate(BossDungeon, DungeonPos, Quaternion.Euler(0,0,0));
+                Destroy(BuildingList.Buildings[i].gameObject);
             }
             else if(BuildingList.Buildings[i].GetComponent<GOFeatureBehaviour>().goFeature.name == "building"){
                 BuildingList.Buildings[i].GetComponent<MeshRenderer>().material = material;

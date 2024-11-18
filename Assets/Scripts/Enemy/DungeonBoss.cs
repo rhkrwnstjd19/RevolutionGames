@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
+using DG.Tweening;
 using Game;
 using UnityEngine;
 
@@ -19,13 +21,21 @@ public class DungeonBoss : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        target = Camera.main.gameObject;
         animator = GetComponent<Animator>();
-        animator.SetBool("Move", true);
         initialScaleY = HPBar.localScale.y;
+        StartCoroutine(SetCameraPosition());
 
     }
 
+    IEnumerator SetCameraPosition()
+    {
+        animator.SetBool("Appear", true);
+        yield return new WaitForSeconds(3f);
+        animator.SetBool("Appear", false);
+        target = Camera.main.gameObject;
+        animator.SetBool("Move", true);
+    }
+    
     private void Update()
     {
         if (target != null)
@@ -43,7 +53,7 @@ public class DungeonBoss : MonoBehaviour
             else
             {
                 transform.position += direction * speed * Time.deltaTime;
-                animator.SetBool("IsAttack", false);
+                animator.SetBool("Attack", false);
             }
         }
             
@@ -58,6 +68,7 @@ public class DungeonBoss : MonoBehaviour
     public void TakeDamage(float amount){
         animator.SetBool("GetHit", true);
         //audioSource.Play();
+        DamageNumberManager.Instance.ShowDamageNumber(transform.position, amount);
         enemyHp -= amount;
         UpdateHPBar();
         if(enemyHp <= 0){

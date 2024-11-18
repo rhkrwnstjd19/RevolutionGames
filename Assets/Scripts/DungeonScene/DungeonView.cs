@@ -29,6 +29,8 @@ public class DungeonView : MonoBehaviour
     private bool isAnimatingExp = false;
 
     public TMP_Text dubuggingText;
+
+    public AudioClip dungeonExitSound;
     void Awake()
     {
         presenter = new DungeonPresenter(this);

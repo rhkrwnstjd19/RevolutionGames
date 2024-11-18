@@ -18,7 +18,7 @@ public class SpawnMonster : MonoBehaviour
     public GameObject Swipe;
     public GameObject Result;
 
-    public AudioSource audioSource;     // 오디오 소스
+    private AudioSource audioSource;     // 오디오 소스
     public AudioClip spawnSound;        // 몬스터 스폰 효과음
 
     private void Start()

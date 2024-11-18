@@ -8,7 +8,6 @@ public class Shopper : MonoBehaviour
 {
     public GameObject Shop;
     public CinemachineVirtualCamera targetAheadCamera;
-    
     private Vector2 originalPosition;
     private Vector2 closePosition;
     public float animationSpeed = 1.5f;
@@ -31,6 +30,7 @@ public class Shopper : MonoBehaviour
         closePosition = new Vector2(originalPosition.x, -Screen.height);
         Shop.transform.localPosition = closePosition;
         Shop.SetActive(true);
+        Shop.GetComponent<Shop>().exitButton.onClick.AddListener(delegate{CloseAnimation();});
         OpenAnimation();
     }
     public void OpenAnimation()
@@ -38,13 +38,15 @@ public class Shopper : MonoBehaviour
         // 패널 애니메이션(Linear로 올라옴)
         Shop.transform.DOLocalMoveY(originalPosition.y, animationSpeed)
         .SetEase(Ease.Linear);
+        EnterShop();
     }
     public void CloseAnimation()
     {
         // 패널 애니메이션(Linear로 내려감)
-        transform.DOLocalMoveY(closePosition.y, animationSpeed)
+        Shop.transform.DOLocalMoveY(closePosition.y, animationSpeed)
         .SetEase(Ease.Linear)
-        .OnComplete(() => gameObject.SetActive(false));
+        .OnComplete(() => Shop.gameObject.SetActive(false));
+        targetAheadCamera.Priority = 10;
     }
     public void EnterShop()
     {

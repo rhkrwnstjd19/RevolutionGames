@@ -18,10 +18,10 @@ public class EnemySpawner : MonoBehaviour
 
     private Camera mainCamera;
 
-    public AudioSource audioSource;     // 오디오 소스
+    private AudioSource audioSource;     // 오디오 소스
     public AudioClip enemySpawnSound;
 
-    void Start()
+    void Awake()
     {
         if (planeManager == null)
         {

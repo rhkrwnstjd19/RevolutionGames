@@ -31,6 +31,11 @@ public class AdventureDetailPanel : MonoBehaviour
     private AdvDungeon currentDungeon;
     private List<GameObject> petObjects = new();
     private Dictionary<string, GameObject> petObjectsMap = new();
+
+    [Header("UI Sounds")]
+    private AudioSource audioSource;
+    public AudioClip enterSound;
+    public AudioClip backSound;
     private async void Awake()
     {
         // 패널의 초기 위치를 저장합니다.
@@ -39,7 +44,7 @@ public class AdventureDetailPanel : MonoBehaviour
         transform.localPosition = closePosition;
         mainPlayerStatusView = FindObjectOfType<MainPlayerStatusView>();
         player = mainPlayerStatusView.currentPlayer;
-
+        audioSource = GetComponent<AudioSource>();
         var petObjects = await PetObjectList.LoadPetObjects();
         foreach (var petObj in petObjects)
         {
@@ -125,12 +130,14 @@ public class AdventureDetailPanel : MonoBehaviour
     }
     public void OpenAnimation()
     {
+        audioSource.PlayOneShot(enterSound);
         // 패널 애니메이션(Linear로 올라옴)
         transform.DOLocalMoveY(originalPosition.y, animationSpeed)
         .SetEase(Ease.Linear);
     }
     public void CloseAnimation()
     {
+        audioSource.PlayOneShot(backSound);
         // 패널 애니메이션(Linear로 내려감)
         transform.DOLocalMoveY(closePosition.y, animationSpeed)
         .SetEase(Ease.Linear)

@@ -26,7 +26,7 @@ public class CaptureManager : MonoBehaviour
     public GameObject ResultPanel;
     public Button Returnhome;
     private bool[] InstantiateDonePet = new bool[100];
-    void Start(){
+    void Awake(){
         UpdateCapturedPet();
        
         for(int i = 0; i < ballButtons.Count; i++){

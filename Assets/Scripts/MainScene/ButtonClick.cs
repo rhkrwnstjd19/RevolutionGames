@@ -7,10 +7,14 @@ public class ButtonClick : MonoBehaviour
 {
     public GameObject StageSelectButton;
     public GameObject NoticeButton_First;
-    public AudioSource audioSource;     // 오디오 소스
+    private AudioSource audioSource;     // 오디오 소스
     public AudioClip enterSound;
     public AudioClip backSound;
 
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     public void OnButtonClickCollect() //������ ���� �������� ���� ���
     {
         StageSelectButton.SetActive(true);

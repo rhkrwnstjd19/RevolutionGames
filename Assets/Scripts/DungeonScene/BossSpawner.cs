@@ -17,7 +17,7 @@ public class BossSpawner : MonoBehaviour
     public ARPlaneManager planeManager; // ARPlaneManager 참조
 
     private Camera mainCamera;
-    public AudioSource audioSource;     // 오디오 소스
+    private AudioSource audioSource;     // 오디오 소스
     public AudioClip bossSpawnSound;
 
     void Start()
@@ -34,14 +34,13 @@ public class BossSpawner : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
         mainCamera = Camera.main;
-        StartCoroutine(SpawnBossOnPlane());
-        audioSource.PlayOneShot(bossSpawnSound);
+        if( planeManager.trackables.count > 0)StartCoroutine(SpawnBossOnPlane());
     }
 
     IEnumerator SpawnBossOnPlane()
     {
         while(true){
-            if(GameObject.FindGameObjectsWithTag("EnemyBoss").Length < 1){
+            if(GameObject.FindGameObjectsWithTag("EnemyBoss").Length < 1 ){
                 SpawnEnemyOnRandomPlane();
             }
             else{
@@ -91,5 +90,6 @@ public class BossSpawner : MonoBehaviour
         }
         // 적 생성
         Instantiate(enemyPrefab, randomPosition, rotation);
+        audioSource.PlayOneShot(bossSpawnSound);
     }
 }

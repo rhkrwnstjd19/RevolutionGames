@@ -188,8 +188,8 @@ MonoBehaviour:
   ballSpawnPoint: {fileID: 3360862188264579415, guid: de729c07107a66a4ead8fb8f67a0c3f7,
     type: 3}
   audioSource: {fileID: 4656551476570091855}
-  throwSound: {fileID: 0}
-  captureSound: {fileID: 0}
+  throwSound: {fileID: 8300000, guid: 69418eaeca5b10941a87b4dcddcdcd81, type: 3}
+  captureSound: {fileID: 8300000, guid: 3a07478fd45b57a4f930b8e572478259, type: 3}
 --- !u!82 &4656551476570091855
 AudioSource:
   m_ObjectHideFlags: 0
@@ -201,7 +201,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

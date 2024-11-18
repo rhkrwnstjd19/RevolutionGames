@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using Math = System.Math;
 using UnityEngine.UI;
 
 public class CaptureBall : MonoBehaviour
@@ -22,11 +24,11 @@ public class CaptureBall : MonoBehaviour
 
     void Awake()
     {
-        InitialBall();
+
         mainCamera = Camera.main;
         captureManager = FindObjectOfType<CaptureManager>();
-
         audioSource = GetComponent<AudioSource>();
+        InitialBall();
     }
     /// <summary>
     /// 볼 생성 코드
@@ -50,30 +52,68 @@ public class CaptureBall : MonoBehaviour
             return;
         }
 
+        // if (Input.touchCount > 0 && isReady) // 한 개 이상의 터치가 있을 때
+        // {
+        //     Touch touch = Input.GetTouch(0);
+
+        //     if (touch.phase == TouchPhase.Began) // 터치가 시작될 때
+        //     {
+        //         startPos = touch.position;
+        //     }
+        //     else if (touch.phase == TouchPhase.Ended) // 터치가 끝날 때
+        //     {
+        //         float dragDistance = touch.position.y - startPos.y;
+
+        //         // 사용자 터치와 드래그(당김) 상태 기반의 힘을 가한다.
+        //         Vector3 throwAngle = (mainCamera.transform.forward +mainCamera.transform.up).normalized;
+
+        //         rb.isKinematic = false; // 물리 적용 활성화
+        //         isReady = false;
+
+        //         rb.AddForce(throwAngle * dragDistance * 0.005f, ForceMode.VelocityChange);
+                
+        //         // 던질 때 사운드 재생
+        //         audioSource.PlayOneShot(throwSound);
+        //         captureManager.ThrowBall();
+        //         if(captureManager.GetBallCount() >0)Invoke("ResetBall", resetTime); // resetTime 뒤에 공의 위치 및 동작을 초기화한다.
+        //     }
+        // }
         if (Input.touchCount > 0 && isReady) // 한 개 이상의 터치가 있을 때
         {
             Touch touch = Input.GetTouch(0);
 
             if (touch.phase == TouchPhase.Began) // 터치가 시작될 때
             {
-                startPos = touch.position;
+            startPos = touch.position;
             }
             else if (touch.phase == TouchPhase.Ended) // 터치가 끝날 때
             {
-                float dragDistance = touch.position.y - startPos.y;
+            float dragDistanceY = touch.position.y - startPos.y;
+            float dragDistanceX = touch.position.x - startPos.x;
 
-                // 사용자 터치와 드래그(당김) 상태 기반의 힘을 가한다.
-                Vector3 throwAngle = (mainCamera.transform.forward +mainCamera.transform.up).normalized;
+            if (dragDistanceY >= 5)
+            {
+                Vector3 throwAngle = mainCamera.transform.forward + mainCamera.transform.up;
+
+                if (Math.Abs(dragDistanceX) > 300){
+                    Debug.Log($"dragDistanceX : {dragDistanceX}");
+                    throwAngle +=new Vector3(dragDistanceX,0,0).normalized;
+                }
+
+                throwAngle = throwAngle.normalized;
 
                 rb.isKinematic = false; // 물리 적용 활성화
                 isReady = false;
 
-                rb.AddForce(throwAngle * dragDistance * 0.005f, ForceMode.VelocityChange);
-                
+                rb.AddForce(throwAngle * dragDistanceY * 0.001f, ForceMode.VelocityChange);
+
                 // 던질 때 사운드 재생
                 audioSource.PlayOneShot(throwSound);
+
                 captureManager.ThrowBall();
-                if(captureManager.GetBallCount() >0)Invoke("ResetBall", resetTime); // resetTime 뒤에 공의 위치 및 동작을 초기화한다.
+                if (captureManager.GetBallCount() > 0) Invoke("ResetBall", resetTime); // resetTime 뒤에 공의 위치 및 동작을 초기화한다.
+            }
+            else Debug.Log("Not enough drag distance");
             }
         }
         if (Input.GetMouseButtonDown(0)) // 마우스 왼쪽 버튼 클릭 시
@@ -84,13 +124,14 @@ public class CaptureBall : MonoBehaviour
         {
             float dragDistanceY = Input.mousePosition.y - startPos.y;
 
-            float dragDistanceX = Input.mousePosition.x - startPos.x;
+            float dragDistanceX =  Input.mousePosition.x-startPos.x;
             //dragdistanceX가 양수 일때는 오른쪽으로 드래그, 음수일때는 왼쪽으로 드래그
             if (dragDistanceY >= 5)
             {
                 Vector3 throwAngle = mainCamera.transform.forward +mainCamera.transform.up;
 
-                if(dragDistanceX > 3){
+                if(Math.Abs(dragDistanceX) > 300){
+                    Debug.Log($"dragDistanceX : {dragDistanceX}");
                     throwAngle +=new Vector3(dragDistanceX,0,0).normalized;
                 }
 
@@ -111,18 +152,37 @@ public class CaptureBall : MonoBehaviour
             else Debug.Log("Not enough drag distance");
 
         }
+    if (Input.GetMouseButton(0) && isReady) // 마우스 왼쪽 버튼을 누르고 있을 때
+    {
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition.z = mainCamera.nearClipPlane + 0.5f; // 카메라 앞에 위치하도록 z값 설정
+        Vector3 worldPosition = mainCamera.ScreenToWorldPoint(mousePosition);
+        transform.position = worldPosition;
+    }
+    if (Input.touchCount > 0 && isReady) // 한 개 이상의 터치가 있을 때
+    {
+        Touch touch = Input.GetTouch(0);
+
+        if (touch.phase == TouchPhase.Moved) // 터치가 이동 중일 때
+        {
+            Vector3 touchPosition = touch.position;
+            touchPosition.z = mainCamera.nearClipPlane + 0.5f; // 카메라 앞에 위치하도록 z값 설정
+            Vector3 worldPosition = mainCamera.ScreenToWorldPoint(touchPosition);
+            transform.position = worldPosition;
+        }
+    }
     }
 
     void SetBallPosition()
     {
         Debug.Log("SetBallPosition");
-        transform.position = ballSpawnPoint.position;
+        transform.position = mainCamera.transform.position + mainCamera.transform.forward * 0.5f + mainCamera.transform.up * -0.2f;
     }
 
     void ResetBall()
     {
         rb.isKinematic = true; // 물리 비활성화
-        transform.position = new Vector3(0, -0.2f, 0.75f); // 공을 초기 위치로 이동
+        transform.position = mainCamera.transform.position + mainCamera.transform.forward * 0.5f + mainCamera.transform.up * -0.2f;
         rb.velocity = Vector3.zero; // 공의 속도 초기화
         isReady = true; // 공 준비
         gameObject.SetActive(true); // 공 다시 활성화

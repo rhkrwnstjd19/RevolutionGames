@@ -9,8 +9,7 @@ public class DungeonPresenter : MonoBehaviour
     DungeonView view;
     //DungeonModel model;
     int firepos = 0;
-    public AudioSource audioSource;     // 오디오 소스
-    public AudioClip dungeonExitSound;
+    private AudioSource audioSource;     // 오디오 소스
 
     public DungeonPresenter(DungeonView view){
         this.view = view;
@@ -75,11 +74,12 @@ public class DungeonPresenter : MonoBehaviour
     }
 
     public void ExitDungeon(){
+        audioSource = view.GetComponent<AudioSource>(); 
         view.dubuggingText.text = "Exit Dungeon Clicked\n!";
         view.dubuggingText.text += "STart SavePlayerData\n";
         // DatabaseManager.Instance.SavePlayerData(view.player);
         view.dubuggingText.text += "End SavePlayerData\n";
-        audioSource.PlayOneShot(dungeonExitSound);
+        audioSource.PlayOneShot(view.dungeonExitSound);
         SceneManager.LoadScene("Main Map - DungeonRPG");
     }
 
