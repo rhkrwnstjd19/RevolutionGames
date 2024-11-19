@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: newdata
   Level: 1
-  currentExp: 220
+  currentExp: 0
   attackVal: 5
   defenseVal: 5
   maxHp: 5
   basicAttackCooldown: 0
-  Stamina: 0
-  gold: 0
+  Stamina: 0.5
+  gold: 120
   skill:
   - {fileID: 11400000, guid: 032dbbc224055124098d241e0e89e160, type: 2}
   - {fileID: 11400000, guid: 592c8e41cfc931d4ea720a7accdee1ff, type: 2}
@@ -31,5 +31,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c2a6886b7b510874cb646ba7d469173b, type: 2}
   - {fileID: 11400000, guid: a39fb919946a0374090ecdf5ae70dbfd, type: 2}
   - {fileID: 11400000, guid: 99fcb9fbd72ab3e42885008a5214c935, type: 2}
-  petList:
-  - {fileID: 11400000, guid: 5b93cc734c5b91d43b806f3ecd316948, type: 2}
+  petList: []

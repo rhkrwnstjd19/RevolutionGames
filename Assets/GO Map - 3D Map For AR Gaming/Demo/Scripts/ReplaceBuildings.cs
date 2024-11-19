@@ -26,7 +26,7 @@ public class ReplaceBuildings : MonoBehaviour
                 //Debug.Log("Building Position : " + BuildingList.Buildings[i].gameObject.transform.position);
                 //BuildingList.buildingList[i].gameObject.transform.position = BuildingList.buildingPosition[i][0];
             }
-            else if(randomNum < 3){
+            else if(randomNum > 7){
                 Vector3 DungeonPos = BuildingList.Buildings[i].gameObject.transform.position =findCenter(BuildingList.Buildings[i].GetComponent<GOFeatureBehaviour>().goFeature.convertedGeometry);
                 var a = Instantiate(BossDungeon, DungeonPos, Quaternion.Euler(0,0,0));
                 Destroy(BuildingList.Buildings[i].gameObject);

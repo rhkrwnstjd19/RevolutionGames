@@ -34,7 +34,7 @@ public class BossSpawner : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
         mainCamera = Camera.main;
-        if( planeManager.trackables.count > 0)StartCoroutine(SpawnBossOnPlane());
+        StartCoroutine(SpawnBossOnPlane());
     }
 
     IEnumerator SpawnBossOnPlane()
@@ -43,11 +43,9 @@ public class BossSpawner : MonoBehaviour
             if(GameObject.FindGameObjectsWithTag("EnemyBoss").Length < 1 ){
                 SpawnEnemyOnRandomPlane();
             }
-            else{
-                break;
-            }
+            yield return new WaitForSeconds(1f);
         }
-        yield return null;
+        
         
     }
 
@@ -84,10 +82,6 @@ public class BossSpawner : MonoBehaviour
         // 평면의 회전과 일치하도록 설정 (옵션)
         Quaternion rotation = Quaternion.Euler(0, Random.Range(0f, 360f), 0);
 
-        var tmp = enemyPrefab.GetComponent<DungeonEnemy>().enemyType;
-        if(tmp == DungeonEnemy.EnemyType.Flying){
-            randomPosition.y += 0.5f;
-        }
         // 적 생성
         Instantiate(enemyPrefab, randomPosition, rotation);
         audioSource.PlayOneShot(bossSpawnSound);

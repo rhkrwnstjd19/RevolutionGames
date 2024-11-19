@@ -205,15 +205,17 @@ public class CaptureBall : MonoBehaviour
                 // 몬스터 잡을 때 사운드 재생
                 audioSource.PlayOneShot(captureSound);
                 Instantiate(effect, other.transform.position, Camera.main.transform.rotation);
+                Destroy(other.gameObject);
             }
             else
             {
                 Debug.Log("Fail to capture");
+                StartCoroutine(captureManager.CaptureFail());
             }
 
-            //Instantiate(effect, other.transform.position, Camera.main.transform.rotation);
+            Instantiate(effect, other.transform.position, Camera.main.transform.rotation);
 
-            Destroy(other.gameObject);
+
             gameObject.SetActive(false);
             Invoke("ResetBall", 3.0f); // 3초 뒤에 공을 다시 나타나게 한다.
         }

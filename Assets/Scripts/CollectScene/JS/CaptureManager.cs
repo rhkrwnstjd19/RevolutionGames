@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Image = UnityEngine.UI.Image;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class CaptureManager : MonoBehaviour
 {   
@@ -16,6 +17,7 @@ public class CaptureManager : MonoBehaviour
     public List<TMP_Text> ballCounts = new();
     public List<Button> ballButtons = new();
     public GameObject MenuButton;    
+    public GameObject CaptureFailText;
 
     public Image CurrentBallImage;
     public TMP_Text CurrentBallCount;
@@ -96,6 +98,11 @@ public class CaptureManager : MonoBehaviour
         return player.ballList[currentBallIndex].ballCount;
     }
 
+    public IEnumerator CaptureFail(){
+        CaptureFailText.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        CaptureFailText.SetActive(false);
+    }
     public void SetResultPanel(){
         ResultPanel.SetActive(true);
     }

@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resetTime: 3
-  captureRate: 1
+  captureRate: 0.4
   effect: {fileID: 8791802859087666345, guid: ae07f2a45f14a82428409cfe410e6002, type: 3}
   ballSpawnPoint: {fileID: 3360862188264579415, guid: de729c07107a66a4ead8fb8f67a0c3f7,
     type: 3}
