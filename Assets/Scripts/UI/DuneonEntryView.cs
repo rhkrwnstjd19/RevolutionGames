@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Castle.Components.DictionaryAdapter.Xml;
 using Cinemachine;
 using DG.Tweening;
+using GoMap;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -21,7 +23,7 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
     public GameObject ShopUI;
     private bool isRPG = false;
     public CinemachineVirtualCamera targetAheadCamera;
-    
+    public TMP_Text BuildingName;
     private AudioSource audioSource;     // 오디오 소스
     public AudioClip enterSound;
     public AudioClip backSound;
@@ -60,6 +62,7 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
                     // 터치한 오브젝트의 이름과 태그를 디버그 로그로 출력합니다.
                     if (hit.transform.tag == "BossDungeon")
                     {
+                        BuildingName.text = hit.transform.GetComponentInParent<GOFeatureBehaviour>().goFeature.name;
                         Debug.Log("123클릭한 오브젝트: " + hit.transform.name);
                         CurrentPanel = BossDungeonPanel;
                         isRPG = false;
@@ -67,6 +70,7 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
                     }
                     else if (hit.transform.tag == "RPGDungeon")
                     {
+                        BuildingName.text = hit.transform.GetComponentInParent<GOFeatureBehaviour>().goFeature.name;
                         Debug.Log("123클릭한 오브젝트: " + hit.transform.name);
                         CurrentPanel = RPGDungeonPanel;
                         isRPG = true;
@@ -74,6 +78,7 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
                     }
                     else if (hit.transform.tag == "AdventureDungeon")
                     {
+                        
                         AdvDungeon touchedDungeon = hit.transform.GetComponent<AdvDungeon>();
                         if (AdventurePanel == null) Debug.LogError("OMG, Adventure Detail Panel is null. \nplease put fucking panel into hierarchy");
                         else if (touchedDungeon == null) Debug.LogError("OMG, Dungeon Script is null. \nDid you idiot forget to put script in prefab?");
@@ -100,6 +105,7 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
 
                 if (hit.transform.tag == "BossDungeon")
                 {
+                    BuildingName.text = hit.transform.GetComponentInParent<GOFeatureBehaviour>().goFeature.name;
                     Debug.Log("123클릭한 오브젝트: " + hit.transform.name);
                     CurrentPanel = BossDungeonPanel;
                     isRPG = false;
@@ -107,6 +113,7 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
                 }   
                 else if (hit.transform.tag == "RPGDungeon")
                 {
+                    BuildingName.text = hit.transform.GetComponentInParent<GOFeatureBehaviour>().goFeature.name;
                     Debug.Log("123클릭한 오브젝트: " + hit.transform.name);
                     CurrentPanel = RPGDungeonPanel;
                     isRPG = true;
@@ -130,6 +137,7 @@ public class DuneonEntryView : Singleton<DuneonEntryView>
 
     void ShowConfirmation()
     {
+        
         
         PanelPosition();
     }

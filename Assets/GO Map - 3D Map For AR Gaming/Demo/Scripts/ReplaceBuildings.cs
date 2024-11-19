@@ -2,37 +2,54 @@ using UnityEngine;
 using GoShared;
 using GoMap;
 using System.Collections.Generic;
-
+using System;
+using Math = UnityEngine.Random;
 
 
 public class ReplaceBuildings : MonoBehaviour
 {
     public List<Mesh> mesh;
     public Material material;
+
+    public List<GameObject> SnowHouse = new();
     public GameObject BossDungeon;
+    private List<String> buildingName = new();
+    private GOPOIKind currentBuildingKind;
+
     void Start(){
         Invoke("ReplaceMesh", 3);
+        buildingName.Add("Restaurant");
+        buildingName.Add("School");
+        buildingName.Add("Hospital");
+        buildingName.Add("Cafe");
+        buildingName.Add("Bank");
+        buildingName.Add("Pharmacy");
+        buildingName.Add("University");
+        buildingName.Add("Convenience");
+
     }
     public void ReplaceMesh(){
         Debug.Log("Building Counts = " + BuildingList.Buildings.Count);
         for(int i = 0 ; i < BuildingList.Buildings.Count; i++){
-            int randomNum = Random.Range(0,8);
-
-            //Debug.Log($"Building {i} : {BuildingList.buildingFeature[i].name}");
-            if(BuildingList.Buildings[i].GetComponent<GOFeatureBehaviour>().goFeature.name == "building" && Random.Range(0,3) <1){
+            int randomNum = Math.Range(0,8);
+            currentBuildingKind = BuildingList.Buildings[i].GetComponent<GOFeatureBehaviour>().goFeature.poiKind;
+            if(buildingName.Contains(currentBuildingKind.ToString())) continue;
+            if(BuildingList.Buildings[i].GetComponent<GOFeatureBehaviour>().goFeature.name == "building" && Math.Range(0,3) <1){
                 BuildingList.Buildings[i].GetComponent<MeshFilter>().mesh = mesh[randomNum];
                 BuildingList.Buildings[i].gameObject.transform.position =findCenter(BuildingList.Buildings[i].GetComponent<GOFeatureBehaviour>().goFeature.convertedGeometry);
-                BuildingList.Buildings[i].gameObject.transform.rotation = Quaternion.Euler(0,-7,0);
+                BuildingList.Buildings[i].gameObject.transform.rotation = Quaternion.Euler(0,-14,0);
                 //Debug.Log("Building Position : " + BuildingList.Buildings[i].gameObject.transform.position);
                 //BuildingList.buildingList[i].gameObject.transform.position = BuildingList.buildingPosition[i][0];
             }
             else if(randomNum > 7){
                 Vector3 DungeonPos = BuildingList.Buildings[i].gameObject.transform.position =findCenter(BuildingList.Buildings[i].GetComponent<GOFeatureBehaviour>().goFeature.convertedGeometry);
-                var a = Instantiate(BossDungeon, DungeonPos, Quaternion.Euler(0,0,0));
+                var a = Instantiate(BossDungeon, DungeonPos, Quaternion.Euler(0,-7,0));
                 Destroy(BuildingList.Buildings[i].gameObject);
             }
             else if(BuildingList.Buildings[i].GetComponent<GOFeatureBehaviour>().goFeature.name == "building"){
-                BuildingList.Buildings[i].GetComponent<MeshRenderer>().material = material;
+                Vector3 HousePos = BuildingList.Buildings[i].gameObject.transform.position =findCenter(BuildingList.Buildings[i].GetComponent<GOFeatureBehaviour>().goFeature.convertedGeometry);
+                var a = Instantiate(SnowHouse[Math.Range(0,2)], HousePos, Quaternion.Euler(0,-14,0));
+                Destroy(BuildingList.Buildings[i].gameObject);
             }
 
 
