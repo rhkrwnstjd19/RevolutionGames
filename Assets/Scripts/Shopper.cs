@@ -1,104 +1,58 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
+using DG.Tweening;
 using UnityEngine;
 
 public class Shopper : MonoBehaviour
 {
     public GameObject Shop;
-    public GameObject shopQ;
-
-    ShopInfo shopInfo;
-    private bool isVisible = true;
-    private bool enteredShop = false;
-
-    // Start is called before the first frame update
+    public CinemachineVirtualCamera targetAheadCamera;
+    private Vector2 originalPosition;
+    private Vector2 closePosition;
+    public float animationSpeed = 1.5f;
     void Start()
     {
 
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void InitCamera(GameObject shopUI)
     {
-        // Your continuous update logic goes here
-        shopInfo = DummyManager.Instance.SI;
-        Debug.Log(shopInfo.isShopEnable);
-        if (shopInfo.isShopEnable && !enteredShop)
-        {
-            ShowNPC();
-            gameObject.GetComponent<CapsuleCollider>().enabled = true;
-        }
-        else
-        {
-            HideNPC();
-            gameObject.GetComponent<CapsuleCollider>().enabled = false;
-        }
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0); // Assume only one touch for simplicity
-
-            // Check if it's the beginning of a touch
-            if (touch.phase == TouchPhase.Began)
-            {
-                // Perform a raycast from the touch position
-                Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                RaycastHit hit;
-
-                // Set the maximum distance for the raycast based on your scene
-                float maxRaycastDistance = 10f;
-
-                // Perform the raycast
-                if (Physics.Raycast(ray, out hit, maxRaycastDistance))
-                {
-                    // Check if the ray hit the NPC
-                    if (hit.collider.CompareTag("shopper"))
-                    {
-                        // NPC touched, perform interaction logic
-                        NPCInteractionLogic();
-                        shopQ.SetActive(true);
-                    }
-                }
-            }
-        }
+        Shop = shopUI;
+        targetAheadCamera.Priority = 30;
+        SetShopPosition();
     }
 
-    //for test in Unity
-    void OnMouseDown()
-    {
-        shopQ.SetActive(true);
-    }
+    void SetShopPosition(){
 
-
-    void NPCInteractionLogic()
-    {
-        // Your NPC interaction logic goes here
-        Debug.Log("NPC Touched!");
+        originalPosition = Shop.transform.localPosition;
+        closePosition = new Vector2(originalPosition.x, -Screen.height);
+        Shop.transform.localPosition = closePosition;
+        Shop.SetActive(true);
+        Shop.GetComponent<Shop>().exitButton.onClick.AddListener(delegate{CloseAnimation();});
+        OpenAnimation();
     }
-   
+    public void OpenAnimation()
+    {
+        // 패널 애니메이션(Linear로 올라옴)
+        Shop.transform.DOLocalMoveY(originalPosition.y, animationSpeed)
+        .SetEase(Ease.Linear);
+        EnterShop();
+    }
+    public void CloseAnimation()
+    {
+        // 패널 애니메이션(Linear로 내려감)
+        Shop.transform.DOLocalMoveY(closePosition.y, animationSpeed)
+        .SetEase(Ease.Linear)
+        .OnComplete(() => Shop.gameObject.SetActive(false));
+        targetAheadCamera.Priority = 10;
+    }
     public void EnterShop()
     {
-        Shop.SetActive(true);
-        enteredShop = true;
-        shopQ.SetActive(false);
+        float halfScreenHeight = Screen.height * 0.5f;
+        Shop.transform.localPosition = new Vector2(originalPosition.x, -halfScreenHeight);
+
     }
 
-    public void ExitShop()
-    {
-       Shop.SetActive(false);
-       enteredShop = false;
-       shopQ.SetActive(false);
-    }
-    // Method to show the NPC
-    private void ShowNPC()
-    {
-        isVisible = true;
-        transform.localScale = new Vector3(3f, 3f, 3f);
-    }
-
-    // Method to hide the NPC
-    private void HideNPC()
-    {
-        isVisible = false;
-        transform.localScale = new Vector3(0f, 0f, 0f);
-    }
 }

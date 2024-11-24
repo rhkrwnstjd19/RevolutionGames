@@ -1180,6 +1180,7 @@ MonoBehaviour:
   exp: 55
   target: {fileID: 0}
   HPBar: {fileID: 4441266319917173232}
+  gold: {fileID: 8554857411142384731, guid: 99fa1fa417f97fd449e03a3c43d94f46, type: 3}
 --- !u!82 &745313190511396102
 AudioSource:
   m_ObjectHideFlags: 0

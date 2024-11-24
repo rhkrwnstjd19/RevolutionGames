@@ -11,6 +11,7 @@ public class MainPlayerStatusView : MonoBehaviour
     public TMP_Text CurrentGold;
     public TMP_Text CurrentExp;
     public Slider ExpSlider;
+    public Slider StaminaSlider;
 
     public TMP_Text Stamina;
     
@@ -20,20 +21,28 @@ public class MainPlayerStatusView : MonoBehaviour
 
     void Awake(){
         presenter = new MainPlayerStatusPresenter(this);
+        UpdatePlayerView();
     }
 
     public void UpdatePlayerView(){
         PlayerLevel.text = currentPlayer.Level.ToString();
-        CurrentGold.text = "Gold : " + currentPlayer.inventory.gold.ToString();
+        CurrentGold.text = "Gold : " + currentPlayer.gold.ToString();
         Stamina.text = "+" + currentPlayer.Stamina.ToString();
+        CurrentExp.text = currentPlayer.currentExp/currentPlayer.MaxExp * 100 + "%";
+        ExpSlider.value = currentPlayer.currentExp / currentPlayer.MaxExp;
+        StaminaSlider.value = currentPlayer.Stamina/ 100f;
     }
-
+    public void UpdateCoinView(int temporaryValue){
+        CurrentGold.text = "Gold : " + temporaryValue.ToString("N0");
+    }
     public void InitPlayer(ScriptablePlayer player){
         currentPlayer = player;
         UpdatePlayerView();
     }
 
     public void StaminaPlus(){
-        presenter.StaminaPlus();
+        currentPlayer.Stamina += 0.5f;
+        UpdatePlayerView();
+        //presenter.StaminaPlus();
     }
 }

@@ -7,34 +7,43 @@ public class ButtonClick : MonoBehaviour
 {
     public GameObject StageSelectButton;
     public GameObject NoticeButton_First;
+    private AudioSource audioSource;     // ì˜¤ë””ì˜¤ ì†ŒìŠ¤
+    public AudioClip enterSound;
+    public AudioClip backSound;
 
-    public void OnButtonClickCollect() //¼öÁýÇü ´øÀü ¾ÆÀÌÄÜÀ» ´©¸¦ °æ¿ì
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+    public void OnButtonClickCollect() //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
     {
         StageSelectButton.SetActive(true);
     }
 
-    public void OnButtonClickBack_StageSelect() //¼öÁýÇü ´øÀü ¸®½ºÆ®ÀÇ x ¹öÆ°À» ´©¸¦ °æ¿ì
+    public void OnButtonClickBack_StageSelect() //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ x ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
     {
         StageSelectButton.SetActive(false);
     }
 
-    public void OnButtonClickStage_First() //Ã¹¹øÂ° ¼öÁýÇü ´øÀü ¹öÆ°À» ´©¸¦ °æ¿ì
+    public void OnButtonClickStage_First() //Ã¹ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
     {
         NoticeButton_First.SetActive(true);
     }
 
-    public void OnButtonClickStage_First_Enter()    //Ã¹¹øÂ° ¼öÁýÇü ´øÀü ¾È³»Ã¢¿¡¼­ µé¾î°¡±â¸¦ ´©¸¦ °æ¿ì
+    public void OnButtonClickStage_First_Enter()    //Ã¹ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½Ã¢ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½î°¡ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
     {
-        SceneManager.LoadScene("(UI)Test_Collect 1");
+        audioSource.PlayOneShot(enterSound);
+        SceneManager.LoadScene("MainCollect");
     }
 
-    public void OnButtonClickStage_First_Back()    //Ã¹¹øÂ° ¼öÁýÇü ´øÀü ¾È³»Ã¢¿¡¼­ µÚ·Î°¡±â¸¦ ´©¸¦ °æ¿ì
+    public void OnButtonClickStage_First_Back()    //Ã¹ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½Ã¢ï¿½ï¿½ï¿½ï¿½ ï¿½Ú·Î°ï¿½ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
     {
         NoticeButton_First.SetActive(false);
     }
 
-    public void OnButtonClickGoToMain()     //¸ÞÀÎÀ¸·Î µ¹¾Æ°¡±â ¹öÆ°À» ´©¸¦ °æ¿ì
+    public void OnButtonClickGoToMain()     //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Æ°ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
     {
+        audioSource.PlayOneShot(backSound);
         SceneManager.LoadScene("(UI)Main Map - DungeonRPG 1");
     }
 }

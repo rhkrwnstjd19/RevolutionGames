@@ -371,7 +371,7 @@ namespace GoMap
 
 			Coordinates coordinates = new Coordinates (lat, lng,0);
 			go.transform.localPosition = coordinates.convertCoordinateToVector(go.transform.position.y);
-
+			Debug.Log($"{go} : {go.transform.position}");
 		}
 
 		//Drop a game object ad fixed latitude/longitude

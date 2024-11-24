@@ -3,36 +3,45 @@ using System.Collections;
 
 public class SpinRoulette : MonoBehaviour
 {
-    public Transform rouletteWheel; // ·ê·¿ ¿ÀºêÁ§Æ®ÀÇ Transform
+    public Transform rouletteWheel; // ï¿½ê·¿ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Transform
     public GameObject rouletteObject;
-    public float spinSpeed; // È¸Àü ¼Óµµ
+    public float spinSpeed; // È¸ï¿½ï¿½ ï¿½Óµï¿½
     public bool isSpinning;
     public int stopSpeed;
     public SpawnMonster spawnMonster;
 
     public bool isRouletteOn = true;
 
+    public AudioSource audioSource;  // ì˜¤ë””ì˜¤ ì†ŒìŠ¤ ì°¸ì¡°
+    public AudioClip spinSound;      // ë£°ë › ëŒì•„ê°€ëŠ” íš¨ê³¼ìŒ
+
     void Start()
     {
         isSpinning = true;
         stopSpeed = Random.Range(1, 4);
         spinSpeed = Random.Range(1000, 2000);
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         if (isSpinning)
         {
-            // ·ê·¿ È¸Àü
+            // ï¿½ê·¿ È¸ï¿½ï¿½
             rouletteWheel.Rotate(0, 0, spinSpeed * Time.deltaTime);
 
-            // ¼­¼­È÷ ¼Óµµ¸¦ ÁÙÀÓ
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             spinSpeed = Mathf.Lerp(spinSpeed, 0, Time.deltaTime * 1f);
 
-            // ¸ØÃã
+            // ï¿½ï¿½ï¿½ï¿½
             if (spinSpeed < 1f)
             {
                 isSpinning = false;
+
+                // íš¨ê³¼ìŒ ì •ì§€
+                audioSource.PlayOneShot(spinSound);
+                
                 float selectedAngle = rouletteWheel.eulerAngles.z;
                 DetermineResult(selectedAngle);
 

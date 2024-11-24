@@ -22,8 +22,13 @@ public class GameResult : MonoBehaviour
 
     public ScriptableResult result;
 
-    void Start(){
-        AddressablesLoad();
+    private AudioSource audioSource;     // 오디오 소스
+    public AudioClip resultSound;
+
+    async void Awake(){
+        var handle = Addressables.LoadAssetAsync<ScriptableResult>("ResultSO");
+        await handle.Task;
+        result = handle.Result;
         SetResult();
     }
     public void SetResult()
@@ -31,21 +36,17 @@ public class GameResult : MonoBehaviour
         this.gold = DungeonManager.Instance.TotalGold;
         this.enemyCount = DungeonManager.Instance.DefeatedEnemyCount;
         this.exp = DungeonManager.Instance.TotalExp;
-
+        audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(resultSound);
         StartCoroutine(ShowResult());
     }
 
-    async void AddressablesLoad()
-    {
-        var handle = Addressables.LoadAssetAsync<ScriptableResult>("ResultSO");
-        await handle.Task;
-        result = handle.Result;
-    }
     IEnumerator ShowResult()
     {
         yield return StartCoroutine(AnimateValue(Gold, 0, gold, 0.5f, "Gold : "));
         yield return StartCoroutine(AnimateValue(EnemyCount, 0, enemyCount, 0.5f, "Enemy : "));
         yield return StartCoroutine(AnimateValue(Exp, 0, exp, 0.5f, "Total Exp : "));
+
         CheckNewRecord();
     }
 
@@ -66,15 +67,15 @@ public class GameResult : MonoBehaviour
 
 
     void CheckNewRecord(){
-        if(result.Gold > gold){
+        if(result.Gold < gold){
             result.Gold = gold;
             NewRecordGold.SetActive(true);
         }
-        if(result.EnemyCount > enemyCount){
+        if(result.EnemyCount < enemyCount){
             result.EnemyCount = enemyCount;
             NewRecordEnemy.SetActive(true);
         }
-        if(result.Exp > exp){
+        if(result.Exp < exp){
             result.Exp = exp;
             NewRecordExp.SetActive(true);
         }

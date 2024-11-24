@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: f0ba915c949771d4bb507d2aba13ab2d
   m_currentHash:
     serializedVersion: 2
-    Hash: 00000000000000000000000000000000
+    Hash: ba6d3d5ebe4d2407ddc4bd9589bad316
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -87,6 +87,8 @@ MonoBehaviour:
   m_LabelTable:
     m_LabelNames:
     - default
+    - AdvDungeonInfo
+    - PetObjects
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 67fa46c350c2ba9468add843cd342585, type: 2}

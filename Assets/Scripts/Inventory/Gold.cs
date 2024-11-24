@@ -52,7 +52,7 @@ public class Gold : MonoBehaviour
                 
                 if(Vector3.Distance(transform.position, goldMagnet.transform.position) < 0.5f)
                 {
-                    DungeonManager.Instance.UpdateGold(1);
+                    DungeonManager.Instance.UpdateGold(20);
                     break;
                 }
                 else

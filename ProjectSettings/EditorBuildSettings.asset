@@ -6,23 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/LoginScene.unity
-    guid: 0f6b58d4fcff7704a841cf7a46a6b92f
+    path: Assets/Scenes/MainScenes/(UI)LoginScene 1.unity
+    guid: b86c31debc70230439be7388bf56fed0
   - enabled: 1
-    path: Assets/Scenes/Dungeon&Enemy/BossDungeon.unity
-    guid: 565b7476d3948f644995eacfc0f8668e
+    path: Assets/Scenes/MainScenes/Main Map - DungeonRPG.unity
+    guid: 8411caa01c6c5b742b5f06dbe20af0db
   - enabled: 1
-    path: Assets/Scenes/RPGDungeon.unity
+    path: Assets/Scenes/MainScenes/RPGDungeon.unity
     guid: baf022488b4d6824c9969b94a00c4875
   - enabled: 1
-    path: Assets/Scenes/(UI)Test_Collect 1.unity
-    guid: addecb6b8a86d144e8fe1bb1bce4a3fa
+    path: Assets/Scenes/MainScenes/BossDungeon.unity
+    guid: 565b7476d3948f644995eacfc0f8668e
   - enabled: 1
-    path: Assets/Scenes/Test_Collect_Dup2.unity
-    guid: 642e1d65c7824424a96a250c40a850e7
-  - enabled: 1
-    path: Assets/Scenes/Main Map - DungeonRPG.unity
-    guid: 8411caa01c6c5b742b5f06dbe20af0db
+    path: Assets/Scenes/MainScenes/MainCollect.unity
+    guid: 50c4a74a76d8d924e94c43962391f095
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: cd6ca4369b7f3ec4bb265c15bb631314,
       type: 2}

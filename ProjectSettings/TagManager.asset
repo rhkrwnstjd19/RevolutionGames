@@ -11,6 +11,10 @@ TagManager:
   - BossDungeon
   - EnemyBoss
   - Buildings
+  - CatchBall
+  - AdventureDungeon
+  - Pet
+  - Shop
   layers:
   - Default
   - TransparentFX

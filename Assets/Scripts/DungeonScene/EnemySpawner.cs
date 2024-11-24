@@ -18,7 +18,10 @@ public class EnemySpawner : MonoBehaviour
 
     private Camera mainCamera;
 
-    void Start()
+    private AudioSource audioSource;     // 오디오 소스
+    public AudioClip enemySpawnSound;
+
+    void Awake()
     {
         if (planeManager == null)
         {
@@ -31,6 +34,7 @@ public class EnemySpawner : MonoBehaviour
         }
 
         mainCamera = Camera.main;
+        audioSource = GetComponent<AudioSource>();
         StartCoroutine(SpawnEnemiesOnPlanes());
     }
 
@@ -105,5 +109,6 @@ public class EnemySpawner : MonoBehaviour
         }
         // 적 생성
         Instantiate(enemyPrefab, randomPosition, rotation);
+        audioSource.PlayOneShot(enemySpawnSound);
     }
 }

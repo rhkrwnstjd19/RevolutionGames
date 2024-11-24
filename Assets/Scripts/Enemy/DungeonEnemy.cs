@@ -54,7 +54,7 @@ public class DungeonEnemy : MonoBehaviour
             else
             {
                 transform.position += direction * speed * Time.deltaTime;
-                animator.SetBool("IsAttack", false);
+                animator.SetBool("Attack", false);
             }
         }
             
@@ -67,6 +67,7 @@ public class DungeonEnemy : MonoBehaviour
         isAttack = false;
     }
     public void TakeDamage(float amount){
+        amount = Random.Range(1500, 3000);
         animator.SetBool("GetHit", true);
         audioSource.Play();
         DamageNumberManager.Instance.ShowDamageNumber(transform.position, amount);
@@ -97,6 +98,6 @@ public class DungeonEnemy : MonoBehaviour
         DungeonManager.Instance.DefeatedEnemyCount++;
         Vector3 pos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z - 0.2f);
         var a = Instantiate(gold, pos, Quaternion.identity);
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 0.5f);
     }
 }

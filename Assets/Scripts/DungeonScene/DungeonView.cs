@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UniRx;
 using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.UI;
@@ -30,12 +29,15 @@ public class DungeonView : MonoBehaviour
     private bool isAnimatingExp = false;
 
     public TMP_Text dubuggingText;
+
+    public AudioClip dungeonExitSound;
     void Awake()
     {
         presenter = new DungeonPresenter(this);
         SwitchSkill.onValueChanged.AddListener(delegate { presenter.SwitchSkill(SwitchSkill.value); });
         fireButton.onClick.AddListener(delegate{presenter.Fire(Skill);} );
         ExitDungeon.onClick.AddListener(delegate{presenter.ExitDungeon();});
+        UpdatePlayerView();
     }
 
     // Update is called once per frame
@@ -49,7 +51,7 @@ public class DungeonView : MonoBehaviour
         CurrentExp.text = $"{(player.currentExp / player.MaxExp) * 100:F2}%";
         ExpSlider.maxValue = player.MaxExp;
         ExpSlider.value = player.currentExp;
-        CurrentGold.text = "Gold : " + player.inventory.gold.ToString();
+        CurrentGold.text = "Gold : " + player.gold.ToString();
     }
 
     public void InitPlayer(ScriptablePlayer player){
@@ -119,7 +121,7 @@ public class DungeonView : MonoBehaviour
 
     public void UpdateGold(int gold)
     {
-        player.inventory.gold += gold;
+        player.gold += gold;
         UpdatePlayerView();
     }
 }

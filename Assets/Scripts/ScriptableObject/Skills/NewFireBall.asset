@@ -16,6 +16,6 @@ MonoBehaviour:
   attackType: 0
   AttackVal: 5
   Cooldown: 1
-  SkillIcon: {fileID: 21300000, guid: a41f0b2a2885c98478fefa58c172b457, type: 3}
+  SkillIcon: {fileID: 21300000, guid: 85623aeaf9f506541a5ccd7b7341d546, type: 3}
   SkillEffect: {fileID: 4347528313254286495, guid: e28c9ecbd0e440c47815250fd9bcbf07,
     type: 3}

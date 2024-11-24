@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b57a56f205ffdbf42a49019f71cde038, type: 3}
+  m_Name: CurrentPlayer
+  m_EditorClassIdentifier: 
+  id: newdata
+  Level: 87
+  currentExp: 35
+  attackVal: 5
+  defenseVal: 5
+  maxHp: 5
+  basicAttackCooldown: 0
+  Stamina: 80
+  gold: 24300
+  skill:
+  - {fileID: 11400000, guid: 032dbbc224055124098d241e0e89e160, type: 2}
+  - {fileID: 11400000, guid: 592c8e41cfc931d4ea720a7accdee1ff, type: 2}
+  - {fileID: 11400000, guid: 128f62d0b64482e45a5873ffa18d0c4c, type: 2}
+  ballList:
+  - {fileID: 11400000, guid: d4a9e7a642f64064083e268ee67d5d8e, type: 2}
+  - {fileID: 11400000, guid: 35e4b36e5155e3f4b972cc6119722380, type: 2}
+  - {fileID: 11400000, guid: c2a6886b7b510874cb646ba7d469173b, type: 2}
+  - {fileID: 11400000, guid: a39fb919946a0374090ecdf5ae70dbfd, type: 2}
+  - {fileID: 11400000, guid: 99fcb9fbd72ab3e42885008a5214c935, type: 2}
+  petList:
+  - {fileID: 11400000, guid: 5b93cc734c5b91d43b806f3ecd316948, type: 2}
+  - {fileID: 11400000, guid: da681bc454d246744b19ee5fa2776dd0, type: 2}
+  - {fileID: 11400000, guid: 2080d612351ce1d4b8e04c38ebbc69e9, type: 2}
+  - {fileID: 11400000, guid: 960a30e3bbd9ca74cb9a31cf3f4cccb9, type: 2}
+  - {fileID: 11400000, guid: 579008a6fb7c2bd43b79b2373d07893b, type: 2}
+  - {fileID: 11400000, guid: 193db7d5f9f632a4eb0620c23ec8e364, type: 2}
+  - {fileID: 11400000, guid: 615a28a41347cd749bd7ef4830592822, type: 2}
+  - {fileID: 11400000, guid: fd7d77743b2014040a2711eb16ef318d, type: 2}
+  - {fileID: 11400000, guid: 9cc5ad142dd9e5c42b287891a5f0ba01, type: 2}
+  - {fileID: 11400000, guid: fb91bc63afdd5ad479ee4575fc993a4e, type: 2}

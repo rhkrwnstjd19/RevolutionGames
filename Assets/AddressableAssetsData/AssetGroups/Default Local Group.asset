@@ -22,11 +22,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a0befe13d4fce914e89ae6516c752300
-    m_Address: Inventory
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b97634ce54ccf0b47916131e3255e1d7
     m_Address: SO/MAIN
     m_ReadOnly: 0
@@ -36,6 +31,120 @@ MonoBehaviour:
     m_Address: PlayerTest
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 622b4645006445947b01b58f6f2f68b2
+    m_Address: "Assets/Scripts/ScriptableObject/AdventureDungeon/\uC18C\uD6152.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AdvDungeonInfo
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a30e72a0647f9bb4bb6610971e76bee7
+    m_Address: "Assets/Scripts/ScriptableObject/AdventureDungeon/\uB300\uD6151.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AdvDungeonInfo
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e71f006ab99fb740be6df65d6126f91
+    m_Address: "Assets/Scripts/ScriptableObject/AdventureDungeon/\uC18C\uD6151.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AdvDungeonInfo
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd8e9861e7eb701478e1fbc17ab1e41f
+    m_Address: "Assets/Scripts/ScriptableObject/AdventureDungeon/\uC18C\uD6153.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AdvDungeonInfo
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f32481eb55d3b584a83c05189185a519
+    m_Address: "Assets/Scripts/ScriptableObject/AdventureDungeon/\uC911\uD6153.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AdvDungeonInfo
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 467ead38fd0aad74f926662105c97974
+    m_Address: "Assets/Scripts/ScriptableObject/AdventureDungeon/\uC911\uD6151.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AdvDungeonInfo
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e7ac83835e4f93b4294fc7f61cdf88c5
+    m_Address: "Assets/Scripts/ScriptableObject/AdventureDungeon/\uC911\uD6152.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AdvDungeonInfo
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cde4f3e02f310334c8cd845bdf692338
+    m_Address: "Assets/Scripts/ScriptableObject/AdventureDungeon/\uB300\uD6153.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AdvDungeonInfo
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bc91070587edb344bbdff89993972d86
+    m_Address: "Assets/Scripts/ScriptableObject/AdventureDungeon/\uB300\uD6152.asset"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AdvDungeonInfo
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e51e04407889b69468231615dfb3cb41
+    m_Address: Assets/Prefabs/Monster/CollectionEnemy/Monster/BatPet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PetObjects
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bfa5bcb9ca46e2047a4f3faa6a75e071
+    m_Address: Assets/Prefabs/Monster/CollectionEnemy/Monster/BeholderPet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PetObjects
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c663bae0cb73ce54cb337723fdb381ff
+    m_Address: Assets/Prefabs/Monster/CollectionEnemy/Monster/CactusPet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PetObjects
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: de1b8fcd4bcd0d6479fbd565ea8299a5
+    m_Address: Assets/Prefabs/Monster/CollectionEnemy/Monster/EvilMagePet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PetObjects
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 26d2f7c8a429670478b031f863aa9df0
+    m_Address: Assets/Prefabs/Monster/CollectionEnemy/Monster/MushroomAngryPet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PetObjects
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9dee84f64d407994fac4aaad2ea248ab
+    m_Address: Assets/Prefabs/Monster/CollectionEnemy/Monster/SlimePet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PetObjects
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9f20f1c618fca1149a571d56c016a0ec
+    m_Address: Assets/Prefabs/Monster/CollectionEnemy/Monster/SpiderPet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PetObjects
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5da308873ffc57d4f85c1a050c3efa31
+    m_Address: Assets/Prefabs/Monster/CollectionEnemy/Monster/TurtleShellPet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PetObjects
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eda288ce8c2fd3140af9d72d6e299d79
+    m_Address: Assets/Prefabs/Monster/CollectionEnemy/Monster/WormMonsterPet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PetObjects
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 62a007d1cb3efc44d86ace2f6df03ac6
+    m_Address: Assets/Prefabs/Monster/CollectionEnemy/Monster/MonsterPlantPBRDefault.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PetObjects
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 93bcf06ba7aa2c349b16ef5757003cda, type: 2}
