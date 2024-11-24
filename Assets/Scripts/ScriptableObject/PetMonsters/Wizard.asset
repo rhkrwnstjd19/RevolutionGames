@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Wizard
   m_EditorClassIdentifier: 
   petName: Wizard
-  level: 1
+  level: 9
   currentExp: 0
-  maxExp: 0
-  attackVal: 10
+  isAttacking: 0
   petSprite: {fileID: 21300000, guid: 2c03ad8245fd1514db2b0413efcc1191, type: 3}

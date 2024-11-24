@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Spider
   m_EditorClassIdentifier: 
   petName: GreenSpider
-  level: 1
+  level: 17
   currentExp: 0
-  maxExp: 0
-  attackVal: 10
+  isAttacking: 0
   petSprite: {fileID: 21300000, guid: 893211fa66103894fbce2a42aac6927e, type: 3}

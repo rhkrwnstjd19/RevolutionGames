@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Alien
   m_EditorClassIdentifier: 
   petName: Alien
-  level: 10
+  level: 31
   currentExp: 160
   isAttacking: 0
   petSprite: {fileID: 21300000, guid: ac5cee5824eed8544bc16da29efcab10, type: 3}

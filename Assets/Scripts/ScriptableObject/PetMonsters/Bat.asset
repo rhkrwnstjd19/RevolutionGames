@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Bat
   m_EditorClassIdentifier: 
   petName: Bat
-  level: 1
+  level: 25
   currentExp: 0
-  maxExp: 0
-  attackVal: 10
+  isAttacking: 0
   petSprite: {fileID: 21300000, guid: cd26a53da4bb1d34fa55223157e8d0f3, type: 3}

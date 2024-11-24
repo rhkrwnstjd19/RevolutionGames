@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Dragon
   m_EditorClassIdentifier: 
   petName: Dragon
-  level: 1
+  level: 34
   currentExp: 0
-  maxExp: 0
-  attackVal: 10
+  isAttacking: 0
   petSprite: {fileID: 21300000, guid: eeafe26fe43526945bf93ad30960222c, type: 3}

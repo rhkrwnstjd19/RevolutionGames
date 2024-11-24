@@ -67,6 +67,7 @@ public class DungeonEnemy : MonoBehaviour
         isAttack = false;
     }
     public void TakeDamage(float amount){
+        amount = Random.Range(1500, 3000);
         animator.SetBool("GetHit", true);
         audioSource.Play();
         DamageNumberManager.Instance.ShowDamageNumber(transform.position, amount);

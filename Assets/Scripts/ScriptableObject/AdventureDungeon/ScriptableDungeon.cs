@@ -18,7 +18,7 @@ public class ScriptableDungeon : ScriptableObject {
     public Size size=Size.소형;
     public string dungeonName{
         get{
-            return $"{size} 허수아비";
+            return $"{size} 피냐타";
         }
     }
     public int maxHealth {

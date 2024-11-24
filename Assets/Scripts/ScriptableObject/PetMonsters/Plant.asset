@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Plant
   m_EditorClassIdentifier: 
   petName: Plant
-  level: 1
+  level: 33
   currentExp: 0
-  maxExp: 0
-  attackVal: 10
+  isAttacking: 0
   petSprite: {fileID: 21300000, guid: 01341a1c350d61346b2a62dc017cf785, type: 3}

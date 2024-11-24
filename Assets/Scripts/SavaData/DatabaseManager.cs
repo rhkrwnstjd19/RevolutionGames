@@ -17,13 +17,13 @@ public class DatabaseManager : SingletonWithDontDestroyOnLoad<DatabaseManager>
     }
     private void LoadUserDatabase()
     {
-        if (File.Exists(filePath))
+        if (File.Exists(filePath)) // 플레이어 데이터 존재 여부 확인
         {
             string json = File.ReadAllText(filePath);
             userDatabase = JsonUtility.FromJson<UserDatabase>(json);
             Debug.Log("User database loaded from: " + filePath);
         }
-        else
+        else // 플레이어 데이터가 없을 경우 새로 생성
         {
             userDatabase = new UserDatabase();
             SaveUserDatabase(); // 파일이 없을 때 새로 저장하여 생성합니다.

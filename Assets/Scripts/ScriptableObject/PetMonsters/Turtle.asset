@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Turtle
   m_EditorClassIdentifier: 
   petName: Turtle
-  level: 1
+  level: 16
   currentExp: 0
-  maxExp: 0
-  attackVal: 10
+  isAttacking: 0
   petSprite: {fileID: 21300000, guid: 053050728f2994e43b82ba35a151c853, type: 3}

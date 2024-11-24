@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Cactus
   m_EditorClassIdentifier: 
   petName: Cactus
-  level: 1
+  level: 27
   currentExp: 0
-  maxExp: 0
-  attackVal: 10
+  isAttacking: 0
   petSprite: {fileID: 21300000, guid: 718b6a24e2f6b734694f142459d0899b, type: 3}

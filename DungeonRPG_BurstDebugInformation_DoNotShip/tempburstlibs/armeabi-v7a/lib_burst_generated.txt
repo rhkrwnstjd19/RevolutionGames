@@ -55,6 +55,7 @@ Library: C:\Users\user\Documents\GitHub\RevolutionGames\Temp\BurstOutput\tempbur
 --assembly-defines=Unity.Services.Core.Threading;
 --assembly-defines=Unity.TextMeshPro;
 --assembly-defines=Unity.Timeline;
+--assembly-defines=Unity.VisualEffectGraph.Runtime;
 --assembly-defines=Unity.XR.ARCore;
 --assembly-defines=Unity.XR.ARFoundation;
 --assembly-defines=Unity.XR.ARFoundation.InternalUtils;
@@ -134,6 +135,7 @@ Library: C:\Users\user\Documents\GitHub\RevolutionGames\Temp\BurstOutput\tempbur
 --assembly-defines=Unity.Services.Core.Threading;
 --assembly-defines=Unity.TextMeshPro;
 --assembly-defines=Unity.Timeline;
+--assembly-defines=Unity.VisualEffectGraph.Runtime;
 --assembly-defines=Unity.XR.ARCore;
 --assembly-defines=Unity.XR.ARFoundation;
 --assembly-defines=Unity.XR.ARFoundation.InternalUtils;

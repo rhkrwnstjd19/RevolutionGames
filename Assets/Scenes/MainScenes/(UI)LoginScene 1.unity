@@ -1015,7 +1015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   usernameInput: {fileID: 1032387073}
   loginButton: {fileID: 1628007534}
-  newPlayerData: {fileID: 11400000, guid: 17fa984275a91ae4aa6186997e0e5710, type: 2}
+  newPlayerData: {fileID: 11400000, guid: b97634ce54ccf0b47916131e3255e1d7, type: 2}
 --- !u!1 &1173939991
 GameObject:
   m_ObjectHideFlags: 0

@@ -1705,10 +1705,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f94977fe6a0205947bee265dec13547d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8831148677516599796, guid: 565dc547ec40b284fb619c7c6b0292d5,
+  enemyPrefab: {fileID: 4202523040418050089, guid: ab6924f69574f5746b79671a8aae3119,
     type: 3}
-  spawnCool: 3
-  maxEnemies: 10
+  spawnCool: 2
+  maxEnemies: 20
   planeManager: {fileID: 2112150315}
   enemySpawnSound: {fileID: 8300000, guid: 1b1bb1f6ea74bda468601087a2e8ab59, type: 3}
 --- !u!4 &2021372294
